@@ -3,6 +3,6 @@
 
 typedef struct Texture
 {
-	unsigned int id;
-	string type;
+	GLuint id;
+	std::string uName;
 }Texture;
