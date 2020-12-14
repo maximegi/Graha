@@ -2,14 +2,7 @@
 #include <GL/glew.h>
 #include <Mesh.hpp>
 
-Mesh::~Mesh()
-{
-    glDeleteBuffers(1,&vbo);
-    glDeleteBuffers(1,&ibo);
-    glDeleteVertexArrays(1,&vao);
-}
-
-void Mesh::Draw(glimac::Program &program)
+void Mesh::DrawTextures(glimac::Program &program)
 {
 	// glActiveTexture(GL_TEXTURE0);
 	// glBindTexture(GL_TEXTURE_2D, mTextures[0].id);
@@ -21,81 +14,48 @@ void Mesh::Draw(glimac::Program &program)
 
 	// glActiveTexture(GL_TEXTURE0);
 
-	glBindVertexArray(vao);
-	glDrawElements(GL_TRIANGLES,mIndices.size(),GL_UNSIGNED_INT,0);
+	glBindVertexArray(this->vao);
+	glDrawElements(GL_TRIANGLES,this->mIndices.size(),GL_UNSIGNED_INT,0);
 	glBindVertexArray(0);
 }
 
-// void Mesh::setupMesh()
-// {
-// 	glGenBuffers(1,&vbo);
-// 	glBindBuffer(GL_ARRAY_BUFFER,vbo);
-// 	glBufferData(GL_ARRAY_BUFFER,mVertices.size()*sizeof(Vertex),mVertices.data(),GL_STATIC_DRAW);
-// 	glBindBuffer(GL_ARRAY_BUFFER,0);
-
-// 	glGenBuffers(1,&ibo);
-// 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,ibo);
-// 	glBufferData(GL_ELEMENT_ARRAY_BUFFER,mIndices.size()*sizeof(unsigned int),mIndices.data(),GL_STATIC_DRAW);
-// 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,0);
-
-// 	glGenVertexArrays(1,&vao);
-// 	glBindVertexArray(vao);
-// 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,ibo);
-// 	glEnableVertexAttribArray(0);	//position
-// 	glEnableVertexAttribArray(1);	//normal
-// 	glEnableVertexAttribArray(2);	//texCoords
-// 	glBindBuffer(GL_ARRAY_BUFFER,vbo);
-// 	glVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE,sizeof(Vertex),(const GLvoid*)(offsetof(Vertex,position)));
-// 	glVertexAttribPointer(1,3,GL_FLOAT,GL_FALSE,sizeof(Vertex),(const GLvoid*)(offsetof(Vertex,normal)));
-// 	glVertexAttribPointer(2,2,GL_FLOAT,GL_FALSE,sizeof(Vertex),(const GLvoid*)(offsetof(Vertex,texCoords)));
-// 	glBindBuffer(GL_ARRAY_BUFFER,0);
-// 	glBindVertexArray(0);
-// }
-
-// void Mesh::setupMesh()
-// {
-// 	glGenVertexArrays(1,&vao);
-// 	glGenBuffers(1,&vbo);
-// 	glGenBuffers(1,&ibo);
-
-// 	glBindVertexArray(vao);
-
-// 	glBindBuffer(GL_ARRAY_BUFFER,vbo);
-// 	glBufferData(GL_ARRAY_BUFFER,mVertices.size()*sizeof(Vertex),&mVertices[0],GL_STATIC_DRAW);
-
-// 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,ibo);
-// 	glBufferData(GL_ELEMENT_ARRAY_BUFFER,mIndices.size()*sizeof(unsigned int),&mIndices[0],GL_STATIC_DRAW);
-	
-// 	glEnableVertexAttribArray(0);	//position
-// 	glVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE,sizeof(Vertex),(const GLvoid*)(offsetof(Vertex,position)));
-// 	glEnableVertexAttribArray(1);	//normal
-// 	glVertexAttribPointer(1,3,GL_FLOAT,GL_FALSE,sizeof(Vertex),(const GLvoid*)(offsetof(Vertex,normal)));
-// 	glEnableVertexAttribArray(2);	//texCoords
-// 	glVertexAttribPointer(2,2,GL_FLOAT,GL_FALSE,sizeof(Vertex),(const GLvoid*)(offsetof(Vertex,texCoords)));
-
-// 	glBindVertexArray(0);
-// }
+void Mesh::DrawColors()
+{
+	glBindVertexArray(this->vao);
+	glDrawElements(GL_TRIANGLES,this->mIndices.size(),GL_UNSIGNED_INT,0);
+	glBindVertexArray(0);
+}
 
 void Mesh::setupMesh()
 {
-	glGenVertexArrays(1,&vao);
 	glGenBuffers(1,&vbo);
-	glGenBuffers(1,&ibo);
-
-	glBindVertexArray(vao);
-
 	glBindBuffer(GL_ARRAY_BUFFER,vbo);
-	glBufferData(GL_ARRAY_BUFFER,mVertices.size()*sizeof(Vertex),&mVertices[0],GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER,mVertices.size()*sizeof(Vertex),mVertices.data(),GL_STATIC_DRAW);
+	glBindBuffer(GL_ARRAY_BUFFER,0);
 
+	glGenBuffers(1,&ibo);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,ibo);
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER,mIndices.size()*sizeof(unsigned int),&mIndices[0],GL_STATIC_DRAW);
-	
-	glEnableVertexAttribArray(0);	//position
-	glVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE,sizeof(Vertex),(const GLvoid*)0);
-	glEnableVertexAttribArray(1);	//normal
-	glVertexAttribPointer(1,3,GL_FLOAT,GL_FALSE,sizeof(Vertex),(const GLvoid*)(offsetof(Vertex,normal)));
-	glEnableVertexAttribArray(2);	//texCoords
-	glVertexAttribPointer(2,2,GL_FLOAT,GL_FALSE,sizeof(Vertex),(const GLvoid*)(offsetof(Vertex,texCoords)));
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER,mIndices.size()*sizeof(unsigned int),mIndices.data(),GL_STATIC_DRAW);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,0);
 
+	glGenVertexArrays(1,&vao);
+	glBindVertexArray(vao);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,ibo);
+	glEnableVertexAttribArray(0);	//position
+	glEnableVertexAttribArray(1);	//normal
+	glEnableVertexAttribArray(2);	//texCoords
+	glBindBuffer(GL_ARRAY_BUFFER,vbo);
+	glVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE,sizeof(Vertex),(const GLvoid*)(offsetof(Vertex,position)));
+	glVertexAttribPointer(1,3,GL_FLOAT,GL_FALSE,sizeof(Vertex),(const GLvoid*)(offsetof(Vertex,normal)));
+	glVertexAttribPointer(2,2,GL_FLOAT,GL_FALSE,sizeof(Vertex),(const GLvoid*)(offsetof(Vertex,texCoords)));
+	glBindBuffer(GL_ARRAY_BUFFER,0);
 	glBindVertexArray(0);
+}
+
+
+void Mesh::deleteBuffers()
+{
+    glDeleteBuffers(1,&vbo);
+    glDeleteBuffers(1,&ibo);
+    glDeleteVertexArrays(1,&vao);
 }

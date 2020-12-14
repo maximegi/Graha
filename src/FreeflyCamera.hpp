@@ -28,6 +28,7 @@ public:
 
 	void moveLeft(float t){ m_Position += t*m_LeftVector; }
 	void moveFront(float t){ m_Position += t*m_FrontVector; }
+	void moveUp(float t){ m_Position += t*m_UpVector; }
 	void rotateLeft(float degrees){ 
 		m_fPhi += glm::radians(degrees);
 		computeDirectionVectors();

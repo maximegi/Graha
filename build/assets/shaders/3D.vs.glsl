@@ -21,6 +21,7 @@ void main()
 	vec4 vertexNormal = vec4(aVertexNormal,0);
 
 	vPosition_vs = vec3(uModelMatrix*vertexPosition);
+	vNormal_vs = aVertexNormal;
 	vNormal_vs = vec3(uNormalMatrix*vertexNormal);
 	vTexCoords = aTexCoords;
 

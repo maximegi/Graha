@@ -1,6 +1,7 @@
 #include <SDLWindowManager.hpp>
 #include <GL/glew.h>
 #include <iostream>
+#include <vector>
 
 //glimac
 #include <common.hpp>
@@ -35,16 +36,15 @@ int main(int argc, char** argv) {
 
     FilePath applicationPath(argv[0]);
     Program program(loadProgram(applicationPath.dirPath() + "assets/shaders/3D.vs.glsl",
-                              applicationPath.dirPath() + "assets/shaders/normals.fs.glsl"));
+                              applicationPath.dirPath() + "assets/shaders/directionallightcolors.fs.glsl"));
     program.use();
 
     GLuint locationMVPMatrix = glGetUniformLocation(program.getGLId(), "uMVPMatrix");
     GLuint locationMVMatrix = glGetUniformLocation(program.getGLId(), "uMVMatrix");
     GLuint locationModelMatrix = glGetUniformLocation(program.getGLId(), "uModelMatrix");
     GLuint locationNormalMatrix = glGetUniformLocation(program.getGLId(), "uNormalMatrix");
-    // GLuint locationLightDirection = glGetUniformLocation(program.getGLId(), "uLightDirection");
-    // GLuint locationLightIntensity = glGetUniformLocation(program.getGLId(), "uLightIntensity");
-    // GLuint locationShininess = glGetUniformLocation(program.getGLId(), "uShininess");
+    GLuint locationLightDirection = glGetUniformLocation(program.getGLId(), "uLightDirection");
+    GLuint locationLightIntensity = glGetUniformLocation(program.getGLId(), "uLightIntensity");
 
     glEnable(GL_DEPTH_TEST);
 
@@ -52,33 +52,8 @@ int main(int argc, char** argv) {
     std::cout << "GLEW Version : " << glewGetString(GLEW_VERSION) << std::endl;
 
     //INITIALIZATION
-
-    Model volcano("assets/models/cube.obj");
-
-    Sphere sphere(1,32,16);
-    GLuint Nvertices = sphere.getVertexCount();
-
-    GLuint vbo;
-    glGenBuffers(1,&vbo);
-    glBindBuffer(GL_ARRAY_BUFFER,vbo);
-    glBufferData(GL_ARRAY_BUFFER,Nvertices*sizeof(ShapeVertex),sphere.getDataPointer(),GL_STATIC_DRAW);
-    glBindBuffer(GL_ARRAY_BUFFER,0);
-
-    GLuint vao;
-    glGenVertexArrays(1,&vao);
-    glBindVertexArray(vao);
-    const GLuint VERTEX_ATTR_POSITION = 0;
-    const GLuint VERTEX_ATTR_NORMAL = 1;
-    const GLuint VERTEX_ATTR_TEXCOORDS = 2;
-    glEnableVertexAttribArray(VERTEX_ATTR_POSITION);
-    glEnableVertexAttribArray(VERTEX_ATTR_NORMAL);
-    glEnableVertexAttribArray(VERTEX_ATTR_TEXCOORDS);
-    glBindBuffer(GL_ARRAY_BUFFER,vbo);
-    glVertexAttribPointer(VERTEX_ATTR_POSITION,3,GL_FLOAT,GL_FALSE,sizeof(ShapeVertex),(const GLvoid*)(offsetof(ShapeVertex,position)));
-    glVertexAttribPointer(VERTEX_ATTR_NORMAL,3,GL_FLOAT,GL_FALSE,sizeof(ShapeVertex),(const GLvoid*)(offsetof(ShapeVertex,normal)));
-    glVertexAttribPointer(VERTEX_ATTR_TEXCOORDS,2,GL_FLOAT,GL_FALSE,sizeof(ShapeVertex),(const GLvoid*)(offsetof(ShapeVertex,texCoords)));
-    glBindBuffer(GL_ARRAY_BUFFER,0);
-    glBindVertexArray(0);
+    std::string volcanoFile = "assets/models/volcano.obj";
+    Model volcano(volcanoFile);
 
     //MATRIXES
     glm::mat4 ProjMatrix = glm::perspective(glm::radians(70.f),((float)WINDOW_W)/((float)WINDOW_H),0.1f,100.f);
@@ -103,9 +78,9 @@ int main(int argc, char** argv) {
         }
 
         //RENDERING CODE
-        //glClearColor(0.1,0.2,0.4,0.3);
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
+        glClearColor(0.1,0.2,0.4,0.3);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);//
+        
         //EVENTS
         if(windowManager.isMouseButtonPressed(SDL_BUTTON_RIGHT))
         {
@@ -129,14 +104,19 @@ int main(int argc, char** argv) {
         {
             camera.moveFront(-0.1f);
         }
+        if(windowManager.isKeyPressed(SDLK_SPACE))
+        {
+            camera.moveUp(0.1f);
+        }
 
         //LIGHTS
-        // glUniform3fv(locationLightDirection,1,glm::value_ptr(glm::vec3(-1.,-1.,0.))); //Position of the light, don't forget to multiply by the view matrix
-        // glUniform3fv(locationLightIntensity,1,glm::value_ptr(glm::vec3(1.,1.,1.))); //Color of the light
+        glUniform3fv(locationLightDirection,1,glm::value_ptr(glm::vec3(-1.,-1.,0.))); //Position of the light, don't forget to multiply by the view matrix
+        glUniform3fv(locationLightIntensity,1,glm::value_ptr(glm::vec3(1.,1.,1.))); //Color of the light
 
 
-        //matrixes
-        ModelMatrix = glm::translate(glm::mat4(1),glm::vec3(0.,0.,-5.));
+    //VOLCANO
+        //MATRIXES
+        ModelMatrix = glm::scale(glm::translate(glm::mat4(1),glm::vec3(-2.,-2.,-5.)),glm::vec3(1.f/100.f,1.f/100.f,1.f/100.f));
         MVMatrix = camera.getViewMatrix()*ModelMatrix;
         NormalMatrix = glm::transpose(glm::inverse(ModelMatrix));
 
@@ -145,14 +125,34 @@ int main(int argc, char** argv) {
         glUniformMatrix4fv(locationMVPMatrix,1,GL_FALSE,glm::value_ptr(ProjMatrix*MVMatrix));
         glUniformMatrix4fv(locationNormalMatrix,1,GL_FALSE,glm::value_ptr(NormalMatrix));
         
-        // glUniform1f(locationShininess,32.f);
+        //COLORS
+        glUniform3fv(glGetUniformLocation(program.getGLId(),"uKa"),1,glm::value_ptr(glm::vec3(0.05375,0.05,0.06625)));
+        glUniform3fv(glGetUniformLocation(program.getGLId(),"uKd"),1,glm::value_ptr(glm::vec3(0.18275,0.17,0.22525)));
+        glUniform3fv(glGetUniformLocation(program.getGLId(),"uKs"),1,glm::value_ptr(glm::vec3(0.332741,0.328634,0.346435)));
+        glUniform1f(glGetUniformLocation(program.getGLId(), "uShininess"),0.3*128.f);
 
         //DRAW
-        volcano.Draw(program);
+        volcano.DrawColors();
 
-        glBindVertexArray(vao);
-        //glDrawArrays(GL_TRIANGLES,0,Nvertices);
-        glBindVertexArray(0);
+    //LAVA
+        //MATRIXES
+        ModelMatrix = glm::scale(glm::translate(glm::mat4(1),glm::vec3(2.,-2.,-5.)),glm::vec3(1.f/100.f,1.f/100.f,1.f/100.f));
+        MVMatrix = camera.getViewMatrix()*ModelMatrix;
+        NormalMatrix = glm::transpose(glm::inverse(ModelMatrix));
+
+        glUniformMatrix4fv(locationModelMatrix,1,GL_FALSE,glm::value_ptr(ModelMatrix));
+        glUniformMatrix4fv(locationMVMatrix,1,GL_FALSE,glm::value_ptr(MVMatrix));
+        glUniformMatrix4fv(locationMVPMatrix,1,GL_FALSE,glm::value_ptr(ProjMatrix*MVMatrix));
+        glUniformMatrix4fv(locationNormalMatrix,1,GL_FALSE,glm::value_ptr(NormalMatrix));
+
+        //COLORS
+        glUniform3fv(glGetUniformLocation(program.getGLId(),"uKa"),1,glm::value_ptr(glm::vec3(0.19125,0.0735,0.0225)));
+        glUniform3fv(glGetUniformLocation(program.getGLId(),"uKd"),1,glm::value_ptr(glm::vec3(0.7038,0.27048,0.0828)));
+        glUniform3fv(glGetUniformLocation(program.getGLId(),"uKs"),1,glm::value_ptr(glm::vec3(0.256777,0.137622,0.086014)));
+        glUniform1f(glGetUniformLocation(program.getGLId(), "uShininess"),0.1*128.f);
+
+        //DRAW
+        volcano.DrawColors();
 
         //END OF RENDERING CODE
 
@@ -161,6 +161,8 @@ int main(int argc, char** argv) {
         // Update the display
         windowManager.swapBuffers();
     }
+    volcano.deleteBuffers();
 
     return EXIT_SUCCESS;
 }
+

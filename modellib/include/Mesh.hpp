@@ -18,16 +18,18 @@ class Mesh
 		std::vector<Texture> mTextures;
 
 		Mesh(std::vector<Vertex> vertices, std::vector<unsigned int> indices, std::vector<Texture> textures) : 
-			mVertices(vertices), mIndices(indices),mTextures(textures)
+			mVertices(vertices), mIndices(indices), mTextures(textures)
 		{
 			setupMesh();
 		}
-		~Mesh();
 
-		void Draw(glimac::Program &program);
+		void DrawTextures(glimac::Program &program);
+		void DrawColors();
+
+		void deleteBuffers();
 
 	private:
-		GLuint vao,vbo,ibo;
+		GLuint vbo,ibo,vao;
 
 		void setupMesh();
 };

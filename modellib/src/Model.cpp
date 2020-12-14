@@ -4,11 +4,19 @@
 #include <Image.hpp>
 #include "Model.hpp"
 
-void Model::Draw(glimac::Program &program)
+void Model::DrawTextures(glimac::Program &program)
 {
 	for(size_t i = 0; i < meshes.size(); i++)
 	{
-		meshes[i].Draw(program);
+		meshes[i].DrawTextures(program);
+	}
+}
+
+void Model::DrawColors()
+{
+	for(size_t i = 0; i < meshes.size(); i++)
+	{
+		meshes[i].DrawColors();
 	}
 }
 
@@ -90,7 +98,6 @@ Mesh Model::processMesh(aiMesh *mesh, const aiScene *scene)
 		}
 	}
 
-	std::cout << mesh->mMaterialIndex << std::endl;
 	if(mesh->mMaterialIndex >= 0)
 	{
 		aiMaterial *material = scene->mMaterials[mesh->mMaterialIndex];
@@ -142,4 +149,12 @@ GLuint TextureFromFile(const char *path, const std::string &directory)
     glBindTexture(GL_TEXTURE_2D,0);
 
     return tex;
+}
+
+void Model::deleteBuffers()
+{
+	for(size_t i = 0; i < meshes.size(); i++)
+	{
+		meshes[i].deleteBuffers();
+	}
 }
