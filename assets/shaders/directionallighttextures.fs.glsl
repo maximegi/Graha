@@ -25,7 +25,7 @@ vec3 blinnPhong()
 	vec3 spec = uLightIntensity * pow(max(dot(normalize(normalize(-vPosition_vs) + lightDir),normalize(vNormal_vs)),0.f),uShininess); 
 	vec3 specularColor = spec * vec3(texture(uTextureSpecular, vTexCoords));
 
-	return diffuseColor + specularColor + vec3(0.4);
+	return diffuseColor + specularColor;
 }
 
 void main()
