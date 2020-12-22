@@ -127,9 +127,6 @@ int main(int argc, char** argv) {
         glUniformMatrix4fv(locationMVMatrix,1,GL_FALSE,glm::value_ptr(MVMatrix));
         glUniformMatrix4fv(locationMVPMatrix,1,GL_FALSE,glm::value_ptr(ProjMatrix*MVMatrix));
         glUniformMatrix4fv(locationNormalMatrix,1,GL_FALSE,glm::value_ptr(NormalMatrix));
-        
-        //COLOR
-        glUniform1f(glGetUniformLocation(program.getGLId(), "uShininess"),0.2*128.f);
 
         //DRAW
         volcano.DrawColors(program);
@@ -144,9 +141,6 @@ int main(int argc, char** argv) {
         glUniformMatrix4fv(locationMVMatrix,1,GL_FALSE,glm::value_ptr(MVMatrix));
         glUniformMatrix4fv(locationMVPMatrix,1,GL_FALSE,glm::value_ptr(ProjMatrix*MVMatrix));
         glUniformMatrix4fv(locationNormalMatrix,1,GL_FALSE,glm::value_ptr(NormalMatrix));
-
-        //COLORS
-        glUniform1f(glGetUniformLocation(program.getGLId(), "uShininess"),0.7*128.f);
 
         //DRAW
         lava.DrawColors(program);

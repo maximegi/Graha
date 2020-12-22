@@ -9,6 +9,7 @@
 
 #include "Vertex.hpp"
 #include "Texture.hpp"
+#include "Material.hpp"
 
 class Mesh
 {
@@ -16,9 +17,10 @@ class Mesh
 		std::vector<Vertex> mVertices;
 		std::vector<unsigned int> mIndices;
 		std::vector<Texture> mTextures;
+		Material mMaterial;
 
-		Mesh(std::vector<Vertex> vertices, std::vector<unsigned int> indices, std::vector<Texture> textures,glm::vec3 Ka, glm::vec3 Kd, glm::vec3 Ks) : 
-			mVertices(vertices), mIndices(indices), mTextures(textures), mKa(Ka), mKd(Kd), mKs(Ks)
+		Mesh(std::vector<Vertex> vertices, std::vector<unsigned int> indices, std::vector<Texture> textures, Material material) : 
+			mVertices(vertices), mIndices(indices), mTextures(textures), mMaterial(material)
 		{
 			setupMesh();
 		}
@@ -30,7 +32,6 @@ class Mesh
 
 	private:
 		GLuint vbo,ibo,vao;
-		glm::vec3 mKa, mKd, mKs;
 
 		void setupMesh();
 };

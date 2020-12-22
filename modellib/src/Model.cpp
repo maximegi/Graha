@@ -99,15 +99,16 @@ Mesh Model::processMesh(aiMesh *mesh, const aiScene *scene)
 	}
 
 	aiMaterial *material = scene->mMaterials[mesh->mMaterialIndex];
-	glm::vec3 Ka, Kd, Ks;
+	Material mat;
 	aiColor3D color;
 
 	material->Get(AI_MATKEY_COLOR_AMBIENT,color);
-	Ka = glm::vec3(color.r,color.g,color.b);
+	mat.Ka = glm::vec3(color.r,color.g,color.b);
 	material->Get(AI_MATKEY_COLOR_DIFFUSE,color);
-	Kd = glm::vec3(color.r,color.g,color.b);
+	mat.Kd = glm::vec3(color.r,color.g,color.b);
 	material->Get(AI_MATKEY_COLOR_SPECULAR,color);
-	Ks = glm::vec3(color.r,color.g,color.b);
+	mat.Ks = glm::vec3(color.r,color.g,color.b);
+	material->Get(AI_MATKEY_SHININESS,mat.shininess);
 
 	if(mesh->mMaterialIndex >= 0)
 	{
@@ -117,7 +118,7 @@ Mesh Model::processMesh(aiMesh *mesh, const aiScene *scene)
 		textures.insert(textures.end(),specularMaps.begin(),specularMaps.end());
 	}
 
-	return Mesh(vertices, indices, textures, Ka, Kd, Ks);
+	return Mesh(vertices, indices, textures, mat);
 }
 
 std::vector<Texture> Model::loadMaterialTextures(aiMaterial *material, aiTextureType type, std::string typeName)

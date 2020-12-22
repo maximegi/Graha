@@ -21,9 +21,10 @@ void Mesh::DrawTextures(glimac::Program &program)
 
 void Mesh::DrawColors(glimac::Program &program)
 {
-	glUniform3fv(glGetUniformLocation(program.getGLId(),"uKa"),1,glm::value_ptr(mKa));
-    glUniform3fv(glGetUniformLocation(program.getGLId(),"uKd"),1,glm::value_ptr(mKd));
-    glUniform3fv(glGetUniformLocation(program.getGLId(),"uKs"),1,glm::value_ptr(mKs));
+	glUniform3fv(glGetUniformLocation(program.getGLId(),"uKa"),1,glm::value_ptr(mMaterial.Ka));
+    glUniform3fv(glGetUniformLocation(program.getGLId(),"uKd"),1,glm::value_ptr(mMaterial.Kd));
+    glUniform3fv(glGetUniformLocation(program.getGLId(),"uKs"),1,glm::value_ptr(mMaterial.Ks));
+    glUniform1f(glGetUniformLocation(program.getGLId(),"uShininess"),mMaterial.shininess);
 
 	glBindVertexArray(this->vao);
 	glDrawElements(GL_TRIANGLES,this->mIndices.size(),GL_UNSIGNED_INT,0);
