@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Graha.dir/src/main.cpp.o"
-  "Graha"
   "Graha.pdb"
+  "Graha"
 )
 
 # Per-language clean rules from dependency scanning.

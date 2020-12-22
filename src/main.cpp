@@ -52,10 +52,10 @@ int main(int argc, char** argv) {
     std::cout << "GLEW Version : " << glewGetString(GLEW_VERSION) << std::endl;
 
     //INITIALIZATION
-    std::string volcanoFile = "assets/models/cube/cubes2.obj";
+    std::string volcanoFile = "assets/models/house/house2.obj";
     Model volcano(volcanoFile);
 
-    std::string lavaFile = "assets/models/cube/cubes2.obj";
+    std::string lavaFile = "assets/models/house/house2.obj";
     Model lava(lavaFile);
 
     //MATRIXES
@@ -119,7 +119,7 @@ int main(int argc, char** argv) {
 
     //VOLCANO 1
         //MATRIXES
-        ModelMatrix = glm::scale(glm::translate(glm::mat4(1),glm::vec3(-2.,-2.,-5.)),glm::vec3(1./100,1./100,1./100));
+        ModelMatrix = glm::scale(glm::translate(glm::mat4(1),glm::vec3(-2.,-2.,-5.)),glm::vec3(1.,1.,1.));
         MVMatrix = camera.getViewMatrix()*ModelMatrix;
         NormalMatrix = glm::transpose(glm::inverse(ModelMatrix));
 
@@ -129,14 +129,14 @@ int main(int argc, char** argv) {
         glUniformMatrix4fv(locationNormalMatrix,1,GL_FALSE,glm::value_ptr(NormalMatrix));
         
         //COLOR
-        glUniform1f(glGetUniformLocation(program.getGLId(), "uShininess"),0.3*128.f);
+        glUniform1f(glGetUniformLocation(program.getGLId(), "uShininess"),0.2*128.f);
 
         //DRAW
         volcano.DrawColors(program);
 
     //VOLCANO 2
         //MATRIXES
-        ModelMatrix = glm::scale(glm::translate(glm::mat4(1),glm::vec3(2.,-2.,-5.)),glm::vec3(1./100,1./100,1./100));
+        ModelMatrix = glm::scale(glm::translate(glm::mat4(1),glm::vec3(2.,-2.,-5.)),glm::vec3(1.,1.,1.));
         MVMatrix = camera.getViewMatrix()*ModelMatrix;
         NormalMatrix = glm::transpose(glm::inverse(ModelMatrix));
 
@@ -146,7 +146,7 @@ int main(int argc, char** argv) {
         glUniformMatrix4fv(locationNormalMatrix,1,GL_FALSE,glm::value_ptr(NormalMatrix));
 
         //COLORS
-        glUniform1f(glGetUniformLocation(program.getGLId(), "uShininess"),0.1*128.f);
+        glUniform1f(glGetUniformLocation(program.getGLId(), "uShininess"),0.7*128.f);
 
         //DRAW
         lava.DrawColors(program);
