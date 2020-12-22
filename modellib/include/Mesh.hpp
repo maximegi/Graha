@@ -17,19 +17,20 @@ class Mesh
 		std::vector<unsigned int> mIndices;
 		std::vector<Texture> mTextures;
 
-		Mesh(std::vector<Vertex> vertices, std::vector<unsigned int> indices, std::vector<Texture> textures) : 
-			mVertices(vertices), mIndices(indices), mTextures(textures)
+		Mesh(std::vector<Vertex> vertices, std::vector<unsigned int> indices, std::vector<Texture> textures,glm::vec3 Ka, glm::vec3 Kd, glm::vec3 Ks) : 
+			mVertices(vertices), mIndices(indices), mTextures(textures), mKa(Ka), mKd(Kd), mKs(Ks)
 		{
 			setupMesh();
 		}
 
 		void DrawTextures(glimac::Program &program);
-		void DrawColors();
+		void DrawColors(glimac::Program &program);
 
 		void deleteBuffers();
 
 	private:
 		GLuint vbo,ibo,vao;
+		glm::vec3 mKa, mKd, mKs;
 
 		void setupMesh();
 };

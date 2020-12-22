@@ -36,7 +36,7 @@ int main(int argc, char** argv) {
 
     FilePath applicationPath(argv[0]);
     Program program(loadProgram(applicationPath.dirPath() + "assets/shaders/3D.vs.glsl",
-                              applicationPath.dirPath() + "assets/shaders/directionallighttextures.fs.glsl"));
+                              applicationPath.dirPath() + "assets/shaders/directionallightcolors.fs.glsl"));
     program.use();
 
     GLuint locationMVPMatrix = glGetUniformLocation(program.getGLId(), "uMVPMatrix");
@@ -52,8 +52,11 @@ int main(int argc, char** argv) {
     std::cout << "GLEW Version : " << glewGetString(GLEW_VERSION) << std::endl;
 
     //INITIALIZATION
-    std::string cubeFile = "assets/models/cube/cube_textures.fbx";
-    Model cube(cubeFile);
+    std::string volcanoFile = "assets/models/cube/cubes2.obj";
+    Model volcano(volcanoFile);
+
+    std::string lavaFile = "assets/models/cube/cubes2.obj";
+    Model lava(lavaFile);
 
     //MATRIXES
     glm::mat4 ProjMatrix = glm::perspective(glm::radians(70.f),((float)WINDOW_W)/((float)WINDOW_H),0.1f,100.f);
@@ -114,9 +117,9 @@ int main(int argc, char** argv) {
         glUniform3fv(locationLightIntensity,1,glm::value_ptr(glm::vec3(1.,1.,1.))); //Color of the light
 
 
-    //VOLCANO
+    //VOLCANO 1
         //MATRIXES
-        ModelMatrix = glm::translate(glm::mat4(1),glm::vec3(-2.,-2.,-5.));
+        ModelMatrix = glm::scale(glm::translate(glm::mat4(1),glm::vec3(-2.,-2.,-5.)),glm::vec3(1./100,1./100,1./100));
         MVMatrix = camera.getViewMatrix()*ModelMatrix;
         NormalMatrix = glm::transpose(glm::inverse(ModelMatrix));
 
@@ -125,18 +128,15 @@ int main(int argc, char** argv) {
         glUniformMatrix4fv(locationMVPMatrix,1,GL_FALSE,glm::value_ptr(ProjMatrix*MVMatrix));
         glUniformMatrix4fv(locationNormalMatrix,1,GL_FALSE,glm::value_ptr(NormalMatrix));
         
-        //COLORS
-        // glUniform3fv(glGetUniformLocation(program.getGLId(),"uKa"),1,glm::value_ptr(glm::vec3(0.05375,0.05,0.06625)));
-        // glUniform3fv(glGetUniformLocation(program.getGLId(),"uKd"),1,glm::value_ptr(glm::vec3(0.18275,0.17,0.22525)));
-        // glUniform3fv(glGetUniformLocation(program.getGLId(),"uKs"),1,glm::value_ptr(glm::vec3(0.332741,0.328634,0.346435)));
+        //COLOR
         glUniform1f(glGetUniformLocation(program.getGLId(), "uShininess"),0.3*128.f);
 
         //DRAW
-        cube.DrawColors();
+        volcano.DrawColors(program);
 
-    //LAVA
+    //VOLCANO 2
         //MATRIXES
-        ModelMatrix = glm::translate(glm::mat4(1),glm::vec3(2.,-2.,-5.));
+        ModelMatrix = glm::scale(glm::translate(glm::mat4(1),glm::vec3(2.,-2.,-5.)),glm::vec3(1./100,1./100,1./100));
         MVMatrix = camera.getViewMatrix()*ModelMatrix;
         NormalMatrix = glm::transpose(glm::inverse(ModelMatrix));
 
@@ -146,13 +146,10 @@ int main(int argc, char** argv) {
         glUniformMatrix4fv(locationNormalMatrix,1,GL_FALSE,glm::value_ptr(NormalMatrix));
 
         //COLORS
-        // glUniform3fv(glGetUniformLocation(program.getGLId(),"uKa"),1,glm::value_ptr(glm::vec3(0.19125,0.0735,0.0225)));
-        // glUniform3fv(glGetUniformLocation(program.getGLId(),"uKd"),1,glm::value_ptr(glm::vec3(0.7038,0.27048,0.0828)));
-        // glUniform3fv(glGetUniformLocation(program.getGLId(),"uKs"),1,glm::value_ptr(glm::vec3(0.256777,0.137622,0.086014)));
         glUniform1f(glGetUniformLocation(program.getGLId(), "uShininess"),0.1*128.f);
 
         //DRAW
-        cube.DrawColors();
+        lava.DrawColors(program);
 
         //END OF RENDERING CODE
 
@@ -161,7 +158,8 @@ int main(int argc, char** argv) {
         // Update the display
         windowManager.swapBuffers();
     }
-    cube.deleteBuffers();
+    volcano.deleteBuffers();
+    lava.deleteBuffers();
 
     return EXIT_SUCCESS;
 }

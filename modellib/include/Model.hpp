@@ -23,7 +23,7 @@ class Model
 		}
 
 		void DrawTextures(glimac::Program &program);
-		void DrawColors();
+		void DrawColors(glimac::Program &program);
 
 		void deleteBuffers();
 	private:

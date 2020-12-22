@@ -12,11 +12,11 @@ void Model::DrawTextures(glimac::Program &program)
 	}
 }
 
-void Model::DrawColors()
+void Model::DrawColors(glimac::Program &program)
 {
 	for(size_t i = 0; i < meshes.size(); i++)
 	{
-		meshes[i].DrawColors();
+		meshes[i].DrawColors(program);
 	}
 }
 
@@ -98,16 +98,26 @@ Mesh Model::processMesh(aiMesh *mesh, const aiScene *scene)
 		}
 	}
 
+	aiMaterial *material = scene->mMaterials[mesh->mMaterialIndex];
+	glm::vec3 Ka, Kd, Ks;
+	aiColor3D color;
+
+	material->Get(AI_MATKEY_COLOR_AMBIENT,color);
+	Ka = glm::vec3(color.r,color.g,color.b);
+	material->Get(AI_MATKEY_COLOR_DIFFUSE,color);
+	Kd = glm::vec3(color.r,color.g,color.b);
+	material->Get(AI_MATKEY_COLOR_SPECULAR,color);
+	Ks = glm::vec3(color.r,color.g,color.b);
+
 	if(mesh->mMaterialIndex >= 0)
 	{
-		aiMaterial *material = scene->mMaterials[mesh->mMaterialIndex];
 		std::vector<Texture> diffuseMaps = loadMaterialTextures(material, aiTextureType_DIFFUSE, "uTextureDiffuse");
 		textures.insert(textures.end(),diffuseMaps.begin(),diffuseMaps.end());
 		std::vector<Texture> specularMaps = loadMaterialTextures(material, aiTextureType_SPECULAR, "uTextureSpecular");
 		textures.insert(textures.end(),specularMaps.begin(),specularMaps.end());
 	}
 
-	return Mesh(vertices, indices, textures);
+	return Mesh(vertices, indices, textures, Ka, Kd, Ks);
 }
 
 std::vector<Texture> Model::loadMaterialTextures(aiMaterial *material, aiTextureType type, std::string typeName)

@@ -20,13 +20,15 @@ vec3 blinnPhong()
 {
 	vec3 lightDir = normalize(-uLightDirection);
 
+	vec3 ambientColor = vec3(0.1,0.1,0.1)*uKa;
+
 	vec3 diff = uLightIntensity * max(dot(normalize(lightDir),normalize(vNormal_vs)),0.f);
 	vec3 diffuseColor = diff * uKd;
 
 	vec3 spec = uLightIntensity * pow(max(dot(normalize(normalize(-vPosition_vs) + lightDir),normalize(vNormal_vs)),0.f),uShininess); 
 	vec3 specularColor = spec * uKs;
 
-	return uKa + diffuseColor + specularColor;
+	return ambientColor + diffuseColor + specularColor;
 }
 
 void main()
