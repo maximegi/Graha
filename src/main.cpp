@@ -52,10 +52,10 @@ int main(int argc, char** argv) {
     std::cout << "GLEW Version : " << glewGetString(GLEW_VERSION) << std::endl;
 
     //INITIALIZATION
-    std::string volcanoFile = "assets/models/house/house2.obj";
+    std::string volcanoFile = "assets/models/house/house5.obj";
     Model volcano(volcanoFile);
 
-    std::string lavaFile = "assets/models/house/house2.obj";
+    std::string lavaFile = "assets/models/house/house5.obj";
     Model lava(lavaFile);
 
     //MATRIXES
