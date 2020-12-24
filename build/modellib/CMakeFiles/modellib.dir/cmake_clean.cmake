@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/modellib.dir/src/Mesh.cpp.o"
   "CMakeFiles/modellib.dir/src/Model.cpp.o"
-  "libmodellib.a"
   "libmodellib.pdb"
+  "libmodellib.a"
 )
 
 # Per-language clean rules from dependency scanning.

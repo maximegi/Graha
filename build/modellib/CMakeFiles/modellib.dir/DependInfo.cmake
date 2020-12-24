@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/baptiste/Bureau/IMAC2/Graha/modellib/src/Mesh.cpp" "/home/baptiste/Bureau/IMAC2/Graha/build/modellib/CMakeFiles/modellib.dir/src/Mesh.cpp.o"
-  "/home/baptiste/Bureau/IMAC2/Graha/modellib/src/Model.cpp" "/home/baptiste/Bureau/IMAC2/Graha/build/modellib/CMakeFiles/modellib.dir/src/Model.cpp.o"
+  "/home/theo/Bureau/Projet/Graha/modellib/src/Mesh.cpp" "/home/theo/Bureau/Projet/Graha/build/modellib/CMakeFiles/modellib.dir/src/Mesh.cpp.o"
+  "/home/theo/Bureau/Projet/Graha/modellib/src/Model.cpp" "/home/theo/Bureau/Projet/Graha/build/modellib/CMakeFiles/modellib.dir/src/Model.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -15,6 +15,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../glimac/include"
   "../modellib/include"
   "../third-party/include"
+  "../freetype-2.10.4/include"
   )
 
 # Targets to which this target links.

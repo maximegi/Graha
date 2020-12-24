@@ -3,6 +3,11 @@
 #include <iostream>
 #include <vector>
 
+//texte
+#include <ft2build.h>
+#include FT_FREETYPE_H
+
+
 //glimac
 #include <common.hpp>
 #include <FilePath.hpp>
@@ -16,9 +21,11 @@
 //modellib
 #include <Model.hpp>
 
+
 #include "FreeflyCamera.hpp"
 
 using namespace glimac;
+
 
 int main(int argc, char** argv) {
     // Initialize SDL and open a window
@@ -45,6 +52,20 @@ int main(int argc, char** argv) {
     GLuint locationNormalMatrix = glGetUniformLocation(program.getGLId(), "uNormalMatrix");
     GLuint locationLightDirection = glGetUniformLocation(program.getGLId(), "uLightDirection");
     GLuint locationLightIntensity = glGetUniformLocation(program.getGLId(), "uLightIntensity");
+
+    FT_Library ft;
+    if (FT_Init_FreeType(&ft))
+    {
+        std::cout << "ERROR::FREETYPE: Could not init FreeType Library" << std::endl;
+        return -1;
+    }
+
+    FT_Face face;
+    if (FT_New_Face(ft, "fonts/arial.ttf", 0, &face))
+    {
+        std::cout << "ERROR::FREETYPE: Failed to load font" << std::endl;  
+        return -1;
+    }
 
     glEnable(GL_DEPTH_TEST);
 
