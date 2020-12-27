@@ -280,13 +280,14 @@ int main(int argc, char** argv) {
         }
 
         if (windowManager.isKeyPressed(SDLK_i)){
-            glDisable(GL_BLEND);
-            glEnable(GL_DEPTH_TEST);
+            glEnable(GL_BLEND);
+            glDisable(GL_DEPTH_TEST);
+            
+            
         }
         else{
-            glDisable(GL_DEPTH_TEST);
-            glEnable(GL_BLEND);
-            glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA); 
+            glDisable(GL_BLEND);
+            glEnable(GL_DEPTH_TEST);
         }
 
 
@@ -338,13 +339,17 @@ int main(int argc, char** argv) {
 
         //DRAW
         cube.DrawColors();
-        glDisable(GL_DEPTH_TEST);
+        glDisable(GL_BLEND);
+        
 
     //TEXTS
+        glEnable(GL_BLEND);
+        glEnable(GL_DEPTH_TEST);
         textProgram.m_Program.use();
         glUniformMatrix4fv(textProgram.locationProjMatrix, 1, GL_FALSE, glm::value_ptr(textProjection));
         RenderText("coucou sa va", 0.0, 0.0, 1.0, textProgram.locationTextColor ,glm::vec3(1.0, 0.0, 0.2), vao, vbo);
-
+        glDisable(GL_DEPTH_TEST);
+        glDisable(GL_BLEND);
         
 
         //END OF RENDERING CODE
