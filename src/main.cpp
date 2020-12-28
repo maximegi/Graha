@@ -15,6 +15,9 @@
 
 //modellib
 #include <Model.hpp>
+//#include <Rectangle.hpp>
+//#include <Cylinder.hpp>
+#include <Spheric.hpp>
 
 #include "FreeflyCamera.hpp"
 
@@ -153,4 +156,3 @@ int main(int argc, char** argv) {
 
     return EXIT_SUCCESS;
 }
-
