@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Graha.dir/src/Audio.cpp.o"
   "CMakeFiles/Graha.dir/src/main.cpp.o"
   "Graha"
   "Graha.pdb"

@@ -17,6 +17,7 @@
 #include <Model.hpp>
 
 #include "FreeflyCamera.hpp"
+#include "Audio.hpp"
 
 using namespace glimac;
 

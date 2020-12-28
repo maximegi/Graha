@@ -1,31 +1,27 @@
 Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
-Change Dir: /home/baptiste/Bureau/IMAC2/Graha/build/CMakeFiles/CMakeTmp
+Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_ac3e9/fast && /usr/bin/make  -f CMakeFiles/cmTC_ac3e9.dir/build.make CMakeFiles/cmTC_ac3e9.dir/build
-make[1] : on entre dans le répertoire « /home/baptiste/Bureau/IMAC2/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_ac3e9.dir/src.c.o
-/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_ac3e9.dir/src.c.o -c /home/baptiste/Bureau/IMAC2/Graha/build/CMakeFiles/CMakeTmp/src.c
-Linking C executable cmTC_ac3e9
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ac3e9.dir/link.txt --verbose=1
-/usr/bin/cc -rdynamic CMakeFiles/cmTC_ac3e9.dir/src.c.o -o cmTC_ac3e9 
-CMakeFiles/cmTC_ac3e9.dir/src.c.o : Dans la fonction « main » :
-src.c:(.text+0x3e) : référence indéfinie vers « pthread_create »
-src.c:(.text+0x4a) : référence indéfinie vers « pthread_detach »
-src.c:(.text+0x56) : référence indéfinie vers « pthread_cancel »
-src.c:(.text+0x67) : référence indéfinie vers « pthread_join »
-src.c:(.text+0x7b) : référence indéfinie vers « pthread_atfork »
+Run Build Command(s):/usr/bin/make cmTC_95e3e/fast && /usr/bin/make -f CMakeFiles/cmTC_95e3e.dir/build.make CMakeFiles/cmTC_95e3e.dir/build
+make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_95e3e.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_95e3e.dir/src.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_95e3e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_95e3e.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_95e3e.dir/src.c.o  -o cmTC_95e3e 
+/usr/bin/ld : CMakeFiles/cmTC_95e3e.dir/src.c.o : dans la fonction « main » :
+src.c:(.text+0x46) : référence indéfinie vers « pthread_create »
+/usr/bin/ld : src.c:(.text+0x52) : référence indéfinie vers « pthread_detach »
+/usr/bin/ld : src.c:(.text+0x63) : référence indéfinie vers « pthread_join »
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_ac3e9.dir/build.make:105: recipe for target 'cmTC_ac3e9' failed
-make[1]: *** [cmTC_ac3e9] Error 1
-make[1] : on quitte le répertoire « /home/baptiste/Bureau/IMAC2/Graha/build/CMakeFiles/CMakeTmp »
-Makefile:140: recipe for target 'cmTC_ac3e9/fast' failed
-make: *** [cmTC_ac3e9/fast] Error 2
+make[1]: *** [CMakeFiles/cmTC_95e3e.dir/build.make:87 : cmTC_95e3e] Erreur 1
+make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
+make: *** [Makefile:121 : cmTC_95e3e/fast] Erreur 2
 
 
 Source file was:
 #include <pthread.h>
 
-static void* test_func(void* data)
+void* test_func(void* data)
 {
   return data;
 }
@@ -35,7 +31,6 @@ int main(void)
   pthread_t thread;
   pthread_create(&thread, NULL, test_func, NULL);
   pthread_detach(thread);
-  pthread_cancel(thread);
   pthread_join(thread, NULL);
   pthread_atfork(NULL, NULL, NULL);
   pthread_exit(NULL);
@@ -44,22 +39,20 @@ int main(void)
 }
 
 Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /home/baptiste/Bureau/IMAC2/Graha/build/CMakeFiles/CMakeTmp
+Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_940a7/fast && /usr/bin/make  -f CMakeFiles/cmTC_940a7.dir/build.make CMakeFiles/cmTC_940a7.dir/build
-make[1] : on entre dans le répertoire « /home/baptiste/Bureau/IMAC2/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_940a7.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_940a7.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.19/Modules/CheckFunctionExists.c
-Linking C executable cmTC_940a7
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_940a7.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create -rdynamic CMakeFiles/cmTC_940a7.dir/CheckFunctionExists.c.o -o cmTC_940a7  -lpthreads 
+Run Build Command(s):/usr/bin/make cmTC_faa73/fast && /usr/bin/make -f CMakeFiles/cmTC_faa73.dir/build.make CMakeFiles/cmTC_faa73.dir/build
+make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_faa73.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_faa73.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_faa73
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_faa73.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_faa73.dir/CheckFunctionExists.c.o  -o cmTC_faa73  -lpthreads 
 /usr/bin/ld : ne peut trouver -lpthreads
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_940a7.dir/build.make:105: recipe for target 'cmTC_940a7' failed
-make[1]: *** [cmTC_940a7] Error 1
-make[1] : on quitte le répertoire « /home/baptiste/Bureau/IMAC2/Graha/build/CMakeFiles/CMakeTmp »
-Makefile:140: recipe for target 'cmTC_940a7/fast' failed
-make: *** [cmTC_940a7/fast] Error 2
+make[1]: *** [CMakeFiles/cmTC_faa73.dir/build.make:87 : cmTC_faa73] Erreur 1
+make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
+make: *** [Makefile:121 : cmTC_faa73/fast] Erreur 2
 
 
 
