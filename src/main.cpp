@@ -52,11 +52,8 @@ int main(int argc, char** argv) {
     std::cout << "GLEW Version : " << glewGetString(GLEW_VERSION) << std::endl;
 
     //INITIALIZATION
-    std::string volcanoFile = "assets/models/house/house5.obj";
-    Model volcano(volcanoFile);
-
-    std::string lavaFile = "assets/models/house/house5.obj";
-    Model lava(lavaFile);
+    std::string houseFile = "assets/models/house/house.obj";
+    Model house(houseFile);
 
     //MATRIXES
     glm::mat4 ProjMatrix = glm::perspective(glm::radians(70.f),((float)WINDOW_W)/((float)WINDOW_H),0.1f,100.f);
@@ -117,7 +114,7 @@ int main(int argc, char** argv) {
         glUniform3fv(locationLightIntensity,1,glm::value_ptr(glm::vec3(1.,1.,1.))); //Color of the light
 
 
-    //VOLCANO 1
+    //HOUSE 1
         //MATRIXES
         ModelMatrix = glm::scale(glm::translate(glm::mat4(1),glm::vec3(-2.,-2.,-5.)),glm::vec3(1.,1.,1.));
         MVMatrix = camera.getViewMatrix()*ModelMatrix;
@@ -129,9 +126,9 @@ int main(int argc, char** argv) {
         glUniformMatrix4fv(locationNormalMatrix,1,GL_FALSE,glm::value_ptr(NormalMatrix));
 
         //DRAW
-        volcano.DrawColors(program);
+        house.DrawColors(program);
 
-    //VOLCANO 2
+    //HOUSE 2
         //MATRIXES
         ModelMatrix = glm::scale(glm::translate(glm::mat4(1),glm::vec3(2.,-2.,-5.)),glm::vec3(1.,1.,1.));
         MVMatrix = camera.getViewMatrix()*ModelMatrix;
@@ -143,7 +140,7 @@ int main(int argc, char** argv) {
         glUniformMatrix4fv(locationNormalMatrix,1,GL_FALSE,glm::value_ptr(NormalMatrix));
 
         //DRAW
-        lava.DrawColors(program);
+        house.DrawColors(program);
 
         //END OF RENDERING CODE
 
@@ -152,8 +149,7 @@ int main(int argc, char** argv) {
         // Update the display
         windowManager.swapBuffers();
     }
-    volcano.deleteBuffers();
-    lava.deleteBuffers();
+    house.deleteBuffers();
 
     return EXIT_SUCCESS;
 }
