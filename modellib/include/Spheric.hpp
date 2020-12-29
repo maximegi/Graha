@@ -12,7 +12,7 @@ public:
 	Spheric(glm::mat4 place, float rad) : GeometricShape(place), mRad(rad) {}
 
 	bool isIn(glm::vec3 position) { return glm::l2Norm(position,mCenter) <= mRad; }
-	void updateShape(glm::mat4 tranformations) //We assume that the scale is always the same on the 3 axis
+	void updateShape(glm::mat4 transformations) //We assume that the scale is always the same on the 3 axis
 	{
 		//calculate translation
 		glm::vec3 translation = glm::vec3(transformations * glm::vec4(0.f,0.f,0.f,1.f));

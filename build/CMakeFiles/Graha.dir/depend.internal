@@ -17,6 +17,8 @@ CMakeFiles/Graha.dir/src/main.cpp.o
  ../modellib/include/Material.hpp
  ../modellib/include/Mesh.hpp
  ../modellib/include/Model.hpp
+ ../modellib/include/Rectangle.hpp
+ ../modellib/include/Spheric.hpp
  ../modellib/include/Texture.hpp
  ../modellib/include/Vertex.hpp
  ../third-party/include/glm/detail/_fixes.hpp

@@ -154,6 +154,22 @@ FilePath.hpp
 Mesh.hpp
 ../modellib/include/Mesh.hpp
 
+../modellib/include/Rectangle.hpp
+iostream
+-
+glm.hpp
+-
+GeometricShape.hpp
+../modellib/include/GeometricShape.hpp
+
+../modellib/include/Spheric.hpp
+iostream
+-
+glm.hpp
+-
+GeometricShape.hpp
+../modellib/include/GeometricShape.hpp
+
 ../modellib/include/Texture.hpp
 iostream
 -
@@ -925,7 +941,11 @@ glm.hpp
 -
 Model.hpp
 -
+Rectangle.hpp
+-
 Cylinder.hpp
+-
+Spheric.hpp
 -
 FreeflyCamera.hpp
 /home/baptiste/Bureau/IMAC2/Graha/src/FreeflyCamera.hpp

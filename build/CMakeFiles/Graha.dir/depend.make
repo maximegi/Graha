@@ -16,6 +16,8 @@ CMakeFiles/Graha.dir/src/main.cpp.o: ../modellib/include/GeometricShape.hpp
 CMakeFiles/Graha.dir/src/main.cpp.o: ../modellib/include/Material.hpp
 CMakeFiles/Graha.dir/src/main.cpp.o: ../modellib/include/Mesh.hpp
 CMakeFiles/Graha.dir/src/main.cpp.o: ../modellib/include/Model.hpp
+CMakeFiles/Graha.dir/src/main.cpp.o: ../modellib/include/Rectangle.hpp
+CMakeFiles/Graha.dir/src/main.cpp.o: ../modellib/include/Spheric.hpp
 CMakeFiles/Graha.dir/src/main.cpp.o: ../modellib/include/Texture.hpp
 CMakeFiles/Graha.dir/src/main.cpp.o: ../modellib/include/Vertex.hpp
 CMakeFiles/Graha.dir/src/main.cpp.o: ../third-party/include/glm/detail/_fixes.hpp

@@ -15,9 +15,9 @@
 
 //modellib
 #include <Model.hpp>
-//#include <Rectangle.hpp>
+#include <Rectangle.hpp>
 #include <Cylinder.hpp>
-//#include <Spheric.hpp>
+#include <Spheric.hpp>
 
 #include "FreeflyCamera.hpp"
 
