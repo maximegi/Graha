@@ -40,8 +40,8 @@ public:
 
 	glm::mat4 getViewMatrix(){ return glm::lookAt(m_Position,m_Position+m_FrontVector,m_UpVector); }
 
-	glm::vec3 getPosition(){ return m_Position; }
-	glm::vec3 getDirection(){ return m_FrontVector; }
+	glm::vec3 getPosition(){ return m_Position;}
+	glm::vec3 getDirection(){ return m_FrontVector;}
 };
 
 }
