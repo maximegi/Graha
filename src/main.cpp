@@ -16,8 +16,8 @@
 //modellib
 #include <Model.hpp>
 //#include <Rectangle.hpp>
-//#include <Cylinder.hpp>
-#include <Spheric.hpp>
+#include <Cylinder.hpp>
+//#include <Spheric.hpp>
 
 #include "FreeflyCamera.hpp"
 
@@ -42,10 +42,7 @@ int main(int argc, char** argv) {
                               applicationPath.dirPath() + "assets/shaders/directionallightcolors.fs.glsl"));
     program.use();
 
-    GLuint locationMVPMatrix = glGetUniformLocation(program.getGLId(), "uMVPMatrix");
-    GLuint locationMVMatrix = glGetUniformLocation(program.getGLId(), "uMVMatrix");
-    GLuint locationModelMatrix = glGetUniformLocation(program.getGLId(), "uModelMatrix");
-    GLuint locationNormalMatrix = glGetUniformLocation(program.getGLId(), "uNormalMatrix");
+
     GLuint locationLightDirection = glGetUniformLocation(program.getGLId(), "uLightDirection");
     GLuint locationLightIntensity = glGetUniformLocation(program.getGLId(), "uLightIntensity");
 
@@ -55,18 +52,19 @@ int main(int argc, char** argv) {
     std::cout << "GLEW Version : " << glewGetString(GLEW_VERSION) << std::endl;
 
     //INITIALIZATION
-    std::string houseFile = "assets/models/house/house.obj";
-    Model house(houseFile);
 
     //MATRIXES
+    glm::mat4 ModelMatrix = glm::translate(glm::mat4(1),glm::vec3(-2.,-2.,-5.));
     glm::mat4 ProjMatrix = glm::perspective(glm::radians(70.f),((float)WINDOW_W)/((float)WINDOW_H),0.1f,100.f);
-    glm::mat4 ModelMatrix;
-    glm::mat4 MVMatrix;
-    glm::mat4 NormalMatrix;
+    glm::mat4 transformationsMatrix;
 
     //CAMERA
     FreeflyCamera camera;
     glm::vec2 mousePosition = windowManager.getMousePosition();
+
+    std::string cubeFile = "assets/models/cube/cubes.obj";
+    Cylinder col(ModelMatrix,1.f,2.f);
+    Model<Cylinder> cube(cubeFile,ModelMatrix,col);
 
 
     // Application loop:
@@ -112,47 +110,40 @@ int main(int argc, char** argv) {
             camera.moveUp(0.1f);
         }
 
+        if(windowManager.isKeyPressed(SDLK_p))
+        {
+            if(cube.collision(camera.getPosition()))
+            {
+                std::cout << "Dedans" << std::endl;
+            }
+            else
+            {
+                std::cout << "Dehors" << std::endl;
+            }
+        }
+        if(windowManager.isKeyPressed(SDLK_t))
+        {
+            transformationsMatrix = glm::scale(glm::mat4(1),glm::vec3(1.,1.1,1.));
+        }
+
         //LIGHTS
         glUniform3fv(locationLightDirection,1,glm::value_ptr(glm::vec3(-1.,-1.,0.))); //Position of the light, don't forget to multiply by the view matrix
         glUniform3fv(locationLightIntensity,1,glm::value_ptr(glm::vec3(1.,1.,1.))); //Color of the light
 
 
-    //HOUSE 1
-        //MATRIXES
-        ModelMatrix = glm::scale(glm::translate(glm::mat4(1),glm::vec3(-2.,-2.,-5.)),glm::vec3(1.,1.,1.));
-        MVMatrix = camera.getViewMatrix()*ModelMatrix;
-        NormalMatrix = glm::transpose(glm::inverse(ModelMatrix));
-
-        glUniformMatrix4fv(locationModelMatrix,1,GL_FALSE,glm::value_ptr(ModelMatrix));
-        glUniformMatrix4fv(locationMVMatrix,1,GL_FALSE,glm::value_ptr(MVMatrix));
-        glUniformMatrix4fv(locationMVPMatrix,1,GL_FALSE,glm::value_ptr(ProjMatrix*MVMatrix));
-        glUniformMatrix4fv(locationNormalMatrix,1,GL_FALSE,glm::value_ptr(NormalMatrix));
-
+    //CUBE
         //DRAW
-        house.DrawColors(program);
-
-    //HOUSE 2
-        //MATRIXES
-        ModelMatrix = glm::scale(glm::translate(glm::mat4(1),glm::vec3(2.,-2.,-5.)),glm::vec3(1.,1.,1.));
-        MVMatrix = camera.getViewMatrix()*ModelMatrix;
-        NormalMatrix = glm::transpose(glm::inverse(ModelMatrix));
-
-        glUniformMatrix4fv(locationModelMatrix,1,GL_FALSE,glm::value_ptr(ModelMatrix));
-        glUniformMatrix4fv(locationMVMatrix,1,GL_FALSE,glm::value_ptr(MVMatrix));
-        glUniformMatrix4fv(locationMVPMatrix,1,GL_FALSE,glm::value_ptr(ProjMatrix*MVMatrix));
-        glUniformMatrix4fv(locationNormalMatrix,1,GL_FALSE,glm::value_ptr(NormalMatrix));
-
-        //DRAW
-        house.DrawColors(program);
+        cube.DrawColors(program,camera.getViewMatrix(),ProjMatrix,transformationsMatrix);
 
         //END OF RENDERING CODE
 
+        transformationsMatrix = glm::mat4(1);
         mousePosition = windowManager.getMousePosition();
 
         // Update the display
         windowManager.swapBuffers();
     }
-    house.deleteBuffers();
+    cube.deleteBuffers();
 
     return EXIT_SUCCESS;
 }

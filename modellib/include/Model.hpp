@@ -21,15 +21,15 @@ template<typename T>
 class Model
 {
 	public:
-		Model(std::string &path, T col) : mCollision(col)
+		Model(std::string &path, glm::mat4 ModelMatrix, T col) : mModelMatrix(ModelMatrix), mCollision(col)
 		{
 			loadModel(path);
 		}
 
-		void DrawTextures(glimac::Program &program);
-		void DrawColors(glimac::Program &program);
+		void DrawTextures(glimac::Program &program, glm::mat4 viewMatrix, glm::mat4 projMatrix, glm::mat4 transformationsMatrix = glm::mat4(1));
+		void DrawColors(glimac::Program &program, glm::mat4 viewMatrix, glm::mat4 projMatrix, glm::mat4 transformationsMatrix = glm::mat4(1));
 
-		bool collision(float x, float y, float z) { return mCollision.isIn(x,y,z); }
+		bool collision(glm::vec3 position) { return mCollision.isIn(position); }
 
 		void deleteBuffers();
 	private:
@@ -37,6 +37,7 @@ class Model
 		std::string directory;
 
 		T mCollision;
+	    glm::mat4 mModelMatrix;
 
 		void loadModel(const std::string &path);
 		void processNode(aiNode *node, const aiScene *scene);
@@ -49,9 +50,19 @@ GLuint TextureFromFile(const char *path, const std::string &directory);
 
 
 
+
 template<typename T>
-void Model<T>::DrawTextures(glimac::Program &program)
+void Model<T>::DrawTextures(glimac::Program &program, glm::mat4 viewMatrix, glm::mat4 projMatrix, glm::mat4 transformationsMatrix)
 {
+	mModelMatrix = mModelMatrix * transformationsMatrix; //Update the object's position if player interacts with it
+	mCollision.updateShape(transformationsMatrix); //Update collision zone
+	glm::mat4 MVMatrix = viewMatrix*mModelMatrix;
+
+    glUniformMatrix4fv(glGetUniformLocation(program.getGLId(), "uModelMatrix"),1,GL_FALSE,glm::value_ptr(mModelMatrix));
+    glUniformMatrix4fv(glGetUniformLocation(program.getGLId(), "uMVMatrix"),1,GL_FALSE,glm::value_ptr(MVMatrix));
+    glUniformMatrix4fv(glGetUniformLocation(program.getGLId(), "uMVPMatrix"),1,GL_FALSE,glm::value_ptr(projMatrix*MVMatrix));
+    glUniformMatrix4fv(glGetUniformLocation(program.getGLId(), "uNormalMatrix"),1,GL_FALSE,glm::value_ptr(glm::transpose(glm::inverse(mModelMatrix))));
+
 	for(size_t i = 0; i < meshes.size(); i++)
 	{
 		meshes[i].DrawTextures(program);
@@ -59,8 +70,17 @@ void Model<T>::DrawTextures(glimac::Program &program)
 }
 
 template<typename T>
-void Model<T>::DrawColors(glimac::Program &program)
+void Model<T>::DrawColors(glimac::Program &program, glm::mat4 viewMatrix, glm::mat4 projMatrix, glm::mat4 transformationsMatrix)
 {
+	mModelMatrix = mModelMatrix * transformationsMatrix; //Update the object's position if player interacts with it
+	mCollision.updateShape(transformationsMatrix); //Update collision zone
+	glm::mat4 MVMatrix = viewMatrix*mModelMatrix;
+
+    glUniformMatrix4fv(glGetUniformLocation(program.getGLId(), "uModelMatrix"),1,GL_FALSE,glm::value_ptr(mModelMatrix));
+    glUniformMatrix4fv(glGetUniformLocation(program.getGLId(), "uMVMatrix"),1,GL_FALSE,glm::value_ptr(MVMatrix));
+    glUniformMatrix4fv(glGetUniformLocation(program.getGLId(), "uMVPMatrix"),1,GL_FALSE,glm::value_ptr(projMatrix*MVMatrix));
+    glUniformMatrix4fv(glGetUniformLocation(program.getGLId(), "uNormalMatrix"),1,GL_FALSE,glm::value_ptr(glm::transpose(glm::inverse(mModelMatrix))));
+
 	for(size_t i = 0; i < meshes.size(); i++)
 	{
 		meshes[i].DrawColors(program);
