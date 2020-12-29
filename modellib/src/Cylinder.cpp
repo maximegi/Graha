@@ -33,14 +33,15 @@ void Cylinder::updateShape(glm::mat4 transformations) //We assume that scale wil
 
 	//Calulation of a point around the previous cylinder. 
 	glm::vec3 direction;
+	//we are trying to get a directional vector of the plane of the dics
 	if(glm::vec3(mCenter + glm::dot(glm::normalize(mOrientation),glm::vec3(0.f) - mCenter) * mOrientation) != glm::vec3(0.f))
 	{
 		direction = mRad * glm::normalize(mCenter + glm::dot(glm::normalize(mOrientation),glm::vec3(0.f) - mCenter) * mOrientation);
-	} 
+	} //Doesn't work if the point (0,0,0) is on the main axis line, we try another point
 	else if(glm::vec3(mCenter + glm::dot(glm::normalize(mOrientation),glm::vec3(1.f,0.f,0.f) - mCenter) * mOrientation) != glm::vec3(0.f))
 	{
 		direction = mRad * (glm::vec3(1.f,0.f,0.f) - glm::normalize(mCenter + glm::dot(glm::normalize(mOrientation),glm::vec3(1.f,0.f,0.f) - mCenter) * mOrientation));
-	}
+	} //If the main axis line go through points (0,0,0) and (1,0,0), we try with another point which is not on this axis.
 	else
 	{
 		direction = mRad * (glm::vec3(0.f,1.f,0.f) - glm::normalize(mCenter + glm::dot(glm::normalize(mOrientation),glm::vec3(0.f,1.f,0.f) - mCenter) * mOrientation));
