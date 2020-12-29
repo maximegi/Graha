@@ -279,16 +279,6 @@ int main(int argc, char** argv) {
             camera.moveUp(0.1f);
         }
 
-        if (windowManager.isKeyPressed(SDLK_i)){
-            glEnable(GL_BLEND);
-            glDisable(GL_DEPTH_TEST);
-            
-            
-        }
-        else{
-            glDisable(GL_BLEND);
-            glEnable(GL_DEPTH_TEST);
-        }
 
 
 
