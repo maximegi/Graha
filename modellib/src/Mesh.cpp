@@ -1,6 +1,7 @@
 #include <iostream>
 #include <GL/glew.h>
-#include <Mesh.hpp>
+
+#include "Mesh.hpp"
 
 void Mesh::DrawTextures(glimac::Program &program)
 {
