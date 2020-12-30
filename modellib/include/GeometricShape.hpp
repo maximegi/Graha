@@ -6,7 +6,7 @@
 class GeometricShape
 {
 public:
-	GeometricShape(glm::mat4 place) : mCenter(glm::vec3(place*glm::vec4(0.f,0.f,0.f,1.f))){}
+	GeometricShape() : mCenter(glm::vec3(0.f,0.f,0.f)){}
 	bool isIn(glm::vec3 position);
 	void updateShape(glm::mat4 tranformations);
 

@@ -1,5 +1,6 @@
 #include <iostream>
 #include <glm.hpp>
+#include <cmath>
 
 #include "Cylinder.hpp"
 
@@ -31,27 +32,33 @@ void Cylinder::updateShape(glm::mat4 transformations) //We assume that scale wil
 	//calculate previous positions
 	glm::vec3 pointOnDisc = mCenter + (mH/2.f) * mOrientation;
 
-	//Calulation of a point around the previous cylinder. 
+	//main axis equation is
+	//mOrientation.x * x + mOrientation.y * y + mOrientation.z * z = mOrientation.x * mCenter.x + mOrientation.y * mCenter.y + mOrientation.z * mCenter.z
+	//We want to calculate a directionnal vector for the plane parrallel to the discs and containing mCenter
+	//We need to find a vectr v(x,y,z) verifying 
+	//mOrientation.x * x + mOrientation.y * y + mOrientation.z * z = 0
+	float normalX = mOrientation.x;
+	float normalY = mOrientation.y;
+	float c = mOrientation.z;
+
 	glm::vec3 direction;
-	//we are trying to get a directional vector of the plane of the dics
-	if(glm::vec3(mCenter + glm::dot(glm::normalize(mOrientation),glm::vec3(0.f) - mCenter) * mOrientation) != glm::vec3(0.f))
+	if(normalX!= 0)
 	{
-		direction = mRad * glm::normalize(mCenter + glm::dot(glm::normalize(mOrientation),glm::vec3(0.f) - mCenter) * mOrientation);
-	} //Doesn't work if the point (0,0,0) is on the main axis line, we try another point
-	else if(glm::vec3(mCenter + glm::dot(glm::normalize(mOrientation),glm::vec3(1.f,0.f,0.f) - mCenter) * mOrientation) != glm::vec3(0.f))
-	{
-		direction = mRad * (glm::vec3(1.f,0.f,0.f) - glm::normalize(mCenter + glm::dot(glm::normalize(mOrientation),glm::vec3(1.f,0.f,0.f) - mCenter) * mOrientation));
-	} //If the main axis line go through points (0,0,0) and (1,0,0), we try with another point which is not on this axis.
+		//In this case we resolve the equation : V = y * (-mOrientation.y/mOrientation.x,1,0) + z * (-mOrientation.z/mOrientation.x,0,1) 
+		//so (-mOrientation.y/mOrientation.x,1,0) is a directional vector. We normalize it for the following steps
+		direction = glm::normalize(glm::vec3(-normalY/normalX,1.f,0.f));
+	}
 	else
 	{
-		direction = mRad * (glm::vec3(0.f,1.f,0.f) - glm::normalize(mCenter + glm::dot(glm::normalize(mOrientation),glm::vec3(0.f,1.f,0.f) - mCenter) * mOrientation));
+		//if normal has no component on x, (1,0,0) is a directional vector of the plane, and it is already normalized
+		direction = glm::vec3(1.f, 0.f,0.f);
 	}
-	glm::vec3 pointAround = mCenter + direction;
+	glm::vec3 pointAround = mCenter + mRad * direction;
 
 	//calculate new positions
-	mCenter += translation;
+	mCenter = mCenter + translation;
 
-	glm::vec3 newDir = glm::vec3(transformations * glm::vec4(pointAround - mCenter,0.f));
+	glm::vec3 newDir = glm::vec3(transformations * glm::vec4(mRad*direction,0.f));
 	glm::vec3 newOrientation = glm::vec3(transformations * glm::vec4((mH/2.f) * mOrientation,0.f));
 	mOrientation = glm::normalize(newOrientation);
 
@@ -59,7 +66,6 @@ void Cylinder::updateShape(glm::mat4 transformations) //We assume that scale wil
 	glm::vec3 pointAroundAfterTransformation = mCenter + newDir;
 
 	//update attributes
-	mCenter += translation;
 	mH = glm::l2Norm(mCenter,pointOnDiscAfterTransformation) * 2.f;
 	mRad = glm::l2Norm(mCenter,pointAroundAfterTransformation);
 }

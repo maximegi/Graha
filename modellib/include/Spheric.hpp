@@ -8,8 +8,11 @@
 class Spheric : public GeometricShape
 {
 public:
-	Spheric() : GeometricShape(glm::mat4(1)), mRad(0.f) {}
-	Spheric(glm::mat4 place, float rad) : GeometricShape(place), mRad(rad) {}
+	Spheric() : GeometricShape(), mRad(1.f) {}
+	Spheric(glm::mat4 place) : GeometricShape(), mRad(1.f)
+	{
+		updateShape(place);
+	}
 
 	bool isIn(glm::vec3 position) { return glm::l2Norm(position,mCenter) <= mRad; }
 	void updateShape(glm::mat4 transformations) //We assume that the scale is always the same on the 3 axis
@@ -17,10 +20,13 @@ public:
 		//calculate translation
 		glm::vec3 translation = glm::vec3(transformations * glm::vec4(0.f,0.f,0.f,1.f));
 
-		glm::vec3 pointOnSphere = mCenter + mRad*glm::vec3(1.f,0.f,0.f);
-		glm::vec3 pointAfterTransformation = glm::vec3(transformations * glm::vec4(pointOnSphere - mCenter,0.f));
+		//transformation of one point on the sphere to get the new radius
+		glm::vec3 direction = glm::vec3(transformations * glm::vec4(mRad*glm::vec3(1.f,0.f,0.f),0.f));
+		
+		//calculate new positions
+		mCenter = mCenter + translation;
+		glm::vec3 pointAfterTransformation = mCenter + direction;
 
-		mCenter += translation;
 		mRad = glm::l2Norm(mCenter,pointAfterTransformation);
 	}
 private:

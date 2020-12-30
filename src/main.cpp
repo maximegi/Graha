@@ -19,7 +19,7 @@
 #include <Cylinder.hpp>
 #include <Spheric.hpp>
 
-#include "FreeflyCamera.hpp"
+#include "FirstPersonCamera.hpp"
 
 using namespace glimac;
 
@@ -54,18 +54,16 @@ int main(int argc, char** argv) {
     //INITIALIZATION
 
     //MATRIXES
-    glm::mat4 ModelMatrix = glm::translate(glm::mat4(1),glm::vec3(-2.,-2.,-5.));
+    glm::mat4 ModelMatrix = glm::scale(glm::rotate(glm::rotate(glm::translate(glm::mat4(1),glm::vec3(0.f,1.f,-5.f)),glm::radians(45.f),glm::vec3(0.,0.,1.)),glm::radians(45.f),glm::vec3(1.,0.,0.)),glm::vec3(3.,3.,3.));
     glm::mat4 ProjMatrix = glm::perspective(glm::radians(70.f),((float)WINDOW_W)/((float)WINDOW_H),0.1f,100.f);
     glm::mat4 transformationsMatrix;
 
     //CAMERA
-    FreeflyCamera camera;
+    FirstPersonCamera camera;
     glm::vec2 mousePosition = windowManager.getMousePosition();
 
-    std::string cubeFile = "assets/models/cube/cubes.obj";
-    Cylinder col(ModelMatrix,1.f,2.f);
-    Model<Cylinder> cube(cubeFile,ModelMatrix,col);
-
+    std::string cubeFile = "assets/models/sphere/sphere.obj";
+    Model<Spheric> cube(cubeFile,ModelMatrix);
 
     // Application loop:
     bool done = false;
@@ -80,8 +78,8 @@ int main(int argc, char** argv) {
 
         //RENDERING CODE
         glClearColor(0.1,0.2,0.4,0.3);
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);//
-        
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
         //EVENTS
         if(windowManager.isMouseButtonPressed(SDL_BUTTON_RIGHT))
         {
@@ -123,7 +121,7 @@ int main(int argc, char** argv) {
         }
         if(windowManager.isKeyPressed(SDLK_t))
         {
-            transformationsMatrix = glm::scale(glm::mat4(1),glm::vec3(1.,1.1,1.));
+            transformationsMatrix = glm::translate(glm::mat4(1),glm::vec3(0.,0.,-0.1));
         }
 
         //LIGHTS
@@ -133,7 +131,7 @@ int main(int argc, char** argv) {
 
     //CUBE
         //DRAW
-        cube.DrawColors(program,camera.getViewMatrix(),ProjMatrix,transformationsMatrix);
+        cube.DrawColors(program,camera.getViewMatrix(),ProjMatrix);//,transformationsMatrix);
 
         //END OF RENDERING CODE
 
