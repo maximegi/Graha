@@ -62,8 +62,13 @@ int main(int argc, char** argv) {
     FirstPersonCamera camera;
     glm::vec2 mousePosition = windowManager.getMousePosition();
 
+    //MODEL
     std::string cubeFile = "assets/models/sphere/sphere.obj";
     Model<Spheric> cube(cubeFile,ModelMatrix);
+
+    //TIME
+    float deltaTime = 0.f;
+    float lastFrame = 0.f;
 
     // Application loop:
     bool done = false;
@@ -80,32 +85,45 @@ int main(int argc, char** argv) {
         glClearColor(0.1,0.2,0.4,0.3);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+
+        float currentFrame = windowManager.getTime();
+        deltaTime = currentFrame - lastFrame;
+        lastFrame = currentFrame;
+
         //EVENTS
         if(windowManager.isMouseButtonPressed(SDL_BUTTON_RIGHT))
         {
             camera.rotateLeft((mousePosition[0] - windowManager.getMousePosition()[0])/10.f);
             camera.rotateUp((mousePosition[1] - windowManager.getMousePosition()[1])/10.f);
         }
-
+        float t;
+        if(windowManager.isKeyPressed(SDLK_LSHIFT))
+        {
+            t = 5*deltaTime;
+        }
+        else
+        {
+            t = 3*deltaTime;
+        }
         if(windowManager.isKeyPressed(SDLK_q))
         {
-            camera.moveLeft(0.1f);
+            camera.moveLeft(t);
         }
         if(windowManager.isKeyPressed(SDLK_z))
         {
-            camera.moveFront(0.1f);
+            camera.moveFront(t);
         }
         if(windowManager.isKeyPressed(SDLK_d))
         {
-            camera.moveLeft(-0.1f);
+            camera.moveLeft(-t);
         }
         if(windowManager.isKeyPressed(SDLK_s))
         {
-            camera.moveFront(-0.1f);
+            camera.moveFront(-t);
         }
         if(windowManager.isKeyPressed(SDLK_SPACE))
         {
-            camera.moveUp(0.1f);
+            camera.moveUp(t);
         }
 
         if(windowManager.isKeyPressed(SDLK_p))
