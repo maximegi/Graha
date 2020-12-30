@@ -16,11 +16,15 @@ set(OPENGL_LIBRARIES /usr/lib/x86_64-linux-gnu/libGL.so.1)
 
 include_directories(${SDL_INCLUDE_DIR} ${OPENGL_INCLUDE_DIR} ${GLEW_INCLUDE_DIR} ${ASSIMP_INCLUDE_DIR} glimac/include modellib/include third-party/include)
 
-set(ALL_LIBRARIES modellib glimac ${SDL_LIBRARY} ${OPENGL_LIBRARIES} ${GLEW_LIBRARY} ${ASSIMP_LIBRARIES})
-
 add_subdirectory(modellib)
 
 add_subdirectory(glimac)
+
+add_subdirectory(sndfile EXCLUDE_FROM_ALL)
+
+add_subdirectory(OpenAL EXCLUDE_FROM_ALL)
+
+set(ALL_LIBRARIES modellib glimac ${SDL_LIBRARY} ${OPENGL_LIBRARIES} ${GLEW_LIBRARY} ${ASSIMP_LIBRARIES} sndfile OpenAL)
 
 file(GLOB HEADER_FILES ${CMAKE_SOURCE_DIR}/src/*.hpp)
 file(GLOB SRC_FILES ${CMAKE_SOURCE_DIR}/src/*.cpp)
@@ -30,4 +34,4 @@ set(OUTPUT ${PROJECT_NAME})
 add_executable(${OUTPUT} ${HEADER_FILES} ${SRC_FILES} ${SHADER_FILES})
 target_link_libraries(${OUTPUT} ${ALL_LIBRARIES})
 
-file(COPY assets DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+target_compile_options(${OUTPUT} PRIVATE -lopenal)

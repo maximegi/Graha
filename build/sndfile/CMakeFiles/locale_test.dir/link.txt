@@ -1,0 +1,1 @@
+/usr/bin/cc -O2 -g -DNDEBUG  -rdynamic CMakeFiles/locale_test.dir/tests/locale_test.c.o  -o locale_test  libsndfile.a libtest_utils.a -lm libsndfile.a -lm 

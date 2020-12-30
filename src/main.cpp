@@ -1,5 +1,7 @@
 #include <SDLWindowManager.hpp>
 #include <GL/glew.h>
+#include <AL/al.h>
+#include <AL/alc.h>
 #include <iostream>
 #include <vector>
 
@@ -27,7 +29,6 @@ int main(int argc, char** argv) {
     const unsigned int WINDOW_H = 900;
 
     SDLWindowManager windowManager(WINDOW_W, WINDOW_H, "GLImac");
-
     // Initialize glew for OpenGL3+ support
     GLenum glewInitError = glewInit();
     if(GLEW_OK != glewInitError) {
@@ -66,6 +67,10 @@ int main(int argc, char** argv) {
     FreeflyCamera camera;
     glm::vec2 mousePosition = windowManager.getMousePosition();
 
+    //InitOpenAL();
+    // std::string filepath = "background.ogg";
+    // Audio music(filepath);
+    // music.AudioFromFile("background.ogg","assets/audio");
 
     // Application loop:
     bool done = false;
@@ -163,7 +168,9 @@ int main(int argc, char** argv) {
         windowManager.swapBuffers();
     }
     cube.deleteBuffers();
-
+    // music.deleteBuffer();
+    //ShutdownOpenAL();
     return EXIT_SUCCESS;
+
 }
 

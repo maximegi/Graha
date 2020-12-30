@@ -1,0 +1,1 @@
+/usr/bin/cc -O2 -g -DNDEBUG  -rdynamic CMakeFiles/stdio_test.dir/tests/stdio_test.c.o  -o stdio_test  libsndfile.a libtest_utils.a -lm libsndfile.a -lm 

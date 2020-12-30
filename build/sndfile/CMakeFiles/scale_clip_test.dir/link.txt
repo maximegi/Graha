@@ -1,0 +1,1 @@
+/usr/bin/cc -O2 -g -DNDEBUG  -rdynamic CMakeFiles/scale_clip_test.dir/tests/scale_clip_test.c.o  -o scale_clip_test  libsndfile.a libtest_utils.a -lm libsndfile.a -lm 

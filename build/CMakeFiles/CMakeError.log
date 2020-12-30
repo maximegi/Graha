@@ -56,3 +56,412 @@ make: *** [Makefile:121 : cmTC_faa73/fast] Erreur 2
 
 
 
+Determining if the include file direct.h exists failed with the following output:
+Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_43363/fast && /usr/bin/make -f CMakeFiles/cmTC_43363.dir/build.make CMakeFiles/cmTC_43363.dir/build
+make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_43363.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_43363.dir/CheckIncludeFile.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: direct.h: Aucun fichier ou dossier de ce type
+    1 | #include <direct.h>
+      |          ^~~~~~~~~~
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTC_43363.dir/build.make:66 : CMakeFiles/cmTC_43363.dir/CheckIncludeFile.c.o] Erreur 1
+make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
+make: *** [Makefile:121 : cmTC_43363/fast] Erreur 2
+
+
+
+Determining if the include file io.h exists failed with the following output:
+Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_7f144/fast && /usr/bin/make -f CMakeFiles/cmTC_7f144.dir/build.make CMakeFiles/cmTC_7f144.dir/build
+make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_7f144.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_7f144.dir/CheckIncludeFile.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: io.h: Aucun fichier ou dossier de ce type
+    1 | #include <io.h>
+      |          ^~~~~~
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTC_7f144.dir/build.make:66 : CMakeFiles/cmTC_7f144.dir/CheckIncludeFile.c.o] Erreur 1
+make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
+make: *** [Makefile:121 : cmTC_7f144/fast] Erreur 2
+
+
+
+Determining if the function sqlite3_close exists in the sqlite3 failed with the following output:
+Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_5ce5a/fast && /usr/bin/make -f CMakeFiles/cmTC_5ce5a.dir/build.make CMakeFiles/cmTC_5ce5a.dir/build
+make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_5ce5a.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=sqlite3_close   -o CMakeFiles/cmTC_5ce5a.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_5ce5a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5ce5a.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=sqlite3_close    -rdynamic CMakeFiles/cmTC_5ce5a.dir/CheckFunctionExists.c.o  -o cmTC_5ce5a  -lsqlite3 -lm 
+/usr/bin/ld : ne peut trouver -lsqlite3
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_5ce5a.dir/build.make:87 : cmTC_5ce5a] Erreur 1
+make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
+make: *** [Makefile:121 : cmTC_5ce5a/fast] Erreur 2
+
+
+
+Performing C SOURCE FILE Test CPU_CLIPS_POSITIVE failed with the following compile output:
+Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_eb025/fast && /usr/bin/make -f CMakeFiles/cmTC_eb025.dir/build.make CMakeFiles/cmTC_eb025.dir/build
+make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_eb025.dir/src.c.o
+/usr/bin/cc   -DCPU_CLIPS_POSITIVE   -o CMakeFiles/cmTC_eb025.dir/src.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_eb025
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_eb025.dir/link.txt --verbose=1
+/usr/bin/cc  -DCPU_CLIPS_POSITIVE    -rdynamic CMakeFiles/cmTC_eb025.dir/src.c.o  -o cmTC_eb025  -lm 
+make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+			#define	_ISOC9X_SOURCE	1
+			#define _ISOC99_SOURCE	1
+			#define	__USE_ISOC99	1
+			#define __USE_ISOC9X	1
+			#include <math.h>
+			int main (void)
+			{	double	fval ;
+				int k, ival ;
+
+				fval = 1.0 * 0x7FFFFFFF ;
+				for (k = 0 ; k < 100 ; k++)
+				{	ival = (lrint (fval)) >> 24 ;
+					if (ival != 127)
+						return 1 ;
+				
+					fval *= 1.2499999 ;
+					} ;
+				
+					return 0 ;
+				}
+			
+Performing C SOURCE FILE Test CPU_CLIPS_NEGATIVE failed with the following compile output:
+Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_82e77/fast && /usr/bin/make -f CMakeFiles/cmTC_82e77.dir/build.make CMakeFiles/cmTC_82e77.dir/build
+make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_82e77.dir/src.c.o
+/usr/bin/cc   -DCPU_CLIPS_NEGATIVE   -o CMakeFiles/cmTC_82e77.dir/src.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_82e77
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_82e77.dir/link.txt --verbose=1
+/usr/bin/cc  -DCPU_CLIPS_NEGATIVE    -rdynamic CMakeFiles/cmTC_82e77.dir/src.c.o  -o cmTC_82e77  -lm 
+make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+			#define	_ISOC9X_SOURCE	1
+			#define _ISOC99_SOURCE	1
+			#define	__USE_ISOC99	1
+			#define __USE_ISOC9X	1
+			#include <math.h>
+			int main (void)
+			{	double	fval ;
+				int k, ival ;
+
+				fval = -8.0 * 0x10000000 ;
+				for (k = 0 ; k < 100 ; k++)
+				{	ival = (lrint (fval)) >> 24 ;
+					if (ival != -128)
+						return 1 ;
+				
+					fval *= 1.2499999 ;
+					} ;
+				
+					return 0 ;
+				}
+			
+Determining if the function __android_log_print exists in the log failed with the following output:
+Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_3c039/fast && /usr/bin/make -f CMakeFiles/cmTC_3c039.dir/build.make CMakeFiles/cmTC_3c039.dir/build
+make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_3c039.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=__android_log_print   -o CMakeFiles/cmTC_3c039.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_3c039
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3c039.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=__android_log_print    -rdynamic CMakeFiles/cmTC_3c039.dir/CheckFunctionExists.c.o  -o cmTC_3c039  -llog -latomic 
+/usr/bin/ld : ne peut trouver -llog
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_3c039.dir/build.make:87 : cmTC_3c039] Erreur 1
+make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
+make: *** [Makefile:121 : cmTC_3c039/fast] Erreur 2
+
+
+
+Performing C SOURCE FILE Test HAVE_MFPU_NEON_SWITCH failed with the following output:
+Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_2cddd/fast && /usr/bin/make -f CMakeFiles/cmTC_2cddd.dir/build.make CMakeFiles/cmTC_2cddd.dir/build
+make[1]: Entering directory '/home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2cddd.dir/src.c.o
+/usr/bin/cc   -DHAVE_MFPU_NEON_SWITCH  -Werror   -mfpu=neon -o CMakeFiles/cmTC_2cddd.dir/src.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/src.c
+cc: error: unrecognized command line option '-mfpu=neon'
+make[1]: *** [CMakeFiles/cmTC_2cddd.dir/build.make:66: CMakeFiles/cmTC_2cddd.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_2cddd/fast] Error 2
+
+
+Source file was:
+int main(void) { return 0; }
+Determining if the include file arm_neon.h exists failed with the following output:
+Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_55feb/fast && /usr/bin/make -f CMakeFiles/cmTC_55feb.dir/build.make CMakeFiles/cmTC_55feb.dir/build
+make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_55feb.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_55feb.dir/CheckIncludeFile.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: arm_neon.h: Aucun fichier ou dossier de ce type
+    1 | #include <arm_neon.h>
+      |          ^~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTC_55feb.dir/build.make:66 : CMakeFiles/cmTC_55feb.dir/CheckIncludeFile.c.o] Erreur 1
+make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
+make: *** [Makefile:121 : cmTC_55feb/fast] Erreur 2
+
+
+
+Determining if the include file intrin.h exists failed with the following output:
+Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_1f503/fast && /usr/bin/make -f CMakeFiles/cmTC_1f503.dir/build.make CMakeFiles/cmTC_1f503.dir/build
+make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_1f503.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_1f503.dir/CheckIncludeFile.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: intrin.h: Aucun fichier ou dossier de ce type
+    1 | #include <intrin.h>
+      |          ^~~~~~~~~~
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTC_1f503.dir/build.make:66 : CMakeFiles/cmTC_1f503.dir/CheckIncludeFile.c.o] Erreur 1
+make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
+make: *** [Makefile:121 : cmTC_1f503/fast] Erreur 2
+
+
+
+Determining if the include file guiddef.h exists failed with the following output:
+Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_8d656/fast && /usr/bin/make -f CMakeFiles/cmTC_8d656.dir/build.make CMakeFiles/cmTC_8d656.dir/build
+make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_8d656.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_8d656.dir/CheckIncludeFile.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: guiddef.h: Aucun fichier ou dossier de ce type
+    1 | #include <guiddef.h>
+      |          ^~~~~~~~~~~
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTC_8d656.dir/build.make:66 : CMakeFiles/cmTC_8d656.dir/CheckIncludeFile.c.o] Erreur 1
+make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
+make: *** [Makefile:121 : cmTC_8d656/fast] Erreur 2
+
+
+
+Determining if the include file initguid.h exists failed with the following output:
+Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_bc5ab/fast && /usr/bin/make -f CMakeFiles/cmTC_bc5ab.dir/build.make CMakeFiles/cmTC_bc5ab.dir/build
+make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_bc5ab.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_bc5ab.dir/CheckIncludeFile.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: initguid.h: Aucun fichier ou dossier de ce type
+    1 | #include <initguid.h>
+      |          ^~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTC_bc5ab.dir/build.make:66 : CMakeFiles/cmTC_bc5ab.dir/CheckIncludeFile.c.o] Erreur 1
+make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
+make: *** [Makefile:121 : cmTC_bc5ab/fast] Erreur 2
+
+
+
+Performing C++ SOURCE FILE Test HAVE_STD_ALIGNED_ALLOC failed with the following output:
+Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_fd52c/fast && /usr/bin/make -f CMakeFiles/cmTC_fd52c.dir/build.make CMakeFiles/cmTC_fd52c.dir/build
+make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
+Building CXX object CMakeFiles/cmTC_fd52c.dir/src.cxx.o
+/usr/bin/c++    -DHAVE_STD_ALIGNED_ALLOC   -o CMakeFiles/cmTC_fd52c.dir/src.cxx.o -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/src.cxx
+/home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/src.cxx: In function ‘int main()’:
+/home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/src.cxx:4:20: error: ‘aligned_alloc’ is not a member of ‘std’; did you mean ‘aligned_alloc’?
+    4 |     void *ptr{std::aligned_alloc(alignof(int), sizeof(int))};
+      |                    ^~~~~~~~~~~~~
+In file included from /usr/include/c++/9/cstdlib:75,
+                 from /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/src.cxx:1:
+/usr/include/stdlib.h:586:14: note: ‘aligned_alloc’ declared here
+  586 | extern void *aligned_alloc (size_t __alignment, size_t __size)
+      |              ^~~~~~~~~~~~~
+make[1]: *** [CMakeFiles/cmTC_fd52c.dir/build.make:66 : CMakeFiles/cmTC_fd52c.dir/src.cxx.o] Erreur 1
+make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
+make: *** [Makefile:121 : cmTC_fd52c/fast] Erreur 2
+
+
+Source file was:
+#include <cstdlib>
+int main()
+{
+    void *ptr{std::aligned_alloc(alignof(int), sizeof(int))};
+    std::free(ptr);
+    return 0;
+}
+Determining if the _aligned_malloc exist failed with the following output:
+Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_20713/fast && /usr/bin/make -f CMakeFiles/cmTC_20713.dir/build.make CMakeFiles/cmTC_20713.dir/build
+make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_20713.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_20713.dir/CheckSymbolExists.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘_aligned_malloc’ undeclared (first use in this function)
+    8 |   return ((int*)(&_aligned_malloc))[argc];
+      |                   ^~~~~~~~~~~~~~~
+/home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+make[1]: *** [CMakeFiles/cmTC_20713.dir/build.make:66 : CMakeFiles/cmTC_20713.dir/CheckSymbolExists.c.o] Erreur 1
+make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
+make: *** [Makefile:121 : cmTC_20713/fast] Erreur 2
+
+
+File /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <malloc.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef _aligned_malloc
+  return ((int*)(&_aligned_malloc))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the proc_pidpath exist failed with the following output:
+Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_802d2/fast && /usr/bin/make -f CMakeFiles/cmTC_802d2.dir/build.make CMakeFiles/cmTC_802d2.dir/build
+make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_802d2.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_802d2.dir/CheckSymbolExists.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: libproc.h: Aucun fichier ou dossier de ce type
+    2 | #include <libproc.h>
+      |          ^~~~~~~~~~~
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTC_802d2.dir/build.make:66 : CMakeFiles/cmTC_802d2.dir/CheckSymbolExists.c.o] Erreur 1
+make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
+make: *** [Makefile:121 : cmTC_802d2/fast] Erreur 2
+
+
+File /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <libproc.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef proc_pidpath
+  return ((int*)(&proc_pidpath))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if files pthread.h;pthread_np.h exist failed with the following output:
+Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_c6b1d/fast && /usr/bin/make -f CMakeFiles/cmTC_c6b1d.dir/build.make CMakeFiles/cmTC_c6b1d.dir/build
+make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_c6b1d.dir/HAVE_PTHREAD_NP_H.c.o
+/usr/bin/cc   -pthread   -o CMakeFiles/cmTC_c6b1d.dir/HAVE_PTHREAD_NP_H.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CheckIncludeFiles/HAVE_PTHREAD_NP_H.c
+/home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CheckIncludeFiles/HAVE_PTHREAD_NP_H.c:3:10: fatal error: pthread_np.h: Aucun fichier ou dossier de ce type
+    3 | #include <pthread_np.h>
+      |          ^~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTC_c6b1d.dir/build.make:66 : CMakeFiles/cmTC_c6b1d.dir/HAVE_PTHREAD_NP_H.c.o] Erreur 1
+make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
+make: *** [Makefile:121 : cmTC_c6b1d/fast] Erreur 2
+
+
+Source:
+/* */
+#include <pthread.h>
+#include <pthread_np.h>
+
+
+int main(void){return 0;}
+
+Determining if the pthread_setname_np exist failed with the following output:
+Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_9cde6/fast && /usr/bin/make -f CMakeFiles/cmTC_9cde6.dir/build.make CMakeFiles/cmTC_9cde6.dir/build
+make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_9cde6.dir/CheckSymbolExists.c.o
+/usr/bin/cc   -pthread   -o CMakeFiles/cmTC_9cde6.dir/CheckSymbolExists.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘pthread_setname_np’ undeclared (first use in this function); did you mean ‘pthread_setcanceltype’?
+    8 |   return ((int*)(&pthread_setname_np))[argc];
+      |                   ^~~~~~~~~~~~~~~~~~
+      |                   pthread_setcanceltype
+/home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+make[1]: *** [CMakeFiles/cmTC_9cde6.dir/build.make:66 : CMakeFiles/cmTC_9cde6.dir/CheckSymbolExists.c.o] Erreur 1
+make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
+make: *** [Makefile:121 : cmTC_9cde6/fast] Erreur 2
+
+
+File /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_setname_np
+  return ((int*)(&pthread_setname_np))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the pthread_set_name_np exist failed with the following output:
+Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_49905/fast && /usr/bin/make -f CMakeFiles/cmTC_49905.dir/build.make CMakeFiles/cmTC_49905.dir/build
+make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_49905.dir/CheckSymbolExists.c.o
+/usr/bin/cc   -pthread   -o CMakeFiles/cmTC_49905.dir/CheckSymbolExists.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘pthread_set_name_np’ undeclared (first use in this function); did you mean ‘pthread_setcanceltype’?
+    8 |   return ((int*)(&pthread_set_name_np))[argc];
+      |                   ^~~~~~~~~~~~~~~~~~~
+      |                   pthread_setcanceltype
+/home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+make[1]: *** [CMakeFiles/cmTC_49905.dir/build.make:66 : CMakeFiles/cmTC_49905.dir/CheckSymbolExists.c.o] Erreur 1
+make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
+make: *** [Makefile:121 : cmTC_49905/fast] Erreur 2
+
+
+File /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_set_name_np
+  return ((int*)(&pthread_set_name_np))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}

@@ -1,0 +1,1 @@
+/usr/bin/c++  -O2 -g -D_DEBUG  -rdynamic CMakeFiles/alconvolve.dir/examples/alconvolve.c.o  -o alconvolve  -Wl,-rpath,/home/maxime/Documents/PROJET_2020/Graha/build/OpenAL -pthread libcommon.a /usr/lib/x86_64-linux-gnu/libsndfile.so libex-common.a libopenal.so.1.21.0 -lrt 

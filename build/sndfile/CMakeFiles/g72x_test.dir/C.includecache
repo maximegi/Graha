@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../sndfile/src/sf_unistd.h
+sys/stat.h
+-
+io.h
+-
+
+../sndfile/src/sfconfig.h
+config.h
+../sndfile/src/config.h
+
+/home/maxime/Documents/PROJET_2020/Graha/sndfile/src/G72x/g72x.h
+
+/home/maxime/Documents/PROJET_2020/Graha/sndfile/src/G72x/g72x_priv.h
+
+/home/maxime/Documents/PROJET_2020/Graha/sndfile/src/G72x/g72x_test.c
+sfconfig.h
+/home/maxime/Documents/PROJET_2020/Graha/sndfile/src/G72x/sfconfig.h
+stdio.h
+-
+unistd.h
+-
+sf_unistd.h
+/home/maxime/Documents/PROJET_2020/Graha/sndfile/src/G72x/sf_unistd.h
+stdlib.h
+-
+string.h
+-
+math.h
+-
+g72x.h
+/home/maxime/Documents/PROJET_2020/Graha/sndfile/src/G72x/g72x.h
+g72x_priv.h
+/home/maxime/Documents/PROJET_2020/Graha/sndfile/src/G72x/g72x_priv.h
+
+sndfile/src/config.h
+

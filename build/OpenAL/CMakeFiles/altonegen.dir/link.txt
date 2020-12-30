@@ -1,0 +1,1 @@
+/usr/bin/cc -O2 -g -D_DEBUG  -rdynamic CMakeFiles/altonegen.dir/examples/altonegen.c.o  -o altonegen  -Wl,-rpath,/home/maxime/Documents/PROJET_2020/Graha/build/OpenAL: -pthread -lm libex-common.a libopenal.so.1.21.0 -lrt 

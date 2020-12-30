@@ -8,13 +8,13 @@
 #include "Audio.hpp"
 
 
-ALuint Audio::loadAudio(const std::string &path)
+void Audio::loadAudio(const std::string &path)
 {
 	SF_INFO fileInfos;
     SNDFILE* file = sf_open(path.c_str(), SFM_READ, &fileInfos);
     if(!file)
     {
-        return 0;
+        return ;
     }
     // Lecture du nombre d'échantillons et du taux d'échantillonnage (nombre d'échantillons à lire par seconde)
     ALsizei NbSamples  = static_cast<ALsizei>(fileInfos.channels * fileInfos.frames);
@@ -23,7 +23,7 @@ ALuint Audio::loadAudio(const std::string &path)
     std::vector<ALshort> Samples(NbSamples);
     if (sf_read_short(file, &Samples[0], NbSamples) < NbSamples)
     {
-        return 0;
+        return ;
     }
     // Fermeture du fichier
     sf_close(file);
@@ -39,10 +39,10 @@ ALuint Audio::loadAudio(const std::string &path)
     // Vérification des erreurs
     if (alGetError() != AL_NO_ERROR)
     {
-        return 0;
+        return ;
     }
 
-    return Buffer;
+    mBuffer = Buffer;
 }
 
 void Audio::deleteBuffer()
@@ -59,7 +59,6 @@ ALuint Audio::AudioFromFile(const char *path, const std::string &directory)
 {
 	std::string filename = std::string(path);
 	filename = directory + '/' + filename;
-	mBuffer = loadAudio(filename);
 	if (mBuffer == 0)
     {
     	std::cerr << "error: audio:" << filename << " could not be loaded" << std::endl;
@@ -67,6 +66,7 @@ ALuint Audio::AudioFromFile(const char *path, const std::string &directory)
     }
     alGenSources(1, &mSource);
     alSourcei(mSource, AL_BUFFER, mBuffer);
+    alSourcePlay(mSource);
     return mSource;
 }
 

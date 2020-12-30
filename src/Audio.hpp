@@ -13,12 +13,15 @@
 class Audio
 {
 	public:
-		Audio(std::string &path){}
+		Audio(std::string &path)
+		{
+			loadAudio(path);
+		}
 		void deleteBuffer();
 		ALuint AudioFromFile(const char *path, const std::string &directory);
 		ALuint mSource;
 	private:
-		ALuint loadAudio(const std::string &path);
+		void loadAudio(const std::string &path);
 		ALuint mBuffer;
 
 };
