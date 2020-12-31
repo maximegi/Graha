@@ -2,6 +2,9 @@
 #include <GL/glew.h>
 #include <iostream>
 #include <vector>
+#include <fstream>
+#include <string>
+#include <sstream>
 
 //glimac
 #include <common.hpp>
@@ -22,6 +25,24 @@
 #include "FirstPersonCamera.hpp"
 
 using namespace glimac;
+
+//fonctions necessaire au parse a ranger apres
+std::vector<std::string> split (const std::string &s, char delim) {
+    std::vector<std::string> result;
+    std::stringstream ss (s);
+    std::string item;
+
+    while (getline (ss, item, delim)) {
+        result.push_back (item);
+    }
+
+    return result;
+}
+//je voulais mettre &vec mais ca marche pas ???
+glm::mat4 vectorstr2mat4(std::vector<std::string> vec)
+{
+    return glm::scale(glm::rotate(glm::rotate(glm::rotate(glm::translate(glm::mat4(1),glm::vec3(std::stof(vec[0]),std::stof(vec[1]),std::stof(vec[2]))),glm::radians(std::stof(vec[5])),glm::vec3(0.,0.,1.)),glm::radians(std::stof(vec[4])),glm::vec3(0.,1.,0.)),glm::radians(std::stof(vec[3])),glm::vec3(1.,0.,0.)),glm::vec3(std::stof(vec[6]), std::stof(vec[7]), std::stof(vec[8])));
+}
 
 int main(int argc, char** argv) {
     // Initialize SDL and open a window
@@ -54,7 +75,7 @@ int main(int argc, char** argv) {
     //INITIALIZATION
 
     //MATRIXES
-    glm::mat4 ModelMatrix = glm::scale(glm::rotate(glm::rotate(glm::translate(glm::mat4(1),glm::vec3(0.f,1.f,-5.f)),glm::radians(45.f),glm::vec3(0.,0.,1.)),glm::radians(45.f),glm::vec3(1.,0.,0.)),glm::vec3(3.,3.,3.));
+    glm::mat4 ModelMatrix = glm::scale(glm::mat4(1),glm::vec3(7.5,7.5,7.5));
     glm::mat4 ProjMatrix = glm::perspective(glm::radians(70.f),((float)WINDOW_W)/((float)WINDOW_H),0.1f,100.f);
     glm::mat4 transformationsMatrix;
 
@@ -62,9 +83,51 @@ int main(int argc, char** argv) {
     FirstPersonCamera camera;
     glm::vec2 mousePosition = windowManager.getMousePosition();
 
-    //MODEL
-    std::string cubeFile = "assets/models/sphere/sphere.obj";
-    Model<Spheric> cube(cubeFile,ModelMatrix);
+    //MODEL PARSE
+    std::string line;
+    std::ifstream file("assets/meshes.txt", std::ios::out);
+    if(!file.is_open())
+    {
+        std::cerr << "Unable to open meshes" << std::endl;
+    }
+    std::vector<std::string> vmod;
+    std::vector<glm::mat4> vmat;
+    std::vector<std::string> vcol;
+    while(getline(file, line))
+    {
+        std::vector<std::string> vline = split(line, '~');
+        if(vline[0] == "mod")
+        {
+            vmod.push_back(vline[1]);
+        }
+        else if(vline[0] == "mat")
+        {
+            vmat.push_back(vectorstr2mat4(split(vline[1], ',')));
+        }
+        else if(vline[0] == "col")
+        {
+            vcol.push_back(vline[1]);
+        }
+    }
+    file.close();
+    for(size_t i = 0; i < vmod.size(); ++i)
+    {
+        if(vcol[i] == "Rectangle")
+        {   
+            //Model<Rectangle> house(vmod[i], vmat[i]);
+        }
+        else if(vcol[i] == "Cylinder")
+        {
+            //Model<Cylinder> cube(vmod[i], vmat[i]);
+        }
+        else if(vcol[i] == "Spheric")
+        {
+            //Model<Spheric> cube(vmod[i], vmat[i]);
+        }
+    }
+
+    Model<Spheric> planet(vmod[1],vmat[1]);
+    Model<Rectangle> house(vmod[0], vmat[0]);
 
     //TIME
     float deltaTime = 0.f;
@@ -128,7 +191,7 @@ int main(int argc, char** argv) {
 
         if(windowManager.isKeyPressed(SDLK_p))
         {
-            if(cube.collision(camera.getPosition()))
+            if(planet.collision(camera.getPosition()))
             {
                 std::cout << "Dedans" << std::endl;
             }
@@ -149,8 +212,8 @@ int main(int argc, char** argv) {
 
     //CUBE
         //DRAW
-        cube.DrawColors(program,camera.getViewMatrix(),ProjMatrix);//,transformationsMatrix);
-
+        planet.DrawColors(program,camera.getViewMatrix(),ProjMatrix);//,transformationsMatrix);
+        house.DrawColors(program, camera.getViewMatrix(),ProjMatrix);
         //END OF RENDERING CODE
 
         transformationsMatrix = glm::mat4(1);
@@ -159,7 +222,8 @@ int main(int argc, char** argv) {
         // Update the display
         windowManager.swapBuffers();
     }
-    cube.deleteBuffers();
+    planet.deleteBuffers();
+    house.deleteBuffers();
 
     return EXIT_SUCCESS;
 }

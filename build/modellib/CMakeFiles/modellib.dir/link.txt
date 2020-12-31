@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmodellib.a  CMakeFiles/modellib.dir/src/Cylinder.cpp.o CMakeFiles/modellib.dir/src/Mesh.cpp.o CMakeFiles/modellib.dir/src/Rectangle.cpp.o
+/usr/bin/ranlib libmodellib.a

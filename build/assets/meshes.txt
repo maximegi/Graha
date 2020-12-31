@@ -1,0 +1,6 @@
+mod~assets/models/planet/planet.obj
+mat~0.,0.,0.,0.f,0.f,0.f,7.5,7.5,7.5
+col~Spheric
+mod~assets/models/house/house.obj
+mat~0.,7.992,0.,0.f,0.f,0.f,0.610,0.610,0.610
+col~Rectangle
