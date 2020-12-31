@@ -38,10 +38,17 @@ std::vector<std::string> split (const std::string &s, char delim) {
 
     return result;
 }
+
 //je voulais mettre &vec mais ca marche pas ???
 glm::mat4 vectorstr2mat4(std::vector<std::string> vec)
 {
-    return glm::scale(glm::rotate(glm::rotate(glm::rotate(glm::translate(glm::mat4(1),glm::vec3(std::stof(vec[0]),std::stof(vec[1]),std::stof(vec[2]))),glm::radians(std::stof(vec[5])),glm::vec3(0.,0.,1.)),glm::radians(std::stof(vec[4])),glm::vec3(0.,1.,0.)),glm::radians(std::stof(vec[3])),glm::vec3(1.,0.,0.)),glm::vec3(std::stof(vec[6]), std::stof(vec[7]), std::stof(vec[8])));
+    //exchange Y and Z axis to change from blender space to OpenGL
+    return glm::scale(glm::rotate(glm::rotate(glm::rotate(glm::translate(
+    glm::mat4(1),glm::vec3(std::stof(vec[0]),std::stof(vec[2]),-std::stof(vec[1]))), //translate
+    glm::radians(std::stof(vec[5])),glm::vec3(0.,1.,0.)), //rotateY
+    glm::radians(-std::stof(vec[4])),glm::vec3(0.,0.,1.)), //rotateZ
+    glm::radians(std::stof(vec[3])),glm::vec3(1.,0.,0.)), //rotateX
+    glm::vec3(std::stof(vec[6]), std::stof(vec[8]), std::stof(vec[7]))); //scale
 }
 
 int main(int argc, char** argv) {
@@ -110,24 +117,27 @@ int main(int argc, char** argv) {
         }
     }
     file.close();
+    std::vector<Model<Rectangle>> rectangleModel;
+    std::vector<Model<Cylinder>> cylinderModel;
+    std::vector<Model<Spheric>> sphericModel; 
     for(size_t i = 0; i < vmod.size(); ++i)
     {
         if(vcol[i] == "Rectangle")
         {   
-            //Model<Rectangle> house(vmod[i], vmat[i]);
+            Model<Rectangle> cube(vmod[i], vmat[i]);
+            rectangleModel.push_back(cube);
         }
         else if(vcol[i] == "Cylinder")
         {
-            //Model<Cylinder> cube(vmod[i], vmat[i]);
+            Model<Cylinder> cube(vmod[i], vmat[i]);
+            cylinderModel.push_back(cube);
         }
         else if(vcol[i] == "Spheric")
         {
-            //Model<Spheric> cube(vmod[i], vmat[i]);
+            Model<Spheric> cube(vmod[i], vmat[i]);
+            sphericModel.push_back(cube);
         }
     }
-
-    Model<Spheric> planet(vmod[1],vmat[1]);
-    Model<Rectangle> house(vmod[0], vmat[0]);
 
     //TIME
     float deltaTime = 0.f;
@@ -191,7 +201,7 @@ int main(int argc, char** argv) {
 
         if(windowManager.isKeyPressed(SDLK_p))
         {
-            if(planet.collision(camera.getPosition()))
+            if(rectangleModel[0].collision(camera.getPosition()))
             {
                 std::cout << "Dedans" << std::endl;
             }
@@ -212,8 +222,19 @@ int main(int argc, char** argv) {
 
     //CUBE
         //DRAW
-        planet.DrawColors(program,camera.getViewMatrix(),ProjMatrix);//,transformationsMatrix);
-        house.DrawColors(program, camera.getViewMatrix(),ProjMatrix);
+        for(size_t i = 0; i < rectangleModel.size(); ++i)
+        {
+            rectangleModel[i].DrawColors(program,camera.getViewMatrix(),ProjMatrix);
+        }
+        for(size_t i = 0; i < cylinderModel.size(); ++i)
+        {
+            cylinderModel[i].DrawColors(program,camera.getViewMatrix(),ProjMatrix);
+        }
+        for(size_t i = 0; i < sphericModel.size(); ++i)
+        {
+            sphericModel[i].DrawColors(program,camera.getViewMatrix(),ProjMatrix);
+        }
+        //,transformationsMatrix);
         //END OF RENDERING CODE
 
         transformationsMatrix = glm::mat4(1);
@@ -222,8 +243,17 @@ int main(int argc, char** argv) {
         // Update the display
         windowManager.swapBuffers();
     }
-    planet.deleteBuffers();
-    house.deleteBuffers();
-
+    for(size_t i = 0; i < rectangleModel.size(); ++i)
+    {
+        rectangleModel[i].deleteBuffers();
+    }
+    for(size_t i = 0; i < cylinderModel.size(); ++i)
+    {
+        cylinderModel[i].deleteBuffers();
+    }
+    for(size_t i = 0; i < sphericModel.size(); ++i)
+    {
+        sphericModel[i].deleteBuffers();
+    }
     return EXIT_SUCCESS;
 }
