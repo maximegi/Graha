@@ -23,6 +23,7 @@
 
 using namespace glimac;
 
+
 int main(int argc, char** argv) {
     // Initialize SDL and open a window
     const unsigned int WINDOW_W = 1200;
