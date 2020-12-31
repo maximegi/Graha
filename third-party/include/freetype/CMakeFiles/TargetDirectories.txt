@@ -1,9 +1,0 @@
-/home/theo/Bureau/Projet/Graha/third-party/include/freetype/CMakeFiles/install/strip.dir
-/home/theo/Bureau/Projet/Graha/third-party/include/freetype/CMakeFiles/install/local.dir
-/home/theo/Bureau/Projet/Graha/third-party/include/freetype/CMakeFiles/install.dir
-/home/theo/Bureau/Projet/Graha/third-party/include/freetype/CMakeFiles/package.dir
-/home/theo/Bureau/Projet/Graha/third-party/include/freetype/CMakeFiles/package_source.dir
-/home/theo/Bureau/Projet/Graha/third-party/include/freetype/CMakeFiles/freetype.dir
-/home/theo/Bureau/Projet/Graha/third-party/include/freetype/CMakeFiles/edit_cache.dir
-/home/theo/Bureau/Projet/Graha/third-party/include/freetype/CMakeFiles/rebuild_cache.dir
-/home/theo/Bureau/Projet/Graha/third-party/include/freetype/CMakeFiles/list_install_components.dir

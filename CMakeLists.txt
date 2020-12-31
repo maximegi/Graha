@@ -10,10 +10,11 @@ find_package(SDL REQUIRED)
 find_package(OpenGL REQUIRED)
 find_package(GLEW REQUIRED)
 find_package(ASSIMP REQUIRED)
+#sudo apt install freetype6-dev
 find_package(Freetype REQUIRED)
 
 # Pour gérer un bug a la fac, a supprimer sur machine perso:
-set(OPENGL_LIBRARIES /usr/lib/x86_64-linux-gnu/libGL.so.1)
+#set(OPENGL_LIBRARIES /usr/lib/x86_64-linux-gnu/libGL.so.1)
 
 include_directories(${SDL_INCLUDE_DIR} ${OPENGL_INCLUDE_DIR} ${GLEW_INCLUDE_DIR} ${ASSIMP_INCLUDE_DIR} glimac/include modellib/include third-party/include freetype-2.10.4/include)
 

@@ -1,9 +1,0 @@
-/home/theo/Bureau/Projet/Graha/freetype-2.10.4/build/CMakeFiles/install/strip.dir
-/home/theo/Bureau/Projet/Graha/freetype-2.10.4/build/CMakeFiles/install/local.dir
-/home/theo/Bureau/Projet/Graha/freetype-2.10.4/build/CMakeFiles/install.dir
-/home/theo/Bureau/Projet/Graha/freetype-2.10.4/build/CMakeFiles/package.dir
-/home/theo/Bureau/Projet/Graha/freetype-2.10.4/build/CMakeFiles/package_source.dir
-/home/theo/Bureau/Projet/Graha/freetype-2.10.4/build/CMakeFiles/freetype.dir
-/home/theo/Bureau/Projet/Graha/freetype-2.10.4/build/CMakeFiles/edit_cache.dir
-/home/theo/Bureau/Projet/Graha/freetype-2.10.4/build/CMakeFiles/rebuild_cache.dir
-/home/theo/Bureau/Projet/Graha/freetype-2.10.4/build/CMakeFiles/list_install_components.dir
