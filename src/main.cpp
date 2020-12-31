@@ -27,31 +27,6 @@
 
 using namespace glimac;
 
-// struct Character {
-//     unsigned int TextureID;  // ID handle of the glyph texture
-//     glm::ivec2   Size;       // Size of glyph
-//     glm::ivec2   Bearing;    // Offset from baseline to left/top of glyph
-//     unsigned int Advance;    // Offset to advance to next glyph
-// };
-
-// std::map<char, Character> Characters;
-
-// struct TextProgram {
-//     Program m_Program;
-//     GLuint locationProjMatrix;
-//     GLuint locationText;
-//     GLuint locationTextColor;
-
-//     TextProgram(const FilePath& applicationPath):
-//         m_Program(loadProgram(applicationPath.dirPath() + "assets/shaders/text.vs.glsl",
-//                               applicationPath.dirPath() + "assets/shaders/text.fs.glsl")) {
-//         locationProjMatrix = glGetUniformLocation(m_Program.getGLId(), "uProjection");
-//         locationText = glGetUniformLocation(m_Program.getGLId(), "uText");
-//         locationTextColor = glGetUniformLocation(m_Program.getGLId(), "uTextColor");
-//     }
-
-// };
-
 struct ModelProgram {
     Program m_Program;
 
@@ -73,49 +48,6 @@ struct ModelProgram {
         locationLightIntensity = glGetUniformLocation(m_Program.getGLId(), "uLightIntensity");
     }
 };
-
-// void RenderText(std::string text, float x, float y, float scale, GLuint colorLocation, glm::vec3 color, GLuint VAO, GLuint VBO)
-// {
-//     // activate corresponding render state  
-//     glUniform3fv(colorLocation, 1, glm::value_ptr(color));
-//     glActiveTexture(GL_TEXTURE0);
-//     glBindVertexArray(VAO);
-
-//     // iterate through all characters
-//     std::string::const_iterator c;
-//     for (c = text.begin(); c != text.end(); c++)
-//     {
-//         Character ch = Characters[*c];
-
-//         float xpos = x + ch.Bearing.x * scale;
-//         float ypos = y - (ch.Size.y - ch.Bearing.y) * scale;
-
-//         float w = ch.Size.x * scale;
-//         float h = ch.Size.y * scale;
-//         // update VBO for each character
-//         float vertices[6][4] = {
-//             { xpos,     ypos + h,   0.0f, 0.0f },            
-//             { xpos,     ypos,       0.0f, 1.0f },
-//             { xpos + w, ypos,       1.0f, 1.0f },
-
-//             { xpos,     ypos + h,   0.0f, 0.0f },
-//             { xpos + w, ypos,       1.0f, 1.0f },
-//             { xpos + w, ypos + h,   1.0f, 0.0f }           
-//         };
-//         // render glyph texture over quad
-//         glBindTexture(GL_TEXTURE_2D, ch.TextureID);
-//         // update content of VBO memory
-//         glBindBuffer(GL_ARRAY_BUFFER, VBO);
-//         glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(vertices), vertices); 
-//         glBindBuffer(GL_ARRAY_BUFFER, 0);
-//         // render quad
-//         glDrawArrays(GL_TRIANGLES, 0, 6);
-//         // now advance cursors for next glyph (note that advance is number of 1/64 pixels)
-//         x += (ch.Advance >> 6) * scale; // bitshift by 6 to get value in pixels (2^6 = 64)
-//     }
-//     glBindVertexArray(0);
-//     glBindTexture(GL_TEXTURE_2D, 0);
-// }
 
 int main(int argc, char** argv) {
     // Initialize SDL and open a window
