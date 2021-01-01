@@ -10,7 +10,7 @@ find_package(SDL REQUIRED)
 find_package(OpenGL REQUIRED)
 find_package(GLEW REQUIRED)
 find_package(ASSIMP REQUIRED)
-#sudo apt install freetype6-dev
+#sudo apt install libfreetype6-dev
 find_package(Freetype REQUIRED)
 
 # Pour gérer un bug a la fac, a supprimer sur machine perso:
