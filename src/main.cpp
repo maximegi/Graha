@@ -5,6 +5,7 @@
 #include <fstream>
 #include <string>
 #include <sstream>
+#include <map>
 
 //glimac
 #include <common.hpp>
@@ -100,6 +101,7 @@ int main(int argc, char** argv) {
     std::vector<std::string> vmod;
     std::vector<glm::mat4> vmat;
     std::vector<std::string> vcol;
+    std::vector<std::string> vname;
     while(getline(file, line))
     {
         std::vector<std::string> vline = split(line, '~');
@@ -115,30 +117,33 @@ int main(int argc, char** argv) {
         {
             vcol.push_back(vline[1]);
         }
+        else if(vline[0] == "name")
+        {
+            vname.push_back(vline[1]);
+        }
     }
     file.close();
-    std::vector<Model<Rectangle>> rectangleModel;
-    std::vector<Model<Cylinder>> cylinderModel;
-    std::vector<Model<Spheric>> sphericModel; 
+    std::map<std::string, Model<Rectangle>> rectangleModel;
+    std::map<std::string, Model<Cylinder>> cylinderModel;
+    std::map<std::string, Model<Spheric>> sphericModel;
     for(size_t i = 0; i < vmod.size(); ++i)
     {
         if(vcol[i] == "Rectangle")
         {   
             Model<Rectangle> cube(vmod[i], vmat[i]);
-            rectangleModel.push_back(cube);
+            rectangleModel.insert(std::pair<std::string, Model<Rectangle>>(vname[i], cube));
         }
         else if(vcol[i] == "Cylinder")
         {
             Model<Cylinder> cube(vmod[i], vmat[i]);
-            cylinderModel.push_back(cube);
+            cylinderModel.insert(std::pair<std::string, Model<Cylinder>>(vname[i], cube));
         }
         else if(vcol[i] == "Spheric")
         {
             Model<Spheric> cube(vmod[i], vmat[i]);
-            sphericModel.push_back(cube);
+            sphericModel.insert(std::pair<std::string, Model<Spheric>>(vname[i], cube));
         }
     }
-
     //TIME
     float deltaTime = 0.f;
     float lastFrame = 0.f;
@@ -201,7 +206,7 @@ int main(int argc, char** argv) {
 
         if(windowManager.isKeyPressed(SDLK_p))
         {
-            if(rectangleModel[0].collision(camera.getPosition()))
+            if((rectangleModel.find("house1")->second).collision(camera.getPosition()))
             {
                 std::cout << "Dedans" << std::endl;
             }
@@ -221,18 +226,21 @@ int main(int argc, char** argv) {
 
 
     //CUBE
+        std::map<std::string, Model<Rectangle>>::iterator irec;
+        std::map<std::string, Model<Cylinder>>::iterator icyl;
+        std::map<std::string, Model<Spheric>>::iterator isph;
         //DRAW
-        for(size_t i = 0; i < rectangleModel.size(); ++i)
+        for(irec = rectangleModel.begin(); irec != rectangleModel.end(); irec++)
         {
-            rectangleModel[i].DrawColors(program,camera.getViewMatrix(),ProjMatrix);
+            (irec->second).DrawColors(program,camera.getViewMatrix(),ProjMatrix);
         }
-        for(size_t i = 0; i < cylinderModel.size(); ++i)
+        for(icyl = cylinderModel.begin(); icyl != cylinderModel.end(); icyl++)
         {
-            cylinderModel[i].DrawColors(program,camera.getViewMatrix(),ProjMatrix);
+            (icyl->second).DrawColors(program,camera.getViewMatrix(),ProjMatrix);
         }
-        for(size_t i = 0; i < sphericModel.size(); ++i)
+        for(isph = sphericModel.begin(); isph != sphericModel.end(); isph++)
         {
-            sphericModel[i].DrawColors(program,camera.getViewMatrix(),ProjMatrix);
+            (isph->second).DrawColors(program,camera.getViewMatrix(),ProjMatrix);
         }
         //,transformationsMatrix);
         //END OF RENDERING CODE
@@ -243,17 +251,20 @@ int main(int argc, char** argv) {
         // Update the display
         windowManager.swapBuffers();
     }
-    for(size_t i = 0; i < rectangleModel.size(); ++i)
+    std::map<std::string, Model<Rectangle>>::iterator irec;
+    std::map<std::string, Model<Cylinder>>::iterator icyl;
+    std::map<std::string, Model<Spheric>>::iterator isph;
+    for(irec = rectangleModel.begin(); irec != rectangleModel.end(); irec++)
     {
-        rectangleModel[i].deleteBuffers();
+        (irec->second).deleteBuffers();
     }
-    for(size_t i = 0; i < cylinderModel.size(); ++i)
+    for(icyl = cylinderModel.begin(); icyl != cylinderModel.end(); icyl++)
     {
-        cylinderModel[i].deleteBuffers();
+        (icyl->second).deleteBuffers();
     }
-    for(size_t i = 0; i < sphericModel.size(); ++i)
+    for(isph = sphericModel.begin(); isph != sphericModel.end(); isph++)
     {
-        sphericModel[i].deleteBuffers();
+        (isph->second).deleteBuffers();
     }
     return EXIT_SUCCESS;
 }
