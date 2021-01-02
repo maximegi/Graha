@@ -28,7 +28,7 @@ class Planet
 public:
 	Planet(glimac::FilePath applicationPath, std::string meshesFile, glm::vec3 beginPosition) : mCamera(beginPosition),
 																								mProgram(glimac::loadProgram(applicationPath.dirPath() + "assets/shaders/3D.vs.glsl",
-							                              							 												  applicationPath.dirPath() + "assets/shaders/directionallightcolors.fs.glsl")) 
+							                              							 										 applicationPath.dirPath() + "assets/shaders/directionallightcolors.fs.glsl")) 
 	{
 		parse(meshesFile);
 	}

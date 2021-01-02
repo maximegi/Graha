@@ -61,7 +61,6 @@ void Planet::parse(std::string &meshesFile)
     }
 }
 
-//fonctions necessaire au parse a ranger apres
 std::vector<std::string> split (const std::string &s, char delim) {
     std::vector<std::string> result;
     std::stringstream ss (s);
@@ -74,7 +73,6 @@ std::vector<std::string> split (const std::string &s, char delim) {
     return result;
 }
 
-//je voulais mettre &vec mais ca marche pas ???
 glm::mat4 vectorstr2mat4(std::vector<std::string> vec)
 {
     //exchange Y and Z axis to change from blender space to OpenGL
@@ -105,6 +103,7 @@ void Planet::processInput(const glimac::SDLWindowManager &windowManager, float d
     {
         t = 10*deltaTime;
     }
+    //ZQSD
     if(windowManager.isKeyPressed(SDLK_q) && !collision(glm::rotate(mTransformationsMatrix,glm::radians(t),mCamera.getDirection()),mCamera.getPosition()))
     {
         mTransformationsMatrix = glm::rotate(mTransformationsMatrix,glm::radians(t),mCamera.getDirection());
@@ -126,7 +125,7 @@ void Planet::processInput(const glimac::SDLWindowManager &windowManager, float d
     {
         (rectangleModel.find("monster_pink")->second).move(glm::rotate(mTransformationsMatrix,glm::radians(1.5f),mCamera.getLeftVector()));
     }
-    if((sphericModel.find("ball")->second).canInteract(mCamera.getPosition()))
+    if(windowManager.isKeyPressed(SDLK_e) && (sphericModel.find("ball")->second).canInteract(mCamera.getPosition()))
     {
         (sphericModel.find("ball")->second).move(glm::rotate(mTransformationsMatrix,glm::radians(1.5f),mCamera.getLeftVector()));
     }

@@ -27,8 +27,7 @@ public:
 			mProjMatrix(glm::perspective(glm::radians(70.f),((float)width)/((float)height),0.1f,100.f)),
 			mMousePosition(mWindowManager.getMousePosition()), deltaTime(0.f), lastFrame(0.f),
 			firstPlanet(applicationPath, "assets/meshes.txt", glm::vec3(0.f,7.85f,0.f)) {}
-		
-	void modelsCreation();
+			
 	void RenderLoop();
 	void close();
 

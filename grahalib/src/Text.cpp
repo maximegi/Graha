@@ -75,8 +75,8 @@ void Text::initialization()
 void Text::write(std::string text, float x, float y, float scale, glm::vec3 color)
 {
     glEnable(GL_BLEND);
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA); 
-    //glEnable(GL_DEPTH_TEST);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
     mProgram.use();
     glUniformMatrix4fv(mLocationProjMatrix, 1, GL_FALSE, glm::value_ptr(mProj));
 
@@ -120,6 +120,5 @@ void Text::write(std::string text, float x, float y, float scale, glm::vec3 colo
     glBindVertexArray(0);
     glBindTexture(GL_TEXTURE_2D, 0);
 
-    //glDisable(GL_DEPTH_TEST);
     glDisable(GL_BLEND);
 }

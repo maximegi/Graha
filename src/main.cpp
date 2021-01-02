@@ -1,22 +1,12 @@
-#include <SDLWindowManager.hpp>
 #include <GL/glew.h>
 #include <iostream>
 
-//texte
-#include <ft2build.h>
-#include FT_FREETYPE_H
-
 //glimac
+#include <SDLWindowManager.hpp>
 #include <FilePath.hpp>
-#include <Program.hpp>
-
-//glm
-#include <glm.hpp>
 
 //grahalib
 #include <Game.hpp>
-
-#include "Text.hpp"
 
 using namespace glimac;
 
