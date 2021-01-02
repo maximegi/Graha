@@ -20,6 +20,7 @@
 #include <Rectangle.hpp>
 #include <Cylinder.hpp>
 #include <Spheric.hpp>
+#include "Text.hpp"
 
 #include "FirstPersonCamera.hpp"
 
@@ -36,6 +37,7 @@ public:
 	void processInput(const glimac::SDLWindowManager &windowManager, float deltaTime, glm::vec2 mousePosition);
 	void drawModels(glm::mat4 &ProjMatrix);
 	void deleteBuffers();
+	void quest(Text &text, const glimac::SDLWindowManager &windowManager);
 
 private:
     std::map<std::string, Model<Rectangle>> rectangleModel;
@@ -50,6 +52,8 @@ private:
 
     void parse(std::string &meshesFile);
     bool collision(glm::mat4 newTransformationsMatrix, glm::vec3 position);
+
+
 };
 
 std::vector<std::string> split (const std::string &s, char delim);
