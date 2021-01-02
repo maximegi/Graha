@@ -9,9 +9,9 @@
 class Rectangle : public GeometricShape
 {
 public:
-	Rectangle() : GeometricShape(), mH(2.f), mW(2.f), mD(2.f), mOrientationW(glm::vec3(1.f,0.f,0.f)), mOrientationH(glm::vec3(0.f,1.f,0.f)), mOrientationD(glm::vec3(0.f,0.f,1.f)) {}
+	Rectangle() : GeometricShape(), mW(2.f), mH(2.f), mD(2.f), mOrientationW(glm::vec3(1.f,0.f,0.f)), mOrientationH(glm::vec3(0.f,1.f,0.f)), mOrientationD(glm::vec3(0.f,0.f,1.f)) {}
 	Rectangle(glm::mat4 place)
-		: GeometricShape(), mH(2.f), mW(2.f), mD(2.f), mOrientationW(glm::vec3(1.f,0.f,0.f)), mOrientationH(glm::vec3(0.f,1.f,0.f)), mOrientationD(glm::vec3(0.f,0.f,1.f))
+		: GeometricShape(), mW(2.f), mH(2.f), mD(2.f), mOrientationW(glm::vec3(1.f,0.f,0.f)), mOrientationH(glm::vec3(0.f,1.f,0.f)), mOrientationD(glm::vec3(0.f,0.f,1.f))
 		{
 			updateShape(place);
 		}

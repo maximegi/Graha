@@ -11,41 +11,35 @@
 
 #include <Program.hpp>
 
-//modellib
-#include <Model.hpp>
-#include <Rectangle.hpp>
-#include <Cylinder.hpp>
-#include <Spheric.hpp>
+#include "Text.hpp"
+#include "Planet.hpp"
 
 #include "FirstPersonCamera.hpp"
 
 class Game
 {
 public:
-	Game(unsigned int width, unsigned int height) : windowWidht(width), windowHeight(height),mWindowManager(width, height, "Graha")
-	{
-		InitWindow();
-    	//ProjMatrix = glm::perspective(glm::radians(70.f),((float)width)/((float)height),0.1f,100.f);
-	}
-	void initialization();
+	Game(unsigned int width, unsigned int height, glimac::SDLWindowManager &window, glimac::FilePath &applicationPath) :  
+			mWindowWidth(width),
+			mWindowHeight(height),
+			mWindowManager(window),
+			text(applicationPath),
+			mProjMatrix(glm::perspective(glm::radians(70.f),((float)width)/((float)height),0.1f,100.f)),
+			mMousePosition(mWindowManager.getMousePosition()), deltaTime(0.f), lastFrame(0.f),
+			firstPlanet(applicationPath, "assets/meshes.txt", glm::vec3(0.f,7.85f,0.f)) {}
+		
 	void modelsCreation();
-	void RenderLoop(glimac::Program &program);
-	void processInput();
-	void Draw(glimac::Program &program);
-	void deleteBuffers();
+	void RenderLoop();
+	void close();
 
 private:
-	void InitWindow();
-	unsigned int windowWidht;
-	unsigned int windowHeight;
+	unsigned int mWindowWidth, mWindowHeight;
 	glimac::SDLWindowManager mWindowManager;
+	Text text;
 
     glm::mat4 mProjMatrix;
     glm::vec2 mMousePosition;
+    float deltaTime, lastFrame;
 
-    FirstPersonCamera mCamera;
-
-    std::vector<Model<Rectangle>> mModelsRect;
-    std::vector<Model<Cylinder>> mModelsCyl;
-    std::vector<Model<Spheric>> mModelsSph;
+    Planet firstPlanet;
 };

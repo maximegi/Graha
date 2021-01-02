@@ -16,8 +16,8 @@
 class Text
 {
 	public:
-		Text(const glimac::FilePath& applicationPath) : mProgram(loadProgram(applicationPath.dirPath() + "assets/shaders/text.vs.glsl",
-                              		  applicationPath.dirPath() + "assets/shaders/text.fs.glsl")) 
+		Text(const glimac::FilePath& applicationPath) : mProgram(glimac::loadProgram(applicationPath.dirPath() + "assets/shaders/text.vs.glsl",
+                              		  												 applicationPath.dirPath() + "assets/shaders/text.fs.glsl")) 
 		{
     		mProj = glm::ortho(0.0f, 800.0f, 0.0f, 600.0f);
 	        mLocationProjMatrix = glGetUniformLocation(mProgram.getGLId(), "uProjection");
@@ -25,6 +25,7 @@ class Text
 	        mLocationTextColor = glGetUniformLocation(mProgram.getGLId(), "uTextColor");
 
 			initText();
+			initialization();
 		}
 		void initialization();
 		void write(std::string text, float x, float y, float scale, glm::vec3 color);
