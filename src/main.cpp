@@ -27,6 +27,7 @@
 
 using namespace glimac;
 
+<<<<<<< HEAD
 //fonctions necessaire au parse a ranger apres
 std::vector<std::string> split (const std::string &s, char delim) {
     std::vector<std::string> result;
@@ -82,6 +83,8 @@ bool collision(std::map<std::string, Model<Rectangle>> &rectangleModel, std::map
     }
     return false;
 }
+=======
+>>>>>>> fpscamera
 
 int main(int argc, char** argv) {
     // Initialize SDL and open a window
