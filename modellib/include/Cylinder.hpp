@@ -14,7 +14,7 @@ public:
 			updateShape(place);
 		}
 
-	bool isIn(glm::vec3 position);
+	bool contains(glm::vec3 position);
 	void updateShape(glm::mat4 transformations); //We assume that scale will always keep circles, and never transform them into ellipses
 
 private:

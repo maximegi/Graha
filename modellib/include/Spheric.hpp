@@ -14,7 +14,7 @@ public:
 		updateShape(place);
 	}
 
-	bool isIn(glm::vec3 position) { return glm::l2Norm(position,mCenter) <= mRad; }
+	bool contains(glm::vec3 position) { return glm::l2Norm(position,mCenter) <= mRad; }
 	void updateShape(glm::mat4 transformations) //We assume that the scale is always the same on the 3 axis
 	{
 		//calculate translation

@@ -21,15 +21,18 @@ template<typename T>
 class Model
 {
 	public:
-		Model(std::string &path, glm::mat4 ModelMatrix) : mModelMatrix(ModelMatrix), mCollision(ModelMatrix)
+		Model(std::string &path, glm::mat4 ModelMatrix) : mModelMatrix(ModelMatrix), mCollision(ModelMatrix), mActionZone(glm::scale(ModelMatrix,glm::vec3(4.5f,4.5f,4.5f)))
 		{
 			loadModel(path);
 		}
 
-		void DrawTextures(glimac::Program &program, glm::mat4 viewMatrix, glm::mat4 projMatrix); //, glm::mat4 transformationsMatrix = glm::mat4(1));
-		void DrawColors(glimac::Program &program, glm::mat4 viewMatrix, glm::mat4 projMatrix); //, glm::mat4 transformationsMatrix = glm::mat4(1));
+		void DrawTextures(glimac::Program &program, glm::mat4 viewMatrix, glm::mat4 projMatrix, glm::mat4 transformationsMatrix = glm::mat4(1));
+		void DrawColors(glimac::Program &program, glm::mat4 viewMatrix, glm::mat4 projMatrix, glm::mat4 transformationsMatrix = glm::mat4(1));
 
-		bool collision(glm::vec3 position) { return mCollision.isIn(position); }
+		void move(glm::mat4 transform);
+
+		bool collide(glm::mat4 transformationsMatrix, glm::vec3 position);
+		bool canInteract(glm::vec3 position) { return mActionZone.contains(position); }
 
 		void deleteBuffers();
 	private:
@@ -37,6 +40,7 @@ class Model
 		std::string directory;
 
 		T mCollision;
+		T mActionZone;
 	    glm::mat4 mModelMatrix;
 
 		void loadModel(const std::string &path);
@@ -52,10 +56,12 @@ GLuint TextureFromFile(const char *path, const std::string &directory);
 
 
 template<typename T>
-void Model<T>::DrawTextures(glimac::Program &program, glm::mat4 viewMatrix, glm::mat4 projMatrix) //, glm::mat4 transformationsMatrix)
+void Model<T>::DrawTextures(glimac::Program &program, glm::mat4 viewMatrix, glm::mat4 projMatrix, glm::mat4 transformationsMatrix)
 {
-	// mModelMatrix = mModelMatrix * transformationsMatrix; //Update the object's position if player interacts with it
-	// mCollision.updateShape(transformationsMatrix); //Update collision zone
+	if(transformationsMatrix != glm::mat4(1))
+	{
+		move(transformationsMatrix);
+	}
 	glm::mat4 MVMatrix = viewMatrix*mModelMatrix;
 
     glUniformMatrix4fv(glGetUniformLocation(program.getGLId(), "uModelMatrix"),1,GL_FALSE,glm::value_ptr(mModelMatrix));
@@ -70,10 +76,12 @@ void Model<T>::DrawTextures(glimac::Program &program, glm::mat4 viewMatrix, glm:
 }
 
 template<typename T>
-void Model<T>::DrawColors(glimac::Program &program, glm::mat4 viewMatrix, glm::mat4 projMatrix)//, glm::mat4 transformationsMatrix)
+void Model<T>::DrawColors(glimac::Program &program, glm::mat4 viewMatrix, glm::mat4 projMatrix, glm::mat4 transformationsMatrix)
 {
-	// mModelMatrix = mModelMatrix * transformationsMatrix; //Update the object's position if player interacts with it
-	// mCollision.updateShape(transformationsMatrix); //Update collision zone
+	if(transformationsMatrix != glm::mat4(1))
+	{
+		move(transformationsMatrix);
+	}
 	glm::mat4 MVMatrix = viewMatrix*mModelMatrix;
 
     glUniformMatrix4fv(glGetUniformLocation(program.getGLId(), "uModelMatrix"),1,GL_FALSE,glm::value_ptr(mModelMatrix));
@@ -85,6 +93,24 @@ void Model<T>::DrawColors(glimac::Program &program, glm::mat4 viewMatrix, glm::m
 	{
 		meshes[i].DrawColors(program);
 	}
+}
+
+template<typename T>
+void Model<T>::move(glm::mat4 transform)
+{
+	mModelMatrix = transform * mModelMatrix; //Update the object's position if player interacts with it
+	T col(mModelMatrix);
+	mCollision = col; //Update collision zone
+	T act(glm::scale(mModelMatrix,glm::vec3(4.5f,4.5f,4.5f)));
+	mActionZone = act; //Update action zone
+}
+
+template<typename T>
+bool Model<T>::collide(glm::mat4 transformationsMatrix, glm::vec3 position)
+{
+	glm::mat4 newModelMatrix = transformationsMatrix * mModelMatrix;
+	T newCol(newModelMatrix);
+	return newCol.contains(position);
 }
 
 template<typename T>

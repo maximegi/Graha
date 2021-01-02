@@ -15,9 +15,8 @@ public:
 		{
 			updateShape(place);
 		}
-	bool isIn(glm::vec3 position);
+	bool contains(glm::vec3 position);
 	void updateShape(glm::mat4 transformations);
-
 private:
 	float mW, mH, mD;
 	glm::vec3 mOrientationW, mOrientationH, mOrientationD; //Define the shape of the box,and its orientation

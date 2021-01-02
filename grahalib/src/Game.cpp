@@ -91,42 +91,42 @@ void Game::processInput()
         mCamera.moveUp(0.1f);
     }
     
-    if(mWindowManager.isKeyPressed(SDLK_p))
-    {
-        for(size_t i; i < mModelsRect.size(); i++)
-        {
-            if(mModelsRect[i].collision(mCamera.getPosition()))
-            {
-                std::cout << "Dedans" << std::endl;
-            }
-            else
-            {
-                std::cout << "Dehors" << std::endl;
-            }
-        }
-        for(size_t i; i < mModelsCyl.size(); i++)
-        {
-            if(mModelsCyl[i].collision(mCamera.getPosition()))
-            {
-                std::cout << "Dedans" << std::endl;
-            }
-            else
-            {
-                std::cout << "Dehors" << std::endl;
-            }
-        }
-        for(size_t i; i < mModelsSph.size(); i++)
-        {
-            if(mModelsSph[i].collision(mCamera.getPosition()))
-            {
-                std::cout << "Dedans" << std::endl;
-            }
-            else
-            {
-                std::cout << "Dehors" << std::endl;
-            }
-        }
-    }
+    // if(mWindowManager.isKeyPressed(SDLK_p))
+    // {
+    //     for(size_t i; i < mModelsRect.size(); i++)
+    //     {
+    //         if(mModelsRect[i].collision(mCamera.getPosition()))
+    //         {
+    //             std::cout << "Dedans" << std::endl;
+    //         }
+    //         else
+    //         {
+    //             std::cout << "Dehors" << std::endl;
+    //         }
+    //     }
+    //     for(size_t i; i < mModelsCyl.size(); i++)
+    //     {
+    //         if(mModelsCyl[i].collision(mCamera.getPosition()))
+    //         {
+    //             std::cout << "Dedans" << std::endl;
+    //         }
+    //         else
+    //         {
+    //             std::cout << "Dehors" << std::endl;
+    //         }
+    //     }
+    //     for(size_t i; i < mModelsSph.size(); i++)
+    //     {
+    //         if(mModelsSph[i].collision(mCamera.getPosition()))
+    //         {
+    //             std::cout << "Dedans" << std::endl;
+    //         }
+    //         else
+    //         {
+    //             std::cout << "Dehors" << std::endl;
+    //         }
+    //     }
+    // }
 }
 
 void Game::Draw(glimac::Program &program)

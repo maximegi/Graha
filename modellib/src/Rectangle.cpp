@@ -3,7 +3,7 @@
 
 #include "Rectangle.hpp"
 
-bool Rectangle::isIn(glm::vec3 position)
+bool Rectangle::contains(glm::vec3 position)
 {
 	glm::vec3 corner = mCenter - (mW/2.f) * mOrientationW - (mH/2.f) * mOrientationH - (mD/2.f) * mOrientationD;
 

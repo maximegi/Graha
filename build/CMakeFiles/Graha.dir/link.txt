@@ -1,1 +1,0 @@
-/usr/bin/c++    -rdynamic CMakeFiles/Graha.dir/src/main.cpp.o  -o Graha  grahalib/libgrahalib.a modellib/libmodellib.a glimac/libglimac.a -Wl,-Bstatic -lSDLmain -Wl,-Bdynamic -lSDL -lpthread /usr/lib/x86_64-linux-gnu/libGL.so.1 -lGLEW -lassimp 

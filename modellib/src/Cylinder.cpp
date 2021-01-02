@@ -4,7 +4,7 @@
 
 #include "Cylinder.hpp"
 
-bool Cylinder::isIn(glm::vec3 position)
+bool Cylinder::contains(glm::vec3 position)
 {
 	glm::vec3 base = mCenter - (mH/2.f) * mOrientation;
 	glm::vec3 baseToP = position - base;

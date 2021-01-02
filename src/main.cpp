@@ -45,11 +45,42 @@ glm::mat4 vectorstr2mat4(std::vector<std::string> vec)
 {
     //exchange Y and Z axis to change from blender space to OpenGL
     return glm::scale(glm::rotate(glm::rotate(glm::rotate(glm::translate(
-    glm::mat4(1),glm::vec3(std::stof(vec[0]),std::stof(vec[2]),-std::stof(vec[1]))), //translate
+    glm::rotate(glm::rotate(glm::mat4(1),glm::radians(-150.f),glm::vec3(0.,1.,0.)),glm::radians(25.f),glm::vec3(1.,0.,0.)), // to begin at the right place
+    glm::vec3(std::stof(vec[0]),std::stof(vec[2]),-std::stof(vec[1]))), //translate
     glm::radians(std::stof(vec[5])),glm::vec3(0.,1.,0.)), //rotateY
     glm::radians(-std::stof(vec[4])),glm::vec3(0.,0.,1.)), //rotateZ
     glm::radians(std::stof(vec[3])),glm::vec3(1.,0.,0.)), //rotateX
     glm::vec3(std::stof(vec[6]), std::stof(vec[8]), std::stof(vec[7]))); //scale
+}
+
+bool collision(std::map<std::string, Model<Rectangle>> &rectangleModel, std::map<std::string, Model<Cylinder>> &cylinderModel, std::map<std::string, Model<Spheric>> &sphericModel,
+                glm::mat4 transformationsMatrix, glm::vec3 position)
+{
+    std::map<std::string, Model<Rectangle>>::iterator irec;
+    std::map<std::string, Model<Cylinder>>::iterator icyl;
+    std::map<std::string, Model<Spheric>>::iterator isph;
+    for(irec = rectangleModel.begin(); irec != rectangleModel.end(); irec++)
+    {
+        if((irec->second).collide(transformationsMatrix,position))
+        {
+            return true;
+        }
+    }
+    for(icyl = cylinderModel.begin(); icyl != cylinderModel.end(); icyl++)
+    {
+        if((icyl->second).collide(transformationsMatrix,position))
+        {
+            return true;
+        }
+    }
+    for(isph = sphericModel.begin(); isph != sphericModel.end(); isph++)
+    {
+        if((isph->second).collide(transformationsMatrix,position))
+        {
+            return true;
+        }
+    }
+    return false;
 }
 
 int main(int argc, char** argv) {
@@ -177,47 +208,36 @@ int main(int argc, char** argv) {
         float t;
         if(windowManager.isKeyPressed(SDLK_LSHIFT))
         {
-            t = 5*deltaTime;
+            t = 15*deltaTime;
         }
         else
         {
-            t = 3*deltaTime;
+            t = 10*deltaTime;
         }
-        if(windowManager.isKeyPressed(SDLK_q))
+        if(windowManager.isKeyPressed(SDLK_q) && !collision(rectangleModel,cylinderModel,sphericModel,glm::rotate(transformationsMatrix,glm::radians(t),camera.getDirection()),camera.getPosition()))
         {
-            camera.moveLeft(t);
+            transformationsMatrix = glm::rotate(transformationsMatrix,glm::radians(t),camera.getDirection());
         }
-        if(windowManager.isKeyPressed(SDLK_z))
+        if(windowManager.isKeyPressed(SDLK_z) && !collision(rectangleModel,cylinderModel,sphericModel,glm::rotate(transformationsMatrix,-glm::radians(t),camera.getLeftVector()),camera.getPosition()))
         {
-            camera.moveFront(t);
+            transformationsMatrix = glm::rotate(transformationsMatrix,-glm::radians(t),camera.getLeftVector());
         }
-        if(windowManager.isKeyPressed(SDLK_d))
+        if(windowManager.isKeyPressed(SDLK_d) && !collision(rectangleModel,cylinderModel,sphericModel,glm::rotate(transformationsMatrix,-glm::radians(t),camera.getDirection()),camera.getPosition()))
         {
-            camera.moveLeft(-t);
+            transformationsMatrix = glm::rotate(transformationsMatrix,-glm::radians(t),camera.getDirection());
         }
-        if(windowManager.isKeyPressed(SDLK_s))
+        if(windowManager.isKeyPressed(SDLK_s) && !collision(rectangleModel,cylinderModel,sphericModel,glm::rotate(transformationsMatrix,glm::radians(t),camera.getLeftVector()),camera.getPosition()))
         {
-            camera.moveFront(-t);
-        }
-        if(windowManager.isKeyPressed(SDLK_SPACE))
-        {
-            camera.moveUp(t);
+            transformationsMatrix = glm::rotate(transformationsMatrix,glm::radians(t),camera.getLeftVector());
         }
 
-        if(windowManager.isKeyPressed(SDLK_p))
+        if((rectangleModel.find("monster_pink")->second).canInteract(camera.getPosition()))
         {
-            if((rectangleModel.find("house1")->second).collision(camera.getPosition()))
-            {
-                std::cout << "Dedans" << std::endl;
-            }
-            else
-            {
-                std::cout << "Dehors" << std::endl;
-            }
+            (rectangleModel.find("monster_pink")->second).move(glm::rotate(transformationsMatrix,glm::radians(1.5f),camera.getLeftVector()));
         }
-        if(windowManager.isKeyPressed(SDLK_t))
+        if((sphericModel.find("ball")->second).canInteract(camera.getPosition()))
         {
-            transformationsMatrix = glm::translate(glm::mat4(1),glm::vec3(0.,0.,-0.1));
+            (sphericModel.find("ball")->second).move(glm::rotate(transformationsMatrix,glm::radians(1.5f),camera.getLeftVector()));
         }
 
         //LIGHTS
@@ -232,17 +252,17 @@ int main(int argc, char** argv) {
         //DRAW
         for(irec = rectangleModel.begin(); irec != rectangleModel.end(); irec++)
         {
-            (irec->second).DrawColors(program,camera.getViewMatrix(),ProjMatrix);
+            (irec->second).DrawColors(program,camera.getViewMatrix(),ProjMatrix, transformationsMatrix);
         }
         for(icyl = cylinderModel.begin(); icyl != cylinderModel.end(); icyl++)
         {
-            (icyl->second).DrawColors(program,camera.getViewMatrix(),ProjMatrix);
+            (icyl->second).DrawColors(program,camera.getViewMatrix(),ProjMatrix, transformationsMatrix);
         }
         for(isph = sphericModel.begin(); isph != sphericModel.end(); isph++)
         {
-            (isph->second).DrawColors(program,camera.getViewMatrix(),ProjMatrix);
+            (isph->second).DrawColors(program,camera.getViewMatrix(),ProjMatrix, transformationsMatrix);
         }
-        //,transformationsMatrix);
+
         //END OF RENDERING CODE
 
         transformationsMatrix = glm::mat4(1);

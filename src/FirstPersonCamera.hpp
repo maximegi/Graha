@@ -20,7 +20,7 @@ private:
 	}
 
 public:
-	FirstPersonCamera() : mPosition(glm::vec3(0.f,0.f,0.f)), mPhi(glm::pi<float>()), mTheta(0.f) {
+	FirstPersonCamera() : mPosition(glm::vec3(0.f,7.85f,0.f)), mPhi(glm::pi<float>()), mTheta(0.f) {
 		computeDirectionVectors();
 	}
 
@@ -39,5 +39,6 @@ public:
 	glm::mat4 getViewMatrix(){ return glm::lookAt(mPosition,mPosition+mFrontVector,mUpVector); }
 
 	glm::vec3 getPosition(){ return mPosition; }
-	glm::vec3 getDirection(){ return mFrontVector; }
+	glm::vec3 getDirection(){ return glm::cross(mLeftVector,glm::vec3(0.,1.,0.)); }
+	glm::vec3 getLeftVector(){ return mLeftVector; }
 };
