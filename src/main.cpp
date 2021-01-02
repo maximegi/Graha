@@ -2,10 +2,15 @@
 #include <GL/glew.h>
 #include <iostream>
 #include <vector>
+
 #include <fstream>
 #include <string>
 #include <sstream>
 #include <map>
+
+//texte
+#include <ft2build.h>
+#include FT_FREETYPE_H
 
 //glimac
 #include <common.hpp>
@@ -23,11 +28,11 @@
 #include <Cylinder.hpp>
 #include <Spheric.hpp>
 
+#include "Text.hpp"
 #include "FirstPersonCamera.hpp"
 
 using namespace glimac;
 
-<<<<<<< HEAD
 //fonctions necessaire au parse a ranger apres
 std::vector<std::string> split (const std::string &s, char delim) {
     std::vector<std::string> result;
@@ -83,8 +88,20 @@ bool collision(std::map<std::string, Model<Rectangle>> &rectangleModel, std::map
     }
     return false;
 }
-=======
->>>>>>> fpscamera
+
+struct ModelProgram {
+    Program m_Program;
+
+    GLuint locationLightDirection;
+    GLuint locationLightIntensity;
+
+    ModelProgram(const FilePath& applicationPath):
+        m_Program(loadProgram(applicationPath.dirPath() + "assets/shaders/3D.vs.glsl",
+                              applicationPath.dirPath() + "assets/shaders/directionallightcolors.fs.glsl")) {
+        locationLightDirection = glGetUniformLocation(m_Program.getGLId(), "uLightDirection");
+        locationLightIntensity = glGetUniformLocation(m_Program.getGLId(), "uLightIntensity");
+    }
+};
 
 int main(int argc, char** argv) {
     // Initialize SDL and open a window
@@ -100,21 +117,20 @@ int main(int argc, char** argv) {
         return EXIT_FAILURE;
     }
 
-    FilePath applicationPath(argv[0]);
-    Program program(loadProgram(applicationPath.dirPath() + "assets/shaders/3D.vs.glsl",
-                              applicationPath.dirPath() + "assets/shaders/directionallightcolors.fs.glsl"));
-    program.use();
-
-
-    GLuint locationLightDirection = glGetUniformLocation(program.getGLId(), "uLightDirection");
-    GLuint locationLightIntensity = glGetUniformLocation(program.getGLId(), "uLightIntensity");
-
-    glEnable(GL_DEPTH_TEST);
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA); 
 
     std::cout << "OpenGL Version : " << glGetString(GL_VERSION) << std::endl;
     std::cout << "GLEW Version : " << glewGetString(GLEW_VERSION) << std::endl;
 
+    FilePath applicationPath(argv[0]);
+    ModelProgram modelProgram(applicationPath);
+    Text text(applicationPath);
+   
+
     //INITIALIZATION
+
+    text.initialization();
 
     //MATRIXES
     glm::mat4 ModelMatrix = glm::scale(glm::mat4(1),glm::vec3(7.5,7.5,7.5));
@@ -243,28 +259,36 @@ int main(int argc, char** argv) {
             (sphericModel.find("ball")->second).move(glm::rotate(transformationsMatrix,glm::radians(1.5f),camera.getLeftVector()));
         }
 
+
+    //MODELS
+        modelProgram.m_Program.use();
+
         //LIGHTS
-        glUniform3fv(locationLightDirection,1,glm::value_ptr(glm::vec3(-1.,-1.,0.))); //Position of the light, don't forget to multiply by the view matrix
-        glUniform3fv(locationLightIntensity,1,glm::value_ptr(glm::vec3(1.,1.,1.))); //Color of the light
+        glUniform3fv(modelProgram.locationLightDirection,1,glm::value_ptr(glm::vec3(-1.,-1.,0.))); //Position of the light, don't forget to multiply by the view matrix
+        glUniform3fv(modelProgram.locationLightIntensity,1,glm::value_ptr(glm::vec3(1.,1.,1.))); //Color of the light
 
-
-    //CUBE
         std::map<std::string, Model<Rectangle>>::iterator irec;
         std::map<std::string, Model<Cylinder>>::iterator icyl;
         std::map<std::string, Model<Spheric>>::iterator isph;
         //DRAW
         for(irec = rectangleModel.begin(); irec != rectangleModel.end(); irec++)
         {
-            (irec->second).DrawColors(program,camera.getViewMatrix(),ProjMatrix, transformationsMatrix);
+            (irec->second).DrawColors(modelProgram.m_Program,camera.getViewMatrix(),ProjMatrix, transformationsMatrix);
         }
         for(icyl = cylinderModel.begin(); icyl != cylinderModel.end(); icyl++)
         {
-            (icyl->second).DrawColors(program,camera.getViewMatrix(),ProjMatrix, transformationsMatrix);
+            (icyl->second).DrawColors(modelProgram.m_Program,camera.getViewMatrix(),ProjMatrix, transformationsMatrix);
         }
         for(isph = sphericModel.begin(); isph != sphericModel.end(); isph++)
         {
-            (isph->second).DrawColors(program,camera.getViewMatrix(),ProjMatrix, transformationsMatrix);
+            (isph->second).DrawColors(modelProgram.m_Program,camera.getViewMatrix(),ProjMatrix, transformationsMatrix);
         }
+
+        glDisable(GL_BLEND);
+        
+
+    //TEXTS
+        text.write("coucou sa va", 0.0, 0.0, 1.0, glm::vec3(1.0, 0.0, 0.2));
 
         //END OF RENDERING CODE
 
