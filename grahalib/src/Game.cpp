@@ -1,6 +1,5 @@
 #include <iostream>
 #include <GL/glew.h>
-
 #include "Game.hpp"
 
 struct Bouton
@@ -22,8 +21,65 @@ struct Bouton
     }
 };
 
-void Game::RenderLoop()
+struct Vertex2DUV
 {
+    glm::vec2 position;
+    glm::vec2 texture;
+
+    Vertex2DUV(){};
+    Vertex2DUV(glm::vec2 position, glm::vec2 texture):position(position), texture(texture){}
+};
+
+void Game::RenderLoop(glimac::FilePath &applicationPath)
+{
+    //chargement textures
+    std::unique_ptr<glimac::Image> imgBeginMenu = glimac::loadImage("assets/textures/begin.png");
+    std::unique_ptr<glimac::Image> imgEndMenu = glimac::loadImage("assets/textures/end.png");
+    if(imgBeginMenu == NULL || imgEndMenu == NULL)
+    {
+        std::cout << "Could not find texture" << std::endl;
+    }
+    glimac::Program program = glimac::loadProgram(applicationPath.dirPath() + "assets/shaders/text2D.vs.glsl", applicationPath.dirPath() + "assets/shaders/text2D.fs.glsl");
+    GLint uTexture = glGetUniformLocation(program.getGLId(), "uTexture");
+    GLuint vbo;
+    GLuint vao;
+    GLuint texture;
+    const GLuint VERTEX_ATTR_POSITION = 0;
+    const GLuint VERTEX_ATTR_TEXTURE = 1;
+
+    glGenTextures(1, &texture);
+    glBindTexture(GL_TEXTURE_2D, texture);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, imgBeginMenu->getWidth(), imgBeginMenu->getHeight(), 0, GL_RGBA, GL_FLOAT, imgBeginMenu->getPixels());
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glBindTexture(GL_TEXTURE_2D, 0);
+
+    glGenBuffers(1, &vbo);
+    glBindBuffer(GL_ARRAY_BUFFER, vbo);
+
+    Vertex2DUV vertices[] = {
+    Vertex2DUV(glm::vec2(-1.0, -1.0), glm::vec2(0.0, 1.0)),
+    Vertex2DUV(glm::vec2(1.0, -1.0), glm::vec2(1.0, 1.0)),
+    Vertex2DUV(glm::vec2(1.0, 1.0), glm::vec2(1.0, 0.0)), 
+    Vertex2DUV(glm::vec2(-1.0, 1.0), glm::vec2(0.0, 0.0))
+    };
+    glBufferData(GL_ARRAY_BUFFER, 4 * sizeof(Vertex2DUV), vertices, GL_STATIC_DRAW);
+    glBindBuffer(GL_ARRAY_BUFFER,0);
+    
+    glGenVertexArrays(1,&vao);
+    glBindVertexArray(vao);
+    
+    glEnableVertexAttribArray(VERTEX_ATTR_POSITION);
+    glEnableVertexAttribArray(VERTEX_ATTR_TEXTURE);
+    
+    glBindBuffer(GL_ARRAY_BUFFER, vbo);
+    
+    glVertexAttribPointer(VERTEX_ATTR_POSITION,2,GL_FLOAT,GL_FALSE,sizeof(Vertex2DUV),(const GLvoid*)(offsetof(Vertex2DUV, position)));
+    glVertexAttribPointer(VERTEX_ATTR_TEXTURE,2,GL_FLOAT,GL_FALSE,sizeof(Vertex2DUV),(const GLvoid*)(offsetof(Vertex2DUV, texture)));
+    
+    glBindBuffer(GL_ARRAY_BUFFER,0);
+    glBindVertexArray(0);
+
     musicAudio.play();
     int loop = 0;
 	bool done = false;
@@ -38,12 +94,18 @@ void Game::RenderLoop()
         }
         while(loop == 0)
         {
-            Bouton play(370., 215., 70., 20., 0.5, "Play");
-            Bouton quit(370., 165., 70., 20., 0.5, "Quit");
-            glClearColor(1.0,1.0,1.0,0.3);
-            glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-            text.write(play.mtext, play.mx, play.my, play.mstext, glm::vec3(0., 0., 0.));
-            text.write(quit.mtext, quit.mx, quit.my, quit.mstext, glm::vec3(0., 0., 0.));
+            Bouton play(385., 265., 70., 20., 0.5, "Play");
+            Bouton quit(385., 225., 70., 20., 0.5, "Quit");
+            glClear(GL_COLOR_BUFFER_BIT);
+            program.use();
+            glBindVertexArray(vao);
+            glBindTexture(GL_TEXTURE_2D, texture);
+            glUniform1i(uTexture, 0);
+            glDrawArrays(GL_QUADS,0,4);
+            glBindVertexArray(0);
+            glBindTexture(GL_TEXTURE_2D, 0);
+            text.write(play.mtext, play.mx, play.my, play.mstext, glm::vec3(1., 1., 1.));
+            text.write(quit.mtext, quit.mx, quit.my, quit.mstext, glm::vec3(1., 1., 1.));
 
             float currentFrame = mWindowManager.getTime();
             deltaTime = currentFrame - lastFrame;
@@ -84,6 +146,9 @@ void Game::RenderLoop()
             }
             mWindowManager.swapBuffers();
         }
+        glDeleteBuffers(1,&vbo);
+        glDeleteVertexArrays(1,&vao);
+        glDeleteTextures(1, &texture);
         musicAudio.stop();
         musicAudio.play();
         while(loop == 1)
@@ -121,14 +186,55 @@ void Game::RenderLoop()
         }
         musicAudio.stop();
         musicAudio.play();
+
+        glGenTextures(1, &texture);
+        glBindTexture(GL_TEXTURE_2D, texture);
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, imgEndMenu->getWidth(), imgEndMenu->getHeight(), 0, GL_RGBA, GL_FLOAT, imgEndMenu->getPixels());
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+        glBindTexture(GL_TEXTURE_2D, 0);
+
+        glGenBuffers(1, &vbo);
+        glBindBuffer(GL_ARRAY_BUFFER, vbo);
+
+        Vertex2DUV vertices[] = {
+        Vertex2DUV(glm::vec2(-1.0, -1.0), glm::vec2(0.0, 1.0)),
+        Vertex2DUV(glm::vec2(1.0, -1.0), glm::vec2(1.0, 1.0)),
+        Vertex2DUV(glm::vec2(1.0, 1.0), glm::vec2(1.0, 0.0)), 
+        Vertex2DUV(glm::vec2(-1.0, 1.0), glm::vec2(0.0, 0.0))
+        };
+        glBufferData(GL_ARRAY_BUFFER, 4 * sizeof(Vertex2DUV), vertices, GL_STATIC_DRAW);
+        glBindBuffer(GL_ARRAY_BUFFER,0);
+
+        glGenVertexArrays(1,&vao);
+        glBindVertexArray(vao);
+
+        glEnableVertexAttribArray(VERTEX_ATTR_POSITION);
+        glEnableVertexAttribArray(VERTEX_ATTR_TEXTURE);
+
+        glBindBuffer(GL_ARRAY_BUFFER, vbo);
+
+        glVertexAttribPointer(VERTEX_ATTR_POSITION,2,GL_FLOAT,GL_FALSE,sizeof(Vertex2DUV),(const GLvoid*)(offsetof(Vertex2DUV, position)));
+        glVertexAttribPointer(VERTEX_ATTR_TEXTURE,2,GL_FLOAT,GL_FALSE,sizeof(Vertex2DUV),(const GLvoid*)(offsetof(Vertex2DUV, texture)));
+
+        glBindBuffer(GL_ARRAY_BUFFER,0);
+        glBindVertexArray(0);
         while(loop == 2)
         {
-            Bouton replay(336., 215., 111., 20., 0.5, "Play again");
-            Bouton quit(370., 165., 70., 20., 0.5, "Quit");
+            Bouton replay(353., 265., 111., 20., 0.5, "Play again");
+            Bouton quit(385., 225., 70., 20., 0.5, "Quit");
             glClearColor(1.0,1.0,1.0,0.3);
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-            text.write(replay.mtext, replay.mx, replay.my, replay.mstext, glm::vec3(0., 0., 0.));
-            text.write(quit.mtext, quit.mx, quit.my, quit.mstext, glm::vec3(0., 0., 0.));
+            glClear(GL_COLOR_BUFFER_BIT);
+            program.use();
+            glBindVertexArray(vao);
+            glBindTexture(GL_TEXTURE_2D, texture);
+            glUniform1i(uTexture, 0);
+            glDrawArrays(GL_QUADS,0,4);
+            glBindVertexArray(0);
+            glBindTexture(GL_TEXTURE_2D, 0);
+            text.write(replay.mtext, replay.mx, replay.my, replay.mstext, glm::vec3(1., 1., 1.));
+            text.write(quit.mtext, quit.mx, quit.my, quit.mstext, glm::vec3(1., 1., 1.));
 
             float currentFrame = mWindowManager.getTime();
             deltaTime = currentFrame - lastFrame;

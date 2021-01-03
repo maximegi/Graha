@@ -35,7 +35,7 @@ public:
 			mMousePosition(mWindowManager.getMousePosition()), deltaTime(0.f), lastFrame(0.f),
 			firstPlanet(applicationPath, "assets/meshes.txt", glm::vec3(0.f,7.85f,0.f)) {}
 			
-	void RenderLoop();
+	void RenderLoop(glimac::FilePath &applicationPath);
 	void close();
 
 private:

@@ -42,7 +42,7 @@ int main(int argc, char** argv) {
     Game graha(WINDOW_W, WINDOW_H, window, applicationPath);
 
     // Application loop:
-    graha.RenderLoop();
+    graha.RenderLoop(applicationPath);
 
     //Delete buffers from planets
     graha.close();
