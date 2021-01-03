@@ -28,7 +28,9 @@ public:
 			musicAudio("assets/audio/music.ogg", "LOOPING"),
 			footAudio("assets/audio/foot.ogg", "NOT LOOPING"),
 			new_objectAudio("assets/audio/new_object.ogg", "NOT LOOPING"),
-			woodAudio("assets/audio/wood.ogg", "NOT LOOPING"),
+			woodAudio("assets/audio/wood.ogg", "NOT LOOPING"), 
+			selectAudio("assets/audio/select.ogg", "NOT LOOPING"), 
+			flyoverAudio("assets/audio/flyover.ogg", "NOT LOOPING"),
 			mProjMatrix(glm::perspective(glm::radians(70.f),((float)width)/((float)height),0.1f,100.f)),
 			mMousePosition(mWindowManager.getMousePosition()), deltaTime(0.f), lastFrame(0.f),
 			firstPlanet(applicationPath, "assets/meshes.txt", glm::vec3(0.f,7.85f,0.f)) {}
@@ -45,6 +47,8 @@ private:
     Audio footAudio;
     Audio new_objectAudio;
     Audio woodAudio;
+    Audio selectAudio;
+    Audio flyoverAudio;
 
     glm::mat4 mProjMatrix;
     glm::vec2 mMousePosition;
