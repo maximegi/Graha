@@ -51,8 +51,18 @@ private:
 	FirstPersonCamera mCamera;
 
     glimac::Program mProgram;
-    bool phase0, phase1, phase2, phase3, phase4;
+    bool phase0 = true;
+    bool phase1 = false;
+    bool phase2 = false;
+    bool phase3 = false;
+    bool phase4 = false;
+    bool end = false;
+    bool ax = false;
+    bool needTalkToPink = false;
+    bool needTalkToYellow = false;
+    bool rocketKeys = false;
 	int batteryCtr = 0;
+	int treeCtr = 0;
 
     void parse(std::string &meshesFile);
     bool collision(glm::mat4 newTransformationsMatrix, glm::vec3 position);

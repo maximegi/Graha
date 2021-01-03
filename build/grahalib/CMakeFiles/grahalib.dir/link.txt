@@ -1,2 +1,0 @@
-/usr/bin/ar qc libgrahalib.a  CMakeFiles/grahalib.dir/src/Game.cpp.o CMakeFiles/grahalib.dir/src/Planet.cpp.o CMakeFiles/grahalib.dir/src/Text.cpp.o
-/usr/bin/ranlib libgrahalib.a

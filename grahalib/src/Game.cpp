@@ -30,7 +30,6 @@ void Game::RenderLoop()
         firstPlanet.drawModels(mProjMatrix);
 
     //TEXTS
-        text.write("Objectives", 0.1, 150.0, 0.7, glm::vec3(1., 1., 1.));
         firstPlanet.quest(text, mWindowManager);
 
         mMousePosition = mWindowManager.getMousePosition();
