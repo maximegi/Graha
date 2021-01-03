@@ -52,6 +52,9 @@ void Planet::parse(std::string &meshesFile)
         {
             Model<Cylinder> cube(vmod[i], vmat[i]);
             cylinderModel.insert(std::pair<std::string, Model<Cylinder>>(vname[i], cube));
+            if (vmod[i].find("tree") != std::string::npos){
+                trees.push_back(vname[i]);
+            }
         }
         else if(vcol[i] == "Spheric")
         {
@@ -87,26 +90,65 @@ glm::mat4 vectorstr2mat4(std::vector<std::string> vec)
 
 void Planet::quest(Text &text, const glimac::SDLWindowManager &windowManager){
 
+    
     //at every moment
     if((sphericModel.find("ball")->second).canInteract(mCamera.getPosition()))
     {
         (sphericModel.find("ball")->second).move(glm::rotate(mTransformationsMatrix,glm::radians(1.5f),mCamera.getLeftVector()));
     }
+    if((sphericModel.find("ball")->second).isIn(rectangleModel.find("cage1")->second) || (sphericModel.find("ball")->second).isIn(rectangleModel.find("cage2")->second)){
+        std::cout<<"gg bg"<<std::endl;
+    }
+    for (size_t i =0; i < trees.size(); i++){
+        if (windowManager.isKeyPressed(SDLK_e) && (cylinderModel.find(trees[i])->second).canInteract(mCamera.getPosition())){
+            (cylinderModel.find(trees[i])->second).disappear();
+        }
+    }
 
+    //Discovery / phase 
+    if (phase0){
+        if(windowManager.isKeyPressed(SDLK_e) && (rectangleModel.find("monster_pink")->second).canInteract(mCamera.getPosition()))
+        {
+            text.write("Il n'y a plus de lumiere ! Retrouve les piles !", 210.0, 100.0, 0.42, glm::vec3(1., 1., 1.));
+        }
+        if(windowManager.isKeyPressed(SDLK_e) && (rectangleModel.find("monster_blue")->second).canInteract(mCamera.getPosition()))
+        {
+            text.write("J'ai perdu ma pile ! Je pense qu'elle n'est pas loin !", 195.0, 100.0, 0.42, glm::vec3(1., 1., 1.));
+        }
+        if(windowManager.isKeyPressed(SDLK_e) && (rectangleModel.find("monster_yellow")->second).canInteract(mCamera.getPosition()))
+        {
+            text.write("T'aimes l'espace toi ? Viens me voir quand tu auras du temps", 120.0, 100.0, 0.42, glm::vec3(1., 1., 1.));
+        }
+    }
 
-    //battery hunt
-    // if(windowManager.isKeyPressed(SDLK_e) && (rectangleModel.find("monster_pink")->second).canInteract(mCamera.getPosition()))
-    // {
-    //     text.write("Il n'y a plus de lumiere ! Retrouve les piles !", 210.0, 100.0, 0.42, glm::vec3(1., 1., 1.));
-    // }
-    // if(windowManager.isKeyPressed(SDLK_e) && (rectangleModel.find("monster_blue")->second).canInteract(mCamera.getPosition()))
-    // {
-    //     text.write("J'ai perdu ma pile ! Je pense qu'elle n'est pas loin !", 195.0, 100.0, 0.42, glm::vec3(1., 1., 1.));
-    // }
-    // if(windowManager.isKeyPressed(SDLK_e) && (rectangleModel.find("monster_yellow")->second).canInteract(mCamera.getPosition()))
-    // {
-    //     text.write("T'aimes l'espace toi ? Viens me voir quand tu auras du temps", 120.0, 100.0, 0.42, glm::vec3(1., 1., 1.));
-    // }
+    //battery hunt / phase 1
+    if (phase1){
+        if(windowManager.isKeyPressed(SDLK_e) && (rectangleModel.find("monster_pink")->second).canInteract(mCamera.getPosition()))
+        {
+            text.write("Il n'y a plus de lumiere ! Retrouve les piles !", 210.0, 100.0, 0.42, glm::vec3(1., 1., 1.));
+        }
+        if(windowManager.isKeyPressed(SDLK_e) && (rectangleModel.find("monster_blue")->second).canInteract(mCamera.getPosition()))
+        {
+            text.write("J'ai perdu ma pile ! Je pense qu'elle n'est pas loin !", 195.0, 100.0, 0.42, glm::vec3(1., 1., 1.));
+        }
+        if(windowManager.isKeyPressed(SDLK_e) && (rectangleModel.find("monster_yellow")->second).canInteract(mCamera.getPosition()))
+        {
+            text.write("T'aimes l'espace toi ? Viens me voir quand tu auras du temps", 120.0, 100.0, 0.42, glm::vec3(1., 1., 1.));
+        }
+        if(windowManager.isKeyPressed(SDLK_e) && (cylinderModel.find("battery1")->second).canInteract(mCamera.getPosition()))
+        {
+            batteryCtr++;
+            (cylinderModel.find("battery1")->second).disappear();
+            std::cout << batteryCtr<<std::endl;
+        }
+        if(windowManager.isKeyPressed(SDLK_e) && (cylinderModel.find("battery2")->second).canInteract(mCamera.getPosition()))
+        {
+            batteryCtr++;
+            (cylinderModel.find("battery2")->second).disappear();
+            std::cout << batteryCtr<<std::endl;
+        }
+    }
+
 
     //tree phase
     // if(windowManager.isKeyPressed(SDLK_e) && (rectangleModel.find("monster_pink")->second).canInteract(mCamera.getPosition()))
@@ -125,19 +167,19 @@ void Planet::quest(Text &text, const glimac::SDLWindowManager &windowManager){
     // }
 
     //football phase
-    if(windowManager.isKeyPressed(SDLK_e) && (rectangleModel.find("monster_pink")->second).canInteract(mCamera.getPosition()))
-    {
-        text.write("Merci beaucoup de ton aide ! Va t'amuser !", 192.0, 90.0, 0.42, glm::vec3(1., 1., 1.));
-        text.write("Tiens essaye de mettre un but pour voir !", 200.0, 60.0, 0.42, glm::vec3(1., 1., 1.));
-    }
-    if(windowManager.isKeyPressed(SDLK_e) && (rectangleModel.find("monster_blue")->second).canInteract(mCamera.getPosition()))
-    {
-        text.write("Mais tu vas me rendre ma hache oui ?!", 230.0, 100.0, 0.42, glm::vec3(1., 1., 1.));
-    }
-    if(windowManager.isKeyPressed(SDLK_e) && (rectangleModel.find("monster_yellow")->second).canInteract(mCamera.getPosition()))
-    {
-        text.write("T'aimes le foot ? Moi j'aime l'espace et j'ai une grosse fusee", 125.0, 100.0, 0.42, glm::vec3(1., 1., 1.));
-    }
+    // if(windowManager.isKeyPressed(SDLK_e) && (rectangleModel.find("monster_pink")->second).canInteract(mCamera.getPosition()))
+    // {
+    //     text.write("Merci beaucoup de ton aide ! Va t'amuser !", 192.0, 90.0, 0.42, glm::vec3(1., 1., 1.));
+    //     text.write("Tiens essaye de mettre un but pour voir !", 200.0, 60.0, 0.42, glm::vec3(1., 1., 1.));
+    // }
+    // if(windowManager.isKeyPressed(SDLK_e) && (rectangleModel.find("monster_blue")->second).canInteract(mCamera.getPosition()))
+    // {
+    //     text.write("Mais tu vas me rendre ma hache oui ?!", 230.0, 100.0, 0.42, glm::vec3(1., 1., 1.));
+    // }
+    // if(windowManager.isKeyPressed(SDLK_e) && (rectangleModel.find("monster_yellow")->second).canInteract(mCamera.getPosition()))
+    // {
+    //     text.write("T'aimes le foot ? Moi j'aime l'espace et j'ai une grosse fusee", 125.0, 100.0, 0.42, glm::vec3(1., 1., 1.));
+    // }
 
 
     

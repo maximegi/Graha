@@ -33,14 +33,19 @@ class Model
 
 		bool collide(glm::mat4 transformationsMatrix, glm::vec3 position);
 		bool canInteract(glm::vec3 position) { return mActionZone.contains(position); }
+		template<typename U> bool isIn(Model<U> container);
 
+		void disappear();
 		void deleteBuffers();
+		T mCollision;
+
+
 	private:
 		std::vector<Mesh> meshes;
 		std::string directory;
 
 	    glm::mat4 mModelMatrix;
-		T mCollision;
+		
 		T mActionZone;
 
 		void loadModel(const std::string &path);
@@ -112,6 +117,13 @@ bool Model<T>::collide(glm::mat4 transformationsMatrix, glm::vec3 position)
 	T newCol(newModelMatrix);
 	return newCol.contains(position);
 }
+
+template<typename T>
+template<typename U> bool Model<T>::isIn(Model<U> container)
+{
+    return container.mCollision.contains(this->mCollision.getPosition());
+}
+
 
 template<typename T>
 void Model<T>::loadModel(const std::string &path)
@@ -233,6 +245,13 @@ std::vector<Texture> Model<T>::loadMaterialTextures(aiMaterial *material, aiText
 	}
 
 	return textures;
+}
+
+template<typename T>
+void Model<T>::disappear()
+{
+	move(glm::mat4(0));
+	deleteBuffers();
 }
 
 template<typename T>

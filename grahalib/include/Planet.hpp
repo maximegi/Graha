@@ -39,20 +39,23 @@ public:
 	void deleteBuffers();
 	void quest(Text &text, const glimac::SDLWindowManager &windowManager);
 
+
 private:
     std::map<std::string, Model<Rectangle>> rectangleModel;
     std::map<std::string, Model<Cylinder>> cylinderModel;
     std::map<std::string, Model<Spheric>> sphericModel;
+    std::vector<std::string> trees;
 
     glm::mat4 mTransformationsMatrix;
 
 	FirstPersonCamera mCamera;
 
     glimac::Program mProgram;
+    bool phase0, phase1, phase2, phase3, phase4;
+	int batteryCtr = 0;
 
     void parse(std::string &meshesFile);
     bool collision(glm::mat4 newTransformationsMatrix, glm::vec3 position);
-
 
 };
 

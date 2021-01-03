@@ -36,7 +36,6 @@ private:
 	unsigned int mWindowWidth, mWindowHeight;
 	glimac::SDLWindowManager mWindowManager;
 	Text text;
-	int phase;
 
     glm::mat4 mProjMatrix;
     glm::vec2 mMousePosition;

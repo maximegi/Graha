@@ -295,7 +295,7 @@ mat~-4.7707,-4.6453,3.5381,25.7f,-61f,22.5f,0.166,0.166,0.166
 col~Rectangle
 name~grass10
 mod~assets/models/grass/grass.obj
-mat~4.233,-5.2312,3.4649,18.8f,-67.7f,30.6f,0.166,0.166,0.166
+mat~-4.233,-5.2312,3.4649,18.8f,-67.7f,30.6f,0.166,0.166,0.166
 col~Rectangle
 name~grass11
 mod~assets/models/grass/grass.obj
