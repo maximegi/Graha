@@ -1,5 +1,6 @@
 #include <iostream>
 #include <GL/glew.h>
+#include "Shader.hpp"
 
 #include "Planet.hpp"
 
@@ -77,12 +78,12 @@ glm::mat4 vectorstr2mat4(std::vector<std::string> vec)
 {
     //exchange Y and Z axis to change from blender space to OpenGL
     return glm::scale(glm::rotate(glm::rotate(glm::rotate(glm::translate(
-    glm::rotate(glm::rotate(glm::mat4(1),glm::radians(-150.f),glm::vec3(0.,1.,0.)),glm::radians(25.f),glm::vec3(1.,0.,0.)), // to begin at the right place
-    glm::vec3(std::stof(vec[0]),std::stof(vec[2]),-std::stof(vec[1]))), //translate
-    glm::radians(std::stof(vec[5])),glm::vec3(0.,1.,0.)), //rotateY
-    glm::radians(-std::stof(vec[4])),glm::vec3(0.,0.,1.)), //rotateZ
-    glm::radians(std::stof(vec[3])),glm::vec3(1.,0.,0.)), //rotateX
-    glm::vec3(std::stof(vec[6]), std::stof(vec[8]), std::stof(vec[7]))); //scale
+	    glm::rotate(glm::rotate(glm::mat4(1),glm::radians(-150.f),glm::vec3(0.,1.,0.)),glm::radians(25.f),glm::vec3(1.,0.,0.)), // to begin at the right place
+	    glm::vec3(std::stof(vec[0]),std::stof(vec[2]),-std::stof(vec[1]))), //translate
+	    glm::radians(std::stof(vec[5])),glm::vec3(0.,1.,0.)), //rotateY
+	    glm::radians(-std::stof(vec[4])),glm::vec3(0.,0.,1.)), //rotateZ
+	    glm::radians(std::stof(vec[3])),glm::vec3(1.,0.,0.)), //rotateX
+	    glm::vec3(std::stof(vec[6]), std::stof(vec[8]), std::stof(vec[7]))); //scale
 }
 
 
@@ -103,6 +104,7 @@ void Planet::processInput(const glimac::SDLWindowManager &windowManager, float d
     {
         t = 10*deltaTime;
     }
+
     //ZQSD
     if(windowManager.isKeyPressed(SDLK_q) && !collision(glm::rotate(mTransformationsMatrix,glm::radians(t),mCamera.getDirection()),mCamera.getPosition()))
     {
@@ -119,6 +121,20 @@ void Planet::processInput(const glimac::SDLWindowManager &windowManager, float d
     if(windowManager.isKeyPressed(SDLK_s) && !collision(glm::rotate(mTransformationsMatrix,glm::radians(t),mCamera.getLeftVector()),mCamera.getPosition()))
     {
         mTransformationsMatrix = glm::rotate(mTransformationsMatrix,glm::radians(t),mCamera.getLeftVector());
+    }
+
+
+    if(windowManager.isKeyPressed(SDLK_p))
+    {
+    	mSun = false;
+    	mUsingLamp = true;
+		mProgram = glimac::loadProgram(mApplicationPath.dirPath() + "assets/shaders/3D.vs.glsl", mApplicationPath.dirPath() + "assets/shaders/spotlight.fs.glsl");
+    }
+    if(windowManager.isKeyPressed(SDLK_o))
+    {
+    	mUsingLamp = false;
+    	mSun = true;
+		mProgram = glimac::loadProgram(mApplicationPath.dirPath() + "assets/shaders/3D.vs.glsl", mApplicationPath.dirPath() + "assets/shaders/directionallightcolors.fs.glsl");
     }
 
     if((rectangleModel.find("monster_pink")->second).canInteract(mCamera.getPosition()))
@@ -167,8 +183,20 @@ void Planet::drawModels(glm::mat4 &ProjMatrix)
     mProgram.use();
 
     //LIGHTS
-    glUniform3fv(glGetUniformLocation(mProgram.getGLId(), "uLightDirection"),1,glm::value_ptr(glm::vec3(-1.,-1.,0.))); //Position of the light, don't forget to multiply by the view matrix
-    glUniform3fv(glGetUniformLocation(mProgram.getGLId(), "uLightIntensity"),1,glm::value_ptr(glm::vec3(1.,1.,1.))); //Color of the light
+    if(mSun)
+    {
+	    glUniform3fv(glGetUniformLocation(mProgram.getGLId(), "uLightDirection"),1,glm::value_ptr(glm::vec3(-1.,-1.,0.))); //Position of the light, don't forget to multiply by the view matrix
+	    glUniform3fv(glGetUniformLocation(mProgram.getGLId(), "uLightIntensity"),1,glm::value_ptr(glm::vec3(1.,1.,1.))); //Color of the light
+	}
+
+    if(mUsingLamp)
+    {
+	    glUniform3fv(glGetUniformLocation(mProgram.getGLId(), "uLightPos_vs"),1,glm::value_ptr(mCamera.getPosition())); //Position of the light which is the position of the camera
+	    glUniform3fv(glGetUniformLocation(mProgram.getGLId(), "uLightIntensity"),1,glm::value_ptr(glm::vec3(2.,2.,2.))); //Color of the light
+	    glUniform3fv(glGetUniformLocation(mProgram.getGLId(), "uLightDirection"),1,glm::value_ptr(mCamera.getFrontVector()));
+	    glUniform1f(glGetUniformLocation(mProgram.getGLId(), "uInnerCutOff"),glm::cos(glm::radians(17.5f)));
+	    glUniform1f(glGetUniformLocation(mProgram.getGLId(), "uOuterCutOff"),glm::cos(glm::radians(22.5f)));
+	}
 
     std::map<std::string, Model<Rectangle>>::iterator irec;
     std::map<std::string, Model<Cylinder>>::iterator icyl;

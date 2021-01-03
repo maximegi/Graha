@@ -14,6 +14,7 @@
 #include <glm.hpp>
 
 #include <Program.hpp>
+#include <FilePath.hpp>
 
 //modellib
 #include <Model.hpp>
@@ -27,8 +28,10 @@ class Planet
 {
 public:
 	Planet(glimac::FilePath applicationPath, std::string meshesFile, glm::vec3 beginPosition) : mCamera(beginPosition),
+																								mApplicationPath(applicationPath),
 																								mProgram(glimac::loadProgram(applicationPath.dirPath() + "assets/shaders/3D.vs.glsl",
-							                              							 										 applicationPath.dirPath() + "assets/shaders/directionallightcolors.fs.glsl")) 
+							                              							 										 applicationPath.dirPath() + "assets/shaders/directionallightcolors.fs.glsl")),
+																								mSun(true), mUsingLamp(false)
 	{
 		parse(meshesFile);
 	}
@@ -46,7 +49,11 @@ private:
 
 	FirstPersonCamera mCamera;
 
+	glimac::FilePath mApplicationPath;
     glimac::Program mProgram;
+
+    bool mSun;
+    bool mUsingLamp;
 
     void parse(std::string &meshesFile);
     bool collision(glm::mat4 newTransformationsMatrix, glm::vec3 position);
