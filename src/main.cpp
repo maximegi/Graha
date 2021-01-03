@@ -72,12 +72,11 @@ int main(int argc, char** argv) {
     std::string footfile = "assets/audio/foot.ogg";
     std::string newobjectfile = "assets/audio/new_object.ogg";
     std::string woodfile = "assets/audio/wood.ogg";
-    Audio music(musicfile);
-    Audio foot(footfile);
-    Audio new_object(newobjectfile);
-    Audio wood(woodfile);
-    music.play(1);
-    
+    Audio music(musicfile, "LOOPING");
+    Audio foot(footfile, "NOT LOOPING");
+    Audio new_object(newobjectfile, "NOT LOOPING");
+    Audio wood(woodfile, "NOT LOOPING");
+    music.play();
     // Application loop:
     bool done = false;
     while(!done) {
@@ -100,46 +99,44 @@ int main(int argc, char** argv) {
         }
 
         if(windowManager.isKeyPressed(SDLK_q))
-        {
+        {   
             camera.moveLeft(0.1f);
             foot.pause();
-            foot.play(0);
+            foot.play();
         }
         if(windowManager.isKeyPressed(SDLK_z))
         {
             camera.moveFront(0.1f);
             foot.pause();
-            foot.play(0);
+            foot.play();
         }
         if(windowManager.isKeyPressed(SDLK_d))
         {
             camera.moveLeft(-0.1f);
             foot.pause();
-            foot.play(0);
+            foot.play();
         }
         if(windowManager.isKeyPressed(SDLK_s))
         {
             camera.moveFront(-0.1f);
             foot.pause();
-            foot.play(0);
+            foot.play();
         }
         if(windowManager.isKeyPressed(SDLK_SPACE))
         {
             camera.moveUp(0.1f);
             foot.pause();
-            foot.play(0);
+            foot.play();
         }
         //test son recoltage
         if(windowManager.isKeyPressed(SDLK_e))
         {
-            new_object.pause();
-            new_object.play(0);
+            new_object.play();
         }
         //test son bois
         if(windowManager.isKeyPressed(SDLK_c))
         {
-            wood.pause();
-            wood.play(0);
+            wood.play();
         }
         //LIGHTS
         glUniform3fv(locationLightDirection,1,glm::value_ptr(glm::vec3(-1.,-1.,0.))); //Position of the light, don't forget to multiply by the view matrix
@@ -194,6 +191,8 @@ int main(int argc, char** argv) {
     cube.deleteBuffers();
     music.deleteBuffer();
     foot.deleteBuffer();
+    new_object.deleteBuffer();
+    wood.deleteBuffer();
     shutdownOpenAL();
     return EXIT_SUCCESS;
 

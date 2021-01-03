@@ -13,16 +13,16 @@
 class Audio
 {
 	public:
-		Audio(std::string &path)
+		Audio(std::string &path, std::string type)
 		{
-			loadAudio(path);
+			loadAudio(path, type);
 		}
 		void deleteBuffer();
-		void play(int type);
+		void play();
 		void stop();
 		void pause();
 	private:
-		void loadAudio(const std::string &path);
+		void loadAudio(const std::string &path, std::string type);
 		ALuint mBuffer, mSource;
 		ALint mStatus;
 		std::string mPath;

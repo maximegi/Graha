@@ -112,8 +112,8 @@ modellib/clean: modellib/CMakeFiles/modellib.dir/clean
 # Target rules for target CMakeFiles/Graha.dir
 
 # All Build rule for target.
-CMakeFiles/Graha.dir/all: glimac/CMakeFiles/glimac.dir/all
 CMakeFiles/Graha.dir/all: modellib/CMakeFiles/modellib.dir/all
+CMakeFiles/Graha.dir/all: glimac/CMakeFiles/glimac.dir/all
 	$(MAKE) -f CMakeFiles/Graha.dir/build.make CMakeFiles/Graha.dir/depend
 	$(MAKE) -f CMakeFiles/Graha.dir/build.make CMakeFiles/Graha.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles --progress-num=1,2,3 "Built target Graha"
