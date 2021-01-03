@@ -1,1 +1,0 @@
-/usr/bin/cc -O2 -g -DNDEBUG  -rdynamic CMakeFiles/sfversion.dir/tests/sfversion.c.o  -o sfversion  libsndfile.a -lm 

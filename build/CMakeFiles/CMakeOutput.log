@@ -28,13 +28,13 @@ The CXX compiler identification is GNU, found in "/home/maxime/Documents/PROJET_
 Determining if the C compiler works passed with the following output:
 Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_5dfc3/fast && /usr/bin/make -f CMakeFiles/cmTC_5dfc3.dir/build.make CMakeFiles/cmTC_5dfc3.dir/build
+Run Build Command(s):/usr/bin/make cmTC_a91a3/fast && /usr/bin/make -f CMakeFiles/cmTC_a91a3.dir/build.make CMakeFiles/cmTC_a91a3.dir/build
 make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_5dfc3.dir/testCCompiler.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_5dfc3.dir/testCCompiler.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_5dfc3
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5dfc3.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_5dfc3.dir/testCCompiler.c.o  -o cmTC_5dfc3 
+Building C object CMakeFiles/cmTC_a91a3.dir/testCCompiler.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_a91a3.dir/testCCompiler.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_a91a3
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a91a3.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_a91a3.dir/testCCompiler.c.o  -o cmTC_a91a3 
 make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
 
 
@@ -42,10 +42,10 @@ make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_db697/fast && /usr/bin/make -f CMakeFiles/cmTC_db697.dir/build.make CMakeFiles/cmTC_db697.dir/build
+Run Build Command(s):/usr/bin/make cmTC_66e78/fast && /usr/bin/make -f CMakeFiles/cmTC_66e78.dir/build.make CMakeFiles/cmTC_66e78.dir/build
 make[1]: Entering directory '/home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_db697.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc   -v -o CMakeFiles/cmTC_db697.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c
+Building C object CMakeFiles/cmTC_66e78.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc   -v -o CMakeFiles/cmTC_66e78.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 OFFLOAD_TARGET_NAMES=nvptx-none:hsa
@@ -54,8 +54,8 @@ Target: x86_64-linux-gnu
 Configured with: ../src/configure -v --with-pkgversion='Ubuntu 9.3.0-17ubuntu1~20.04' --with-bugurl=file:///usr/share/doc/gcc-9/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++,gm2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-9 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-9-HskZEa/gcc-9-9.3.0/debian/tmp-nvptx/usr,hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
 Thread model: posix
 gcc version 9.3.0 (Ubuntu 9.3.0-17ubuntu1~20.04) 
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_db697.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/9/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_db697.dir/CMakeCCompilerABI.c.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/cc07XCn1.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_66e78.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/9/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_66e78.dir/CMakeCCompilerABI.c.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccWIFZDp.s
 GNU C17 (Ubuntu 9.3.0-17ubuntu1~20.04) version 9.3.0 (x86_64-linux-gnu)
 	compiled by GNU C version 9.3.0, GMP version 6.2.0, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.22.1-GMP
 
@@ -75,15 +75,15 @@ GNU C17 (Ubuntu 9.3.0-17ubuntu1~20.04) version 9.3.0 (x86_64-linux-gnu)
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 Compiler executable checksum: bbf13931d8de1abe14040c9909cb6969
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_db697.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
- as -v --64 -o CMakeFiles/cmTC_db697.dir/CMakeCCompilerABI.c.o /tmp/cc07XCn1.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_66e78.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+ as -v --64 -o CMakeFiles/cmTC_66e78.dir/CMakeCCompilerABI.c.o /tmp/ccWIFZDp.s
 GNU assembler version 2.34 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.34
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_db697.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
-Linking C executable cmTC_db697
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_db697.dir/link.txt --verbose=1
-/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_db697.dir/CMakeCCompilerABI.c.o  -o cmTC_db697 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_66e78.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+Linking C executable cmTC_66e78
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_66e78.dir/link.txt --verbose=1
+/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_66e78.dir/CMakeCCompilerABI.c.o  -o cmTC_66e78 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper
@@ -95,9 +95,9 @@ Thread model: posix
 gcc version 9.3.0 (Ubuntu 9.3.0-17ubuntu1~20.04) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_db697' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccVmlGFw.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_db697 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.. CMakeFiles/cmTC_db697.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_db697' '-mtune=generic' '-march=x86-64'
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_66e78' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper -plugin-opt=-fresolution=/tmp/cc87gzxT.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_66e78 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.. CMakeFiles/cmTC_66e78.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_66e78' '-mtune=generic' '-march=x86-64'
 make[1]: Leaving directory '/home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp'
 
 
@@ -121,10 +121,10 @@ Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):/usr/bin/make cmTC_db697/fast && /usr/bin/make -f CMakeFiles/cmTC_db697.dir/build.make CMakeFiles/cmTC_db697.dir/build]
+  ignore line: [Run Build Command(s):/usr/bin/make cmTC_66e78/fast && /usr/bin/make -f CMakeFiles/cmTC_66e78.dir/build.make CMakeFiles/cmTC_66e78.dir/build]
   ignore line: [make[1]: Entering directory '/home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_db697.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_db697.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c]
+  ignore line: [Building C object CMakeFiles/cmTC_66e78.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_66e78.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:hsa]
@@ -133,8 +133,8 @@ Parsed C implicit link information from above output:
   ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 9.3.0-17ubuntu1~20.04' --with-bugurl=file:///usr/share/doc/gcc-9/README.Bugs --enable-languages=c ada c++ go brig d fortran objc obj-c++ gm2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-9 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-9-HskZEa/gcc-9-9.3.0/debian/tmp-nvptx/usr hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
   ignore line: [Thread model: posix]
   ignore line: [gcc version 9.3.0 (Ubuntu 9.3.0-17ubuntu1~20.04) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_db697.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
-  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/9/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_db697.dir/CMakeCCompilerABI.c.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/cc07XCn1.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_66e78.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/9/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_66e78.dir/CMakeCCompilerABI.c.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccWIFZDp.s]
   ignore line: [GNU C17 (Ubuntu 9.3.0-17ubuntu1~20.04) version 9.3.0 (x86_64-linux-gnu)]
   ignore line: [	compiled by GNU C version 9.3.0  GMP version 6.2.0  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.22.1-GMP]
   ignore line: []
@@ -154,15 +154,15 @@ Parsed C implicit link information from above output:
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [Compiler executable checksum: bbf13931d8de1abe14040c9909cb6969]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_db697.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
-  ignore line: [ as -v --64 -o CMakeFiles/cmTC_db697.dir/CMakeCCompilerABI.c.o /tmp/cc07XCn1.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_66e78.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [ as -v --64 -o CMakeFiles/cmTC_66e78.dir/CMakeCCompilerABI.c.o /tmp/ccWIFZDp.s]
   ignore line: [GNU assembler version 2.34 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.34]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_db697.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
-  ignore line: [Linking C executable cmTC_db697]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_db697.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_db697.dir/CMakeCCompilerABI.c.o  -o cmTC_db697 ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_66e78.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [Linking C executable cmTC_66e78]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_66e78.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_66e78.dir/CMakeCCompilerABI.c.o  -o cmTC_66e78 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper]
@@ -174,13 +174,13 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 9.3.0 (Ubuntu 9.3.0-17ubuntu1~20.04) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_db697' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccVmlGFw.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_db697 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.. CMakeFiles/cmTC_db697.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_66e78' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper -plugin-opt=-fresolution=/tmp/cc87gzxT.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_66e78 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.. CMakeFiles/cmTC_66e78.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/9/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccVmlGFw.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cc87gzxT.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -199,7 +199,7 @@ Parsed C implicit link information from above output:
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_db697] ==> ignore
+    arg [cmTC_66e78] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o] ==> ignore
@@ -211,7 +211,7 @@ Parsed C implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/9/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../..]
-    arg [CMakeFiles/cmTC_db697.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_66e78.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--push-state] ==> ignore
     arg [--as-needed] ==> ignore
@@ -241,13 +241,13 @@ Parsed C implicit link information from above output:
 Determining if the CXX compiler works passed with the following output:
 Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_08a0b/fast && /usr/bin/make -f CMakeFiles/cmTC_08a0b.dir/build.make CMakeFiles/cmTC_08a0b.dir/build
+Run Build Command(s):/usr/bin/make cmTC_ae1da/fast && /usr/bin/make -f CMakeFiles/cmTC_ae1da.dir/build.make CMakeFiles/cmTC_ae1da.dir/build
 make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building CXX object CMakeFiles/cmTC_08a0b.dir/testCXXCompiler.cxx.o
-/usr/bin/c++     -o CMakeFiles/cmTC_08a0b.dir/testCXXCompiler.cxx.o -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_08a0b
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_08a0b.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_08a0b.dir/testCXXCompiler.cxx.o  -o cmTC_08a0b 
+Building CXX object CMakeFiles/cmTC_ae1da.dir/testCXXCompiler.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTC_ae1da.dir/testCXXCompiler.cxx.o -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_ae1da
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ae1da.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_ae1da.dir/testCXXCompiler.cxx.o  -o cmTC_ae1da 
 make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
 
 
@@ -255,10 +255,10 @@ make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_6407c/fast && /usr/bin/make -f CMakeFiles/cmTC_6407c.dir/build.make CMakeFiles/cmTC_6407c.dir/build
+Run Build Command(s):/usr/bin/make cmTC_f93a7/fast && /usr/bin/make -f CMakeFiles/cmTC_f93a7.dir/build.make CMakeFiles/cmTC_f93a7.dir/build
 make[1]: Entering directory '/home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_6407c.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++    -v -o CMakeFiles/cmTC_6407c.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp
+Building CXX object CMakeFiles/cmTC_f93a7.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++    -v -o CMakeFiles/cmTC_f93a7.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 OFFLOAD_TARGET_NAMES=nvptx-none:hsa
@@ -267,8 +267,8 @@ Target: x86_64-linux-gnu
 Configured with: ../src/configure -v --with-pkgversion='Ubuntu 9.3.0-17ubuntu1~20.04' --with-bugurl=file:///usr/share/doc/gcc-9/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++,gm2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-9 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-9-HskZEa/gcc-9-9.3.0/debian/tmp-nvptx/usr,hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
 Thread model: posix
 gcc version 9.3.0 (Ubuntu 9.3.0-17ubuntu1~20.04) 
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_6407c.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/9/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_6407c.dir/CMakeCXXCompilerABI.cpp.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/cchAkwC2.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f93a7.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/9/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_f93a7.dir/CMakeCXXCompilerABI.cpp.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/cc8vTOXm.s
 GNU C++14 (Ubuntu 9.3.0-17ubuntu1~20.04) version 9.3.0 (x86_64-linux-gnu)
 	compiled by GNU C version 9.3.0, GMP version 6.2.0, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.22.1-GMP
 
@@ -292,15 +292,15 @@ GNU C++14 (Ubuntu 9.3.0-17ubuntu1~20.04) version 9.3.0 (x86_64-linux-gnu)
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 Compiler executable checksum: 466f818abe2f30ba03783f22bd12d815
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_6407c.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- as -v --64 -o CMakeFiles/cmTC_6407c.dir/CMakeCXXCompilerABI.cpp.o /tmp/cchAkwC2.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f93a7.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ as -v --64 -o CMakeFiles/cmTC_f93a7.dir/CMakeCXXCompilerABI.cpp.o /tmp/cc8vTOXm.s
 GNU assembler version 2.34 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.34
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_6407c.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
-Linking CXX executable cmTC_6407c
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6407c.dir/link.txt --verbose=1
-/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_6407c.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_6407c 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f93a7.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+Linking CXX executable cmTC_f93a7
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f93a7.dir/link.txt --verbose=1
+/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_f93a7.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_f93a7 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper
@@ -312,9 +312,9 @@ Thread model: posix
 gcc version 9.3.0 (Ubuntu 9.3.0-17ubuntu1~20.04) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_6407c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccevoGBt.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_6407c /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.. CMakeFiles/cmTC_6407c.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_6407c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_f93a7' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccz452RO.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_f93a7 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.. CMakeFiles/cmTC_f93a7.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_f93a7' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
 make[1]: Leaving directory '/home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp'
 
 
@@ -344,10 +344,10 @@ Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):/usr/bin/make cmTC_6407c/fast && /usr/bin/make -f CMakeFiles/cmTC_6407c.dir/build.make CMakeFiles/cmTC_6407c.dir/build]
+  ignore line: [Run Build Command(s):/usr/bin/make cmTC_f93a7/fast && /usr/bin/make -f CMakeFiles/cmTC_f93a7.dir/build.make CMakeFiles/cmTC_f93a7.dir/build]
   ignore line: [make[1]: Entering directory '/home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_6407c.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++    -v -o CMakeFiles/cmTC_6407c.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Building CXX object CMakeFiles/cmTC_f93a7.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++    -v -o CMakeFiles/cmTC_f93a7.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:hsa]
@@ -356,8 +356,8 @@ Parsed CXX implicit link information from above output:
   ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 9.3.0-17ubuntu1~20.04' --with-bugurl=file:///usr/share/doc/gcc-9/README.Bugs --enable-languages=c ada c++ go brig d fortran objc obj-c++ gm2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-9 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-9-HskZEa/gcc-9-9.3.0/debian/tmp-nvptx/usr hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
   ignore line: [Thread model: posix]
   ignore line: [gcc version 9.3.0 (Ubuntu 9.3.0-17ubuntu1~20.04) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_6407c.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/9/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_6407c.dir/CMakeCXXCompilerABI.cpp.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/cchAkwC2.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f93a7.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/9/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_f93a7.dir/CMakeCXXCompilerABI.cpp.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/cc8vTOXm.s]
   ignore line: [GNU C++14 (Ubuntu 9.3.0-17ubuntu1~20.04) version 9.3.0 (x86_64-linux-gnu)]
   ignore line: [	compiled by GNU C version 9.3.0  GMP version 6.2.0  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.22.1-GMP]
   ignore line: []
@@ -381,15 +381,15 @@ Parsed CXX implicit link information from above output:
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [Compiler executable checksum: 466f818abe2f30ba03783f22bd12d815]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_6407c.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  ignore line: [ as -v --64 -o CMakeFiles/cmTC_6407c.dir/CMakeCXXCompilerABI.cpp.o /tmp/cchAkwC2.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f93a7.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  ignore line: [ as -v --64 -o CMakeFiles/cmTC_f93a7.dir/CMakeCXXCompilerABI.cpp.o /tmp/cc8vTOXm.s]
   ignore line: [GNU assembler version 2.34 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.34]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_6407c.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  ignore line: [Linking CXX executable cmTC_6407c]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6407c.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_6407c.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_6407c ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f93a7.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  ignore line: [Linking CXX executable cmTC_f93a7]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f93a7.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_f93a7.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_f93a7 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper]
@@ -401,13 +401,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 9.3.0 (Ubuntu 9.3.0-17ubuntu1~20.04) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_6407c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccevoGBt.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_6407c /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.. CMakeFiles/cmTC_6407c.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_f93a7' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccz452RO.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_f93a7 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.. CMakeFiles/cmTC_f93a7.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/9/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccevoGBt.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccz452RO.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -426,7 +426,7 @@ Parsed CXX implicit link information from above output:
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_6407c] ==> ignore
+    arg [cmTC_f93a7] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o] ==> ignore
@@ -438,7 +438,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/9/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../..]
-    arg [CMakeFiles/cmTC_6407c.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_f93a7.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -464,13 +464,13 @@ Parsed CXX implicit link information from above output:
 Determining if the include file pthread.h exists passed with the following output:
 Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_0abdf/fast && /usr/bin/make -f CMakeFiles/cmTC_0abdf.dir/build.make CMakeFiles/cmTC_0abdf.dir/build
+Run Build Command(s):/usr/bin/make cmTC_ea2ca/fast && /usr/bin/make -f CMakeFiles/cmTC_ea2ca.dir/build.make CMakeFiles/cmTC_ea2ca.dir/build
 make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_0abdf.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_0abdf.dir/CheckIncludeFile.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_0abdf
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0abdf.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_0abdf.dir/CheckIncludeFile.c.o  -o cmTC_0abdf 
+Building C object CMakeFiles/cmTC_ea2ca.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_ea2ca.dir/CheckIncludeFile.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_ea2ca
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ea2ca.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_ea2ca.dir/CheckIncludeFile.c.o  -o cmTC_ea2ca 
 make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
 
 
@@ -478,1047 +478,14 @@ make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha
 Determining if the function pthread_create exists in the pthread passed with the following output:
 Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_963e2/fast && /usr/bin/make -f CMakeFiles/cmTC_963e2.dir/build.make CMakeFiles/cmTC_963e2.dir/build
+Run Build Command(s):/usr/bin/make cmTC_8ee8e/fast && /usr/bin/make -f CMakeFiles/cmTC_8ee8e.dir/build.make CMakeFiles/cmTC_8ee8e.dir/build
 make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_963e2.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_963e2.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
-Linking C executable cmTC_963e2
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_963e2.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_963e2.dir/CheckFunctionExists.c.o  -o cmTC_963e2  -lpthread 
+Building C object CMakeFiles/cmTC_8ee8e.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_8ee8e.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_8ee8e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8ee8e.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_8ee8e.dir/CheckFunctionExists.c.o  -o cmTC_8ee8e  -lpthread 
 make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
 
 
 
-Determining if the include file sys/types.h exists passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_beb7b/fast && /usr/bin/make -f CMakeFiles/cmTC_beb7b.dir/build.make CMakeFiles/cmTC_beb7b.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_beb7b.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_beb7b.dir/CheckIncludeFile.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_beb7b
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_beb7b.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_beb7b.dir/CheckIncludeFile.c.o  -o cmTC_beb7b 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Determining if the include file stdint.h exists passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_2bcdf/fast && /usr/bin/make -f CMakeFiles/cmTC_2bcdf.dir/build.make CMakeFiles/cmTC_2bcdf.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_2bcdf.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_2bcdf.dir/CheckIncludeFile.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_2bcdf
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2bcdf.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_2bcdf.dir/CheckIncludeFile.c.o  -o cmTC_2bcdf 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Determining if the include file stddef.h exists passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_e8174/fast && /usr/bin/make -f CMakeFiles/cmTC_e8174.dir/build.make CMakeFiles/cmTC_e8174.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_e8174.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_e8174.dir/CheckIncludeFile.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_e8174
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e8174.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_e8174.dir/CheckIncludeFile.c.o  -o cmTC_e8174 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Determining size of off_t passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_68d46/fast && /usr/bin/make -f CMakeFiles/cmTC_68d46.dir/build.make CMakeFiles/cmTC_68d46.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_68d46.dir/SIZEOF_OFF_T.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_68d46.dir/SIZEOF_OFF_T.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CheckTypeSize/SIZEOF_OFF_T.c
-Linking C executable cmTC_68d46
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_68d46.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_68d46.dir/SIZEOF_OFF_T.c.o  -o cmTC_68d46 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Determining if the include file byteswap.h exists passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_7607f/fast && /usr/bin/make -f CMakeFiles/cmTC_7607f.dir/build.make CMakeFiles/cmTC_7607f.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_7607f.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_7607f.dir/CheckIncludeFile.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_7607f
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7607f.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_7607f.dir/CheckIncludeFile.c.o  -o cmTC_7607f 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Determining if the include file dlfcn.h exists passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_75831/fast && /usr/bin/make -f CMakeFiles/cmTC_75831.dir/build.make CMakeFiles/cmTC_75831.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_75831.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_75831.dir/CheckIncludeFile.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_75831
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_75831.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_75831.dir/CheckIncludeFile.c.o  -o cmTC_75831 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Determining if the include file endian.h exists passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_562ed/fast && /usr/bin/make -f CMakeFiles/cmTC_562ed.dir/build.make CMakeFiles/cmTC_562ed.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_562ed.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_562ed.dir/CheckIncludeFile.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_562ed
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_562ed.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_562ed.dir/CheckIncludeFile.c.o  -o cmTC_562ed 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Determining if the include file inttypes.h exists passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_384ed/fast && /usr/bin/make -f CMakeFiles/cmTC_384ed.dir/build.make CMakeFiles/cmTC_384ed.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_384ed.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_384ed.dir/CheckIncludeFile.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_384ed
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_384ed.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_384ed.dir/CheckIncludeFile.c.o  -o cmTC_384ed 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Determining if the include file sys/time.h exists passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_5c0a2/fast && /usr/bin/make -f CMakeFiles/cmTC_5c0a2.dir/build.make CMakeFiles/cmTC_5c0a2.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_5c0a2.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_5c0a2.dir/CheckIncludeFile.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_5c0a2
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5c0a2.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_5c0a2.dir/CheckIncludeFile.c.o  -o cmTC_5c0a2 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Determining if the include file unistd.h exists passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_71eb8/fast && /usr/bin/make -f CMakeFiles/cmTC_71eb8.dir/build.make CMakeFiles/cmTC_71eb8.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_71eb8.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_71eb8.dir/CheckIncludeFile.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_71eb8
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_71eb8.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_71eb8.dir/CheckIncludeFile.c.o  -o cmTC_71eb8 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Determining if the include file immintrin.h exists passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_bf3da/fast && /usr/bin/make -f CMakeFiles/cmTC_bf3da.dir/build.make CMakeFiles/cmTC_bf3da.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_bf3da.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_bf3da.dir/CheckIncludeFile.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_bf3da
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bf3da.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_bf3da.dir/CheckIncludeFile.c.o  -o cmTC_bf3da 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Determining if the include file locale.h exists passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_2354e/fast && /usr/bin/make -f CMakeFiles/cmTC_2354e.dir/build.make CMakeFiles/cmTC_2354e.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_2354e.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_2354e.dir/CheckIncludeFile.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_2354e
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2354e.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_2354e.dir/CheckIncludeFile.c.o  -o cmTC_2354e 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Determining if the include file sys/wait.h exists passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_45425/fast && /usr/bin/make -f CMakeFiles/cmTC_45425.dir/build.make CMakeFiles/cmTC_45425.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_45425.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_45425.dir/CheckIncludeFile.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_45425
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_45425.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_45425.dir/CheckIncludeFile.c.o  -o cmTC_45425 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Determining size of int64_t passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_ac72b/fast && /usr/bin/make -f CMakeFiles/cmTC_ac72b.dir/build.make CMakeFiles/cmTC_ac72b.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_ac72b.dir/SIZEOF_INT64_T.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_ac72b.dir/SIZEOF_INT64_T.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CheckTypeSize/SIZEOF_INT64_T.c
-Linking C executable cmTC_ac72b
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ac72b.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_ac72b.dir/SIZEOF_INT64_T.c.o  -o cmTC_ac72b 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Determining size of long passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_75a68/fast && /usr/bin/make -f CMakeFiles/cmTC_75a68.dir/build.make CMakeFiles/cmTC_75a68.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_75a68.dir/SIZEOF_LONG.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_75a68.dir/SIZEOF_LONG.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CheckTypeSize/SIZEOF_LONG.c
-Linking C executable cmTC_75a68
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_75a68.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_75a68.dir/SIZEOF_LONG.c.o  -o cmTC_75a68 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Determining size of long long passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_1b7df/fast && /usr/bin/make -f CMakeFiles/cmTC_1b7df.dir/build.make CMakeFiles/cmTC_1b7df.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_1b7df.dir/SIZEOF_LONG_LONG.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_1b7df.dir/SIZEOF_LONG_LONG.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CheckTypeSize/SIZEOF_LONG_LONG.c
-Linking C executable cmTC_1b7df
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1b7df.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_1b7df.dir/SIZEOF_LONG_LONG.c.o  -o cmTC_1b7df 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Determining size of ssize_t passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_82a67/fast && /usr/bin/make -f CMakeFiles/cmTC_82a67.dir/build.make CMakeFiles/cmTC_82a67.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_82a67.dir/SIZEOF_SSIZE_T.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_82a67.dir/SIZEOF_SSIZE_T.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CheckTypeSize/SIZEOF_SSIZE_T.c
-Linking C executable cmTC_82a67
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_82a67.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_82a67.dir/SIZEOF_SSIZE_T.c.o  -o cmTC_82a67 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Determining size of wchar_t passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_152ab/fast && /usr/bin/make -f CMakeFiles/cmTC_152ab.dir/build.make CMakeFiles/cmTC_152ab.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_152ab.dir/SIZEOF_WCHAR_T.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_152ab.dir/SIZEOF_WCHAR_T.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CheckTypeSize/SIZEOF_WCHAR_T.c
-Linking C executable cmTC_152ab
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_152ab.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_152ab.dir/SIZEOF_WCHAR_T.c.o  -o cmTC_152ab 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Determining size of int64_t passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_b1f52/fast && /usr/bin/make -f CMakeFiles/cmTC_b1f52.dir/build.make CMakeFiles/cmTC_b1f52.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_b1f52.dir/SIZEOF_SF_COUNT_T.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_b1f52.dir/SIZEOF_SF_COUNT_T.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CheckTypeSize/SIZEOF_SF_COUNT_T.c
-Linking C executable cmTC_b1f52
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b1f52.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_b1f52.dir/SIZEOF_SF_COUNT_T.c.o  -o cmTC_b1f52 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Determining if the function floor exists in the m passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_0c180/fast && /usr/bin/make -f CMakeFiles/cmTC_0c180.dir/build.make CMakeFiles/cmTC_0c180.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_0c180.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=floor   -o CMakeFiles/cmTC_0c180.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
-<command-line>: warning: conflicting types for built-in function ‘floor’; expected ‘double(double)’ [-Wbuiltin-declaration-mismatch]
-/usr/share/cmake-3.16/Modules/CheckFunctionExists.c:7:3: note: in expansion of macro ‘CHECK_FUNCTION_EXISTS’
-    7 |   CHECK_FUNCTION_EXISTS(void);
-      |   ^~~~~~~~~~~~~~~~~~~~~
-/usr/share/cmake-3.16/Modules/CheckFunctionExists.c:1:1: note: ‘floor’ is declared in header ‘<math.h>’
-  +++ |+#include <math.h>
-    1 | #ifdef CHECK_FUNCTION_EXISTS
-Linking C executable cmTC_0c180
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0c180.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=floor    -rdynamic CMakeFiles/cmTC_0c180.dir/CheckFunctionExists.c.o  -o cmTC_0c180  -lm 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Determining if the function fstat exists passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_003d0/fast && /usr/bin/make -f CMakeFiles/cmTC_003d0.dir/build.make CMakeFiles/cmTC_003d0.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_003d0.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=fstat   -o CMakeFiles/cmTC_003d0.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
-Linking C executable cmTC_003d0
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_003d0.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=fstat    -rdynamic CMakeFiles/cmTC_003d0.dir/CheckFunctionExists.c.o  -o cmTC_003d0  -lm 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Determining if the function fstat64 exists passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_124fa/fast && /usr/bin/make -f CMakeFiles/cmTC_124fa.dir/build.make CMakeFiles/cmTC_124fa.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_124fa.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=fstat64   -o CMakeFiles/cmTC_124fa.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
-Linking C executable cmTC_124fa
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_124fa.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=fstat64    -rdynamic CMakeFiles/cmTC_124fa.dir/CheckFunctionExists.c.o  -o cmTC_124fa  -lm 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Determining if the function gettimeofday exists passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_2d4f9/fast && /usr/bin/make -f CMakeFiles/cmTC_2d4f9.dir/build.make CMakeFiles/cmTC_2d4f9.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_2d4f9.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gettimeofday   -o CMakeFiles/cmTC_2d4f9.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
-Linking C executable cmTC_2d4f9
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2d4f9.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=gettimeofday    -rdynamic CMakeFiles/cmTC_2d4f9.dir/CheckFunctionExists.c.o  -o cmTC_2d4f9  -lm 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Determining if the function gmtime exists passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_fea36/fast && /usr/bin/make -f CMakeFiles/cmTC_fea36.dir/build.make CMakeFiles/cmTC_fea36.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_fea36.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gmtime   -o CMakeFiles/cmTC_fea36.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
-Linking C executable cmTC_fea36
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fea36.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=gmtime    -rdynamic CMakeFiles/cmTC_fea36.dir/CheckFunctionExists.c.o  -o cmTC_fea36  -lm 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Determining if the function gmtime_r exists passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_122c8/fast && /usr/bin/make -f CMakeFiles/cmTC_122c8.dir/build.make CMakeFiles/cmTC_122c8.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_122c8.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gmtime_r   -o CMakeFiles/cmTC_122c8.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
-Linking C executable cmTC_122c8
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_122c8.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=gmtime_r    -rdynamic CMakeFiles/cmTC_122c8.dir/CheckFunctionExists.c.o  -o cmTC_122c8  -lm 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Determining if the function localtime exists passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_3d428/fast && /usr/bin/make -f CMakeFiles/cmTC_3d428.dir/build.make CMakeFiles/cmTC_3d428.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_3d428.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=localtime   -o CMakeFiles/cmTC_3d428.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
-Linking C executable cmTC_3d428
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3d428.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=localtime    -rdynamic CMakeFiles/cmTC_3d428.dir/CheckFunctionExists.c.o  -o cmTC_3d428  -lm 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Determining if the function localtime_r exists passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_7101f/fast && /usr/bin/make -f CMakeFiles/cmTC_7101f.dir/build.make CMakeFiles/cmTC_7101f.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_7101f.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=localtime_r   -o CMakeFiles/cmTC_7101f.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
-Linking C executable cmTC_7101f
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7101f.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=localtime_r    -rdynamic CMakeFiles/cmTC_7101f.dir/CheckFunctionExists.c.o  -o cmTC_7101f  -lm 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Determining if the function lseek exists passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_d355a/fast && /usr/bin/make -f CMakeFiles/cmTC_d355a.dir/build.make CMakeFiles/cmTC_d355a.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_d355a.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=lseek   -o CMakeFiles/cmTC_d355a.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
-Linking C executable cmTC_d355a
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d355a.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=lseek    -rdynamic CMakeFiles/cmTC_d355a.dir/CheckFunctionExists.c.o  -o cmTC_d355a  -lm 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Determining if the function open exists passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_a93e8/fast && /usr/bin/make -f CMakeFiles/cmTC_a93e8.dir/build.make CMakeFiles/cmTC_a93e8.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_a93e8.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=open   -o CMakeFiles/cmTC_a93e8.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
-Linking C executable cmTC_a93e8
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a93e8.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=open    -rdynamic CMakeFiles/cmTC_a93e8.dir/CheckFunctionExists.c.o  -o cmTC_a93e8  -lm 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Determining if the function read exists passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_a3965/fast && /usr/bin/make -f CMakeFiles/cmTC_a3965.dir/build.make CMakeFiles/cmTC_a3965.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_a3965.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=read   -o CMakeFiles/cmTC_a3965.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
-Linking C executable cmTC_a3965
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a3965.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=read    -rdynamic CMakeFiles/cmTC_a3965.dir/CheckFunctionExists.c.o  -o cmTC_a3965  -lm 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Determining if the function write exists passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_119f3/fast && /usr/bin/make -f CMakeFiles/cmTC_119f3.dir/build.make CMakeFiles/cmTC_119f3.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_119f3.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=write   -o CMakeFiles/cmTC_119f3.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
-Linking C executable cmTC_119f3
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_119f3.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=write    -rdynamic CMakeFiles/cmTC_119f3.dir/CheckFunctionExists.c.o  -o cmTC_119f3  -lm 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Determining if the function lrint exists passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_17618/fast && /usr/bin/make -f CMakeFiles/cmTC_17618.dir/build.make CMakeFiles/cmTC_17618.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_17618.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=lrint   -o CMakeFiles/cmTC_17618.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
-<command-line>: warning: conflicting types for built-in function ‘lrint’; expected ‘long int(double)’ [-Wbuiltin-declaration-mismatch]
-/usr/share/cmake-3.16/Modules/CheckFunctionExists.c:7:3: note: in expansion of macro ‘CHECK_FUNCTION_EXISTS’
-    7 |   CHECK_FUNCTION_EXISTS(void);
-      |   ^~~~~~~~~~~~~~~~~~~~~
-/usr/share/cmake-3.16/Modules/CheckFunctionExists.c:1:1: note: ‘lrint’ is declared in header ‘<math.h>’
-  +++ |+#include <math.h>
-    1 | #ifdef CHECK_FUNCTION_EXISTS
-Linking C executable cmTC_17618
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_17618.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=lrint    -rdynamic CMakeFiles/cmTC_17618.dir/CheckFunctionExists.c.o  -o cmTC_17618  -lm 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Determining if the function lrintf exists passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_b3f57/fast && /usr/bin/make -f CMakeFiles/cmTC_b3f57.dir/build.make CMakeFiles/cmTC_b3f57.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_b3f57.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=lrintf   -o CMakeFiles/cmTC_b3f57.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
-<command-line>: warning: conflicting types for built-in function ‘lrintf’; expected ‘long int(float)’ [-Wbuiltin-declaration-mismatch]
-/usr/share/cmake-3.16/Modules/CheckFunctionExists.c:7:3: note: in expansion of macro ‘CHECK_FUNCTION_EXISTS’
-    7 |   CHECK_FUNCTION_EXISTS(void);
-      |   ^~~~~~~~~~~~~~~~~~~~~
-/usr/share/cmake-3.16/Modules/CheckFunctionExists.c:1:1: note: ‘lrintf’ is declared in header ‘<math.h>’
-  +++ |+#include <math.h>
-    1 | #ifdef CHECK_FUNCTION_EXISTS
-Linking C executable cmTC_b3f57
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b3f57.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=lrintf    -rdynamic CMakeFiles/cmTC_b3f57.dir/CheckFunctionExists.c.o  -o cmTC_b3f57  -lm 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Determining if the function ftruncate exists passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_b3065/fast && /usr/bin/make -f CMakeFiles/cmTC_b3065.dir/build.make CMakeFiles/cmTC_b3065.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_b3065.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=ftruncate   -o CMakeFiles/cmTC_b3065.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
-Linking C executable cmTC_b3065
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b3065.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=ftruncate    -rdynamic CMakeFiles/cmTC_b3065.dir/CheckFunctionExists.c.o  -o cmTC_b3065  -lm 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Determining if the function fsync exists passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_58932/fast && /usr/bin/make -f CMakeFiles/cmTC_58932.dir/build.make CMakeFiles/cmTC_58932.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_58932.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=fsync   -o CMakeFiles/cmTC_58932.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
-Linking C executable cmTC_58932
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_58932.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=fsync    -rdynamic CMakeFiles/cmTC_58932.dir/CheckFunctionExists.c.o  -o cmTC_58932  -lm 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Determining if the function pipe exists passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_aa9b3/fast && /usr/bin/make -f CMakeFiles/cmTC_aa9b3.dir/build.make CMakeFiles/cmTC_aa9b3.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_aa9b3.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pipe   -o CMakeFiles/cmTC_aa9b3.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
-Linking C executable cmTC_aa9b3
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_aa9b3.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pipe    -rdynamic CMakeFiles/cmTC_aa9b3.dir/CheckFunctionExists.c.o  -o cmTC_aa9b3  -lm 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Determining if the function setlocale exists passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_9681d/fast && /usr/bin/make -f CMakeFiles/cmTC_9681d.dir/build.make CMakeFiles/cmTC_9681d.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_9681d.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=setlocale   -o CMakeFiles/cmTC_9681d.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
-Linking C executable cmTC_9681d
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9681d.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=setlocale    -rdynamic CMakeFiles/cmTC_9681d.dir/CheckFunctionExists.c.o  -o cmTC_9681d  -lm 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Determining if the function waitpid exists passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_13c15/fast && /usr/bin/make -f CMakeFiles/cmTC_13c15.dir/build.make CMakeFiles/cmTC_13c15.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_13c15.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=waitpid   -o CMakeFiles/cmTC_13c15.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
-Linking C executable cmTC_13c15
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_13c15.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=waitpid    -rdynamic CMakeFiles/cmTC_13c15.dir/CheckFunctionExists.c.o  -o cmTC_13c15  -lm 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Determining if the S_IRGRP exist passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_e2a0b/fast && /usr/bin/make -f CMakeFiles/cmTC_e2a0b.dir/build.make CMakeFiles/cmTC_e2a0b.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_e2a0b.dir/CheckSymbolExists.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_e2a0b.dir/CheckSymbolExists.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTC_e2a0b
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e2a0b.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_e2a0b.dir/CheckSymbolExists.c.o  -o cmTC_e2a0b  -lm 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-File /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
-/* */
-#include <sys/stat.h>
-
-int main(int argc, char** argv)
-{
-  (void)argv;
-#ifndef S_IRGRP
-  return ((int*)(&S_IRGRP))[argc];
-#else
-  (void)argc;
-  return 0;
-#endif
-}
-Determining size of unsigned short passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_c9948/fast && /usr/bin/make -f CMakeFiles/cmTC_c9948.dir/build.make CMakeFiles/cmTC_c9948.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_c9948.dir/CMAKE_SIZEOF_UNSIGNED_SHORT.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_c9948.dir/CMAKE_SIZEOF_UNSIGNED_SHORT.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CheckTypeSize/CMAKE_SIZEOF_UNSIGNED_SHORT.c
-Linking C executable cmTC_c9948
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c9948.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_c9948.dir/CMAKE_SIZEOF_UNSIGNED_SHORT.c.o  -o cmTC_c9948  -lm 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Determining if the system is big endian passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_e6f73/fast && /usr/bin/make -f CMakeFiles/cmTC_e6f73.dir/build.make CMakeFiles/cmTC_e6f73.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_e6f73.dir/TestEndianess.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_e6f73.dir/TestEndianess.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/TestEndianess.c
-Linking C executable cmTC_e6f73
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e6f73.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_e6f73.dir/TestEndianess.c.o  -o cmTC_e6f73 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-TestEndianess.c:
-/* A 16 bit integer is required. */
-typedef unsigned short cmakeint16;
-
-/* On a little endian machine, these 16bit ints will give "THIS IS LITTLE ENDIAN."
-   On a big endian machine the characters will be exchanged pairwise. */
-const cmakeint16 info_little[] =  {0x4854, 0x5349, 0x4920, 0x2053, 0x494c, 0x5454, 0x454c, 0x4520, 0x444e, 0x4149, 0x2e4e, 0x0000};
-
-/* on a big endian machine, these 16bit ints will give "THIS IS BIG ENDIAN."
-   On a little endian machine the characters will be exchanged pairwise. */
-const cmakeint16 info_big[] =     {0x5448, 0x4953, 0x2049, 0x5320, 0x4249, 0x4720, 0x454e, 0x4449, 0x414e, 0x2e2e, 0x0000};
-
-#ifdef __CLASSIC_C__
-int main(argc, argv) int argc; char *argv[];
-#else
-int main(int argc, char *argv[])
-#endif
-{
-  int require = 0;
-  require += info_little[argc];
-  require += info_big[argc];
-  (void)argv;
-  return require;
-}
-
-
-Determining if the posix_memalign exist passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_f2510/fast && /usr/bin/make -f CMakeFiles/cmTC_f2510.dir/build.make CMakeFiles/cmTC_f2510.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_f2510.dir/CheckSymbolExists.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_f2510.dir/CheckSymbolExists.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTC_f2510
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f2510.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_f2510.dir/CheckSymbolExists.c.o  -o cmTC_f2510 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-File /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
-/* */
-#include <stdlib.h>
-
-int main(int argc, char** argv)
-{
-  (void)argv;
-#ifndef posix_memalign
-  return ((int*)(&posix_memalign))[argc];
-#else
-  (void)argc;
-  return 0;
-#endif
-}
-Performing C++ SOURCE FILE Test HAVE___RESTRICT succeeded with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_39010/fast && /usr/bin/make -f CMakeFiles/cmTC_39010.dir/build.make CMakeFiles/cmTC_39010.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building CXX object CMakeFiles/cmTC_39010.dir/src.cxx.o
-/usr/bin/c++    -DHAVE___RESTRICT   -o CMakeFiles/cmTC_39010.dir/src.cxx.o -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/src.cxx
-Linking CXX executable cmTC_39010
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_39010.dir/link.txt --verbose=1
-/usr/bin/c++   -DHAVE___RESTRICT    -rdynamic CMakeFiles/cmTC_39010.dir/src.cxx.o  -o cmTC_39010 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-Source file was:
-int *__restrict foo;
-int main() { return 0; }
-Performing C++ SOURCE FILE Test HAVE_LIBATOMIC succeeded with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_90989/fast && /usr/bin/make -f CMakeFiles/cmTC_90989.dir/build.make CMakeFiles/cmTC_90989.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building CXX object CMakeFiles/cmTC_90989.dir/src.cxx.o
-/usr/bin/c++    -DHAVE_LIBATOMIC   -o CMakeFiles/cmTC_90989.dir/src.cxx.o -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/src.cxx
-Linking CXX executable cmTC_90989
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_90989.dir/link.txt --verbose=1
-/usr/bin/c++   -DHAVE_LIBATOMIC    -rdynamic CMakeFiles/cmTC_90989.dir/src.cxx.o  -o cmTC_90989  -latomic 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-Source file was:
-#include <atomic>
-std::atomic<int> foo{0};
-int main() { return foo.fetch_add(2); }
-Performing C SOURCE FILE Test HAVE_FNO_MATH_ERRNO succeeded with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_94e12/fast && /usr/bin/make -f CMakeFiles/cmTC_94e12.dir/build.make CMakeFiles/cmTC_94e12.dir/build
-make[1]: Entering directory '/home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_94e12.dir/src.c.o
-/usr/bin/cc   -DHAVE_FNO_MATH_ERRNO   -fno-math-errno -o CMakeFiles/cmTC_94e12.dir/src.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/src.c
-Linking C executable cmTC_94e12
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_94e12.dir/link.txt --verbose=1
-/usr/bin/cc  -DHAVE_FNO_MATH_ERRNO    -rdynamic CMakeFiles/cmTC_94e12.dir/src.c.o  -o cmTC_94e12  -latomic 
-make[1]: Leaving directory '/home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp'
-
-
-Source file was:
-int main(void) { return 0; }
-Performing C SOURCE FILE Test HAVE_GCC_PROTECTED_VISIBILITY succeeded with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_e7959/fast && /usr/bin/make -f CMakeFiles/cmTC_e7959.dir/build.make CMakeFiles/cmTC_e7959.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_e7959.dir/src.c.o
-/usr/bin/cc   -DHAVE_GCC_PROTECTED_VISIBILITY  -Wattributes -Werror   -o CMakeFiles/cmTC_e7959.dir/src.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/src.c
-Linking C executable cmTC_e7959
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e7959.dir/link.txt --verbose=1
-/usr/bin/cc  -DHAVE_GCC_PROTECTED_VISIBILITY  -Wattributes -Werror    -rdynamic CMakeFiles/cmTC_e7959.dir/src.c.o  -o cmTC_e7959  -latomic 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-Source file was:
-int foo() __attribute__((visibility("protected")));
-                             int main() {return 0;}
-Performing C SOURCE FILE Test HAVE_VISIBILITY_HIDDEN_SWITCH succeeded with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_d2466/fast && /usr/bin/make -f CMakeFiles/cmTC_d2466.dir/build.make CMakeFiles/cmTC_d2466.dir/build
-make[1]: Entering directory '/home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_d2466.dir/src.c.o
-/usr/bin/cc   -DHAVE_VISIBILITY_HIDDEN_SWITCH  -Wattributes -Werror   -fvisibility=hidden -o CMakeFiles/cmTC_d2466.dir/src.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/src.c
-Linking C executable cmTC_d2466
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d2466.dir/link.txt --verbose=1
-/usr/bin/cc  -DHAVE_VISIBILITY_HIDDEN_SWITCH  -Wattributes -Werror    -rdynamic CMakeFiles/cmTC_d2466.dir/src.c.o  -o cmTC_d2466  -latomic 
-make[1]: Leaving directory '/home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp'
-
-
-Source file was:
-int main(void) { return 0; }
-Performing C SOURCE FILE Test HAVE_MSSE2_SWITCH succeeded with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_fcd56/fast && /usr/bin/make -f CMakeFiles/cmTC_fcd56.dir/build.make CMakeFiles/cmTC_fcd56.dir/build
-make[1]: Entering directory '/home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_fcd56.dir/src.c.o
-/usr/bin/cc   -DHAVE_MSSE2_SWITCH  -Werror   -msse2 -o CMakeFiles/cmTC_fcd56.dir/src.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/src.c
-Linking C executable cmTC_fcd56
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fcd56.dir/link.txt --verbose=1
-/usr/bin/cc  -DHAVE_MSSE2_SWITCH  -Werror    -rdynamic CMakeFiles/cmTC_fcd56.dir/src.c.o  -o cmTC_fcd56  -latomic 
-make[1]: Leaving directory '/home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp'
-
-
-Source file was:
-int main(void) { return 0; }
-Determining if the include file xmmintrin.h exists passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_4029d/fast && /usr/bin/make -f CMakeFiles/cmTC_4029d.dir/build.make CMakeFiles/cmTC_4029d.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_4029d.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_4029d.dir/CheckIncludeFile.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_4029d
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4029d.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_4029d.dir/CheckIncludeFile.c.o  -o cmTC_4029d  -latomic 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Determining if the include file emmintrin.h exists passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_5f2d0/fast && /usr/bin/make -f CMakeFiles/cmTC_5f2d0.dir/build.make CMakeFiles/cmTC_5f2d0.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_5f2d0.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_5f2d0.dir/CheckIncludeFile.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_5f2d0
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5f2d0.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_5f2d0.dir/CheckIncludeFile.c.o  -o cmTC_5f2d0  -latomic 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Determining if the include file pmmintrin.h exists passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_b23d0/fast && /usr/bin/make -f CMakeFiles/cmTC_b23d0.dir/build.make CMakeFiles/cmTC_b23d0.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_b23d0.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_b23d0.dir/CheckIncludeFile.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_b23d0
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b23d0.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_b23d0.dir/CheckIncludeFile.c.o  -o cmTC_b23d0  -latomic 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Determining if the include file smmintrin.h exists passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_dd1d9/fast && /usr/bin/make -f CMakeFiles/cmTC_dd1d9.dir/build.make CMakeFiles/cmTC_dd1d9.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_dd1d9.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_dd1d9.dir/CheckIncludeFile.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_dd1d9
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dd1d9.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_dd1d9.dir/CheckIncludeFile.c.o  -o cmTC_dd1d9  -latomic 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Performing C SOURCE FILE Test HAVE_SSE_INTRINSICS succeeded with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_0d31b/fast && /usr/bin/make -f CMakeFiles/cmTC_0d31b.dir/build.make CMakeFiles/cmTC_0d31b.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_0d31b.dir/src.c.o
-/usr/bin/cc   -DHAVE_SSE_INTRINSICS   -o CMakeFiles/cmTC_0d31b.dir/src.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/src.c
-Linking C executable cmTC_0d31b
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0d31b.dir/link.txt --verbose=1
-/usr/bin/cc  -DHAVE_SSE_INTRINSICS    -rdynamic CMakeFiles/cmTC_0d31b.dir/src.c.o  -o cmTC_0d31b  -latomic 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-Source file was:
-#include <emmintrin.h>
-                             int main() {_mm_pause(); return 0;}
-Determining if the include file malloc.h exists passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_75645/fast && /usr/bin/make -f CMakeFiles/cmTC_75645.dir/build.make CMakeFiles/cmTC_75645.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_75645.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_75645.dir/CheckIncludeFile.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_75645
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_75645.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_75645.dir/CheckIncludeFile.c.o  -o cmTC_75645  -latomic 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Determining if the include file cpuid.h exists passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_67c85/fast && /usr/bin/make -f CMakeFiles/cmTC_67c85.dir/build.make CMakeFiles/cmTC_67c85.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_67c85.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_67c85.dir/CheckIncludeFile.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_67c85
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_67c85.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_67c85.dir/CheckIncludeFile.c.o  -o cmTC_67c85  -latomic 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Determining if the function pow exists in the m passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_79935/fast && /usr/bin/make -f CMakeFiles/cmTC_79935.dir/build.make CMakeFiles/cmTC_79935.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_79935.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pow   -o CMakeFiles/cmTC_79935.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
-<command-line>: warning: conflicting types for built-in function ‘pow’; expected ‘double(double,  double)’ [-Wbuiltin-declaration-mismatch]
-/usr/share/cmake-3.16/Modules/CheckFunctionExists.c:7:3: note: in expansion of macro ‘CHECK_FUNCTION_EXISTS’
-    7 |   CHECK_FUNCTION_EXISTS(void);
-      |   ^~~~~~~~~~~~~~~~~~~~~
-/usr/share/cmake-3.16/Modules/CheckFunctionExists.c:1:1: note: ‘pow’ is declared in header ‘<math.h>’
-  +++ |+#include <math.h>
-    1 | #ifdef CHECK_FUNCTION_EXISTS
-Linking C executable cmTC_79935
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_79935.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pow    -rdynamic CMakeFiles/cmTC_79935.dir/CheckFunctionExists.c.o  -o cmTC_79935  -lm -latomic 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Determining if the function clock_gettime exists in the rt passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_aa85f/fast && /usr/bin/make -f CMakeFiles/cmTC_aa85f.dir/build.make CMakeFiles/cmTC_aa85f.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_aa85f.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=clock_gettime   -o CMakeFiles/cmTC_aa85f.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
-Linking C executable cmTC_aa85f
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_aa85f.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=clock_gettime    -rdynamic CMakeFiles/cmTC_aa85f.dir/CheckFunctionExists.c.o  -o cmTC_aa85f  -lrt -latomic -lm 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Determining if the function dlopen exists in the dl passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_13718/fast && /usr/bin/make -f CMakeFiles/cmTC_13718.dir/build.make CMakeFiles/cmTC_13718.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_13718.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=dlopen   -o CMakeFiles/cmTC_13718.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
-Linking C executable cmTC_13718
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_13718.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=dlopen    -rdynamic CMakeFiles/cmTC_13718.dir/CheckFunctionExists.c.o  -o cmTC_13718  -ldl -latomic -lm 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Performing C SOURCE FILE Test HAVE_GCC_GET_CPUID succeeded with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_16e05/fast && /usr/bin/make -f CMakeFiles/cmTC_16e05.dir/build.make CMakeFiles/cmTC_16e05.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_16e05.dir/src.c.o
-/usr/bin/cc   -DHAVE_GCC_GET_CPUID   -o CMakeFiles/cmTC_16e05.dir/src.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/src.c
-Linking C executable cmTC_16e05
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_16e05.dir/link.txt --verbose=1
-/usr/bin/cc  -DHAVE_GCC_GET_CPUID    -rdynamic CMakeFiles/cmTC_16e05.dir/src.c.o  -o cmTC_16e05  -latomic -lm -ldl 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-Source file was:
-#include <cpuid.h>
-        int main()
-        {
-            unsigned int eax, ebx, ecx, edx;
-            return __get_cpuid(0, &eax, &ebx, &ecx, &edx);
-        }
-Determining if the posix_memalign exist passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_66fa2/fast && /usr/bin/make -f CMakeFiles/cmTC_66fa2.dir/build.make CMakeFiles/cmTC_66fa2.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_66fa2.dir/CheckSymbolExists.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_66fa2.dir/CheckSymbolExists.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTC_66fa2
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_66fa2.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_66fa2.dir/CheckSymbolExists.c.o  -o cmTC_66fa2  -latomic -lm -ldl 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-File /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
-/* */
-#include <stdlib.h>
-
-int main(int argc, char** argv)
-{
-  (void)argv;
-#ifndef posix_memalign
-  return ((int*)(&posix_memalign))[argc];
-#else
-  (void)argc;
-  return 0;
-#endif
-}
-Determining if the include file pthread.h exists passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_35c19/fast && /usr/bin/make -f CMakeFiles/cmTC_35c19.dir/build.make CMakeFiles/cmTC_35c19.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_35c19.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_35c19.dir/CheckIncludeFile.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_35c19
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_35c19.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_35c19.dir/CheckIncludeFile.c.o  -o cmTC_35c19  -latomic -lm -ldl 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-
-Performing C SOURCE FILE Test HAVE_PTHREAD succeeded with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_b2735/fast && /usr/bin/make -f CMakeFiles/cmTC_b2735.dir/build.make CMakeFiles/cmTC_b2735.dir/build
-make[1]: Entering directory '/home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_b2735.dir/src.c.o
-/usr/bin/cc   -DHAVE_PTHREAD   -pthread -o CMakeFiles/cmTC_b2735.dir/src.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/src.c
-Linking C executable cmTC_b2735
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b2735.dir/link.txt --verbose=1
-/usr/bin/cc  -DHAVE_PTHREAD    -rdynamic CMakeFiles/cmTC_b2735.dir/src.c.o  -o cmTC_b2735  -latomic -lm -ldl 
-make[1]: Leaving directory '/home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp'
-
-
-Source file was:
-int main(void) { return 0; }
-Determining if the pthread_setschedparam exist passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_32f60/fast && /usr/bin/make -f CMakeFiles/cmTC_32f60.dir/build.make CMakeFiles/cmTC_32f60.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_32f60.dir/CheckSymbolExists.c.o
-/usr/bin/cc   -pthread   -o CMakeFiles/cmTC_32f60.dir/CheckSymbolExists.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTC_32f60
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_32f60.dir/link.txt --verbose=1
-/usr/bin/cc   -pthread    -rdynamic CMakeFiles/cmTC_32f60.dir/CheckSymbolExists.c.o  -o cmTC_32f60  -latomic -lm -ldl 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-File /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
-/* */
-#include <pthread.h>
-
-int main(int argc, char** argv)
-{
-  (void)argv;
-#ifndef pthread_setschedparam
-  return ((int*)(&pthread_setschedparam))[argc];
-#else
-  (void)argc;
-  return 0;
-#endif
-}
-Determining if the getopt exist passed with the following output:
-Change Dir: /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_2f54a/fast && /usr/bin/make -f CMakeFiles/cmTC_2f54a.dir/build.make CMakeFiles/cmTC_2f54a.dir/build
-make[1] : on entre dans le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_2f54a.dir/CheckSymbolExists.c.o
-/usr/bin/cc   -pthread   -o CMakeFiles/cmTC_2f54a.dir/CheckSymbolExists.c.o   -c /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTC_2f54a
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2f54a.dir/link.txt --verbose=1
-/usr/bin/cc   -pthread    -rdynamic CMakeFiles/cmTC_2f54a.dir/CheckSymbolExists.c.o  -o cmTC_2f54a  -latomic -lm -ldl 
-make[1] : on quitte le répertoire « /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp »
-
-
-File /home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
-/* */
-#include <unistd.h>
-
-int main(int argc, char** argv)
-{
-  (void)argv;
-#ifndef getopt
-  return ((int*)(&getopt))[argc];
-#else
-  (void)argc;
-  return 0;
-#endif
-}

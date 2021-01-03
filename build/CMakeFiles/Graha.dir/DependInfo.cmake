@@ -15,17 +15,12 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../glimac/include"
   "../modellib/include"
   "../third-party/include"
-  "../sndfile/include"
-  "sndfile/include"
-  "../OpenAL/include"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/maxime/Documents/PROJET_2020/Graha/build/modellib/CMakeFiles/modellib.dir/DependInfo.cmake"
   "/home/maxime/Documents/PROJET_2020/Graha/build/glimac/CMakeFiles/glimac.dir/DependInfo.cmake"
-  "/home/maxime/Documents/PROJET_2020/Graha/build/sndfile/CMakeFiles/sndfile.dir/DependInfo.cmake"
-  "/home/maxime/Documents/PROJET_2020/Graha/build/OpenAL/CMakeFiles/OpenAL.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

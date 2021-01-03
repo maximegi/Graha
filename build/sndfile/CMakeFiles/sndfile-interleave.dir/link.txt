@@ -1,1 +1,0 @@
-/usr/bin/cc -O2 -g -DNDEBUG  -rdynamic CMakeFiles/sndfile-interleave.dir/programs/sndfile-interleave.c.o CMakeFiles/sndfile-interleave.dir/programs/common.c.o  -o sndfile-interleave  libsndfile.a -lm 

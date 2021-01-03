@@ -1,1 +1,0 @@
-/usr/bin/cc -O2 -g -DNDEBUG  -rdynamic CMakeFiles/long_read_write_test.dir/tests/long_read_write_test.c.o  -o long_read_write_test  libsndfile.a libtest_utils.a -lm libsndfile.a -lm 

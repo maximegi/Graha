@@ -1,1 +1,0 @@
-/usr/bin/cc -O2 -g -DNDEBUG  -rdynamic CMakeFiles/make_sine.dir/examples/make_sine.c.o  -o make_sine  libsndfile.a -lm 

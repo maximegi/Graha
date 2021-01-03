@@ -20,11 +20,7 @@ add_subdirectory(modellib)
 
 add_subdirectory(glimac)
 
-add_subdirectory(sndfile EXCLUDE_FROM_ALL)
-
-add_subdirectory(OpenAL EXCLUDE_FROM_ALL)
-
-set(ALL_LIBRARIES modellib glimac ${SDL_LIBRARY} ${OPENGL_LIBRARIES} ${GLEW_LIBRARY} ${ASSIMP_LIBRARIES} sndfile OpenAL)
+set(ALL_LIBRARIES modellib glimac ${SDL_LIBRARY} ${OPENGL_LIBRARIES} ${GLEW_LIBRARY} ${ASSIMP_LIBRARIES})
 
 file(GLOB HEADER_FILES ${CMAKE_SOURCE_DIR}/src/*.hpp)
 file(GLOB SRC_FILES ${CMAKE_SOURCE_DIR}/src/*.cpp)
@@ -32,6 +28,5 @@ file(GLOB_RECURSE SHADER_FILES ${CMAKE_SOURCE_DIR}/assets/shaders/*.glsl)
 
 set(OUTPUT ${PROJECT_NAME})
 add_executable(${OUTPUT} ${HEADER_FILES} ${SRC_FILES} ${SHADER_FILES})
-target_link_libraries(${OUTPUT} ${ALL_LIBRARIES})
-
-target_compile_options(${OUTPUT} PRIVATE -lopenal)
+target_link_libraries(${OUTPUT} ${ALL_LIBRARIES} openal sndfile)
+file(COPY assets DESTINATION ${CMAKE_CURRENT_BINARY_DIR})

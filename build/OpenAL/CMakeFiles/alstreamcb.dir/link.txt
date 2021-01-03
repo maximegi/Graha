@@ -1,1 +1,0 @@
-/usr/bin/c++  -O2 -g -D_DEBUG  -rdynamic CMakeFiles/alstreamcb.dir/examples/alstreamcb.cpp.o  -o alstreamcb  -Wl,-rpath,/home/maxime/Documents/PROJET_2020/Graha/build/OpenAL -pthread /usr/lib/x86_64-linux-gnu/libsndfile.so libex-common.a libopenal.so.1.21.0 -lrt 

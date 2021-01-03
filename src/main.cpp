@@ -67,11 +67,17 @@ int main(int argc, char** argv) {
     FreeflyCamera camera;
     glm::vec2 mousePosition = windowManager.getMousePosition();
 
-    //InitOpenAL();
-    // std::string filepath = "background.ogg";
-    // Audio music(filepath);
-    // music.AudioFromFile("background.ogg","assets/audio");
-
+    initOpenAL();
+    std::string musicfile = "assets/audio/music.ogg";
+    std::string footfile = "assets/audio/foot.ogg";
+    std::string newobjectfile = "assets/audio/new_object.ogg";
+    std::string woodfile = "assets/audio/wood.ogg";
+    Audio music(musicfile);
+    Audio foot(footfile);
+    Audio new_object(newobjectfile);
+    Audio wood(woodfile);
+    music.play(1);
+    
     // Application loop:
     bool done = false;
     while(!done) {
@@ -82,7 +88,6 @@ int main(int argc, char** argv) {
                 done = true; // Leave the loop after this iteration
             }
         }
-
         //RENDERING CODE
         glClearColor(0.1,0.2,0.4,0.3);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);//
@@ -97,28 +102,48 @@ int main(int argc, char** argv) {
         if(windowManager.isKeyPressed(SDLK_q))
         {
             camera.moveLeft(0.1f);
+            foot.pause();
+            foot.play(0);
         }
         if(windowManager.isKeyPressed(SDLK_z))
         {
             camera.moveFront(0.1f);
+            foot.pause();
+            foot.play(0);
         }
         if(windowManager.isKeyPressed(SDLK_d))
         {
             camera.moveLeft(-0.1f);
+            foot.pause();
+            foot.play(0);
         }
         if(windowManager.isKeyPressed(SDLK_s))
         {
             camera.moveFront(-0.1f);
+            foot.pause();
+            foot.play(0);
         }
         if(windowManager.isKeyPressed(SDLK_SPACE))
         {
             camera.moveUp(0.1f);
+            foot.pause();
+            foot.play(0);
         }
-
+        //test son recoltage
+        if(windowManager.isKeyPressed(SDLK_e))
+        {
+            new_object.pause();
+            new_object.play(0);
+        }
+        //test son bois
+        if(windowManager.isKeyPressed(SDLK_c))
+        {
+            wood.pause();
+            wood.play(0);
+        }
         //LIGHTS
         glUniform3fv(locationLightDirection,1,glm::value_ptr(glm::vec3(-1.,-1.,0.))); //Position of the light, don't forget to multiply by the view matrix
         glUniform3fv(locationLightIntensity,1,glm::value_ptr(glm::vec3(1.,1.,1.))); //Color of the light
-
 
     //VOLCANO
         //MATRIXES
@@ -159,7 +184,6 @@ int main(int argc, char** argv) {
 
         //DRAW
         cube.DrawColors();
-
         //END OF RENDERING CODE
 
         mousePosition = windowManager.getMousePosition();
@@ -168,8 +192,9 @@ int main(int argc, char** argv) {
         windowManager.swapBuffers();
     }
     cube.deleteBuffers();
-    // music.deleteBuffer();
-    //ShutdownOpenAL();
+    music.deleteBuffer();
+    foot.deleteBuffer();
+    shutdownOpenAL();
     return EXIT_SUCCESS;
 
 }

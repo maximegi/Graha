@@ -18,13 +18,16 @@ class Audio
 			loadAudio(path);
 		}
 		void deleteBuffer();
-		ALuint AudioFromFile(const char *path, const std::string &directory);
-		ALuint mSource;
+		void play(int type);
+		void stop();
+		void pause();
 	private:
 		void loadAudio(const std::string &path);
-		ALuint mBuffer;
+		ALuint mBuffer, mSource;
+		ALint mStatus;
+		std::string mPath;
 
 };
 
-bool InitOpenAL();
-void ShutdownOpenAL();
+bool initOpenAL();
+void shutdownOpenAL();

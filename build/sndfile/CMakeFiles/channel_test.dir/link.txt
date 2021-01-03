@@ -1,1 +1,0 @@
-/usr/bin/cc -O2 -g -DNDEBUG  -rdynamic CMakeFiles/channel_test.dir/tests/channel_test.c.o  -o channel_test  libsndfile.a libtest_utils.a -lm libsndfile.a -lm 

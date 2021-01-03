@@ -1,1 +1,0 @@
-/usr/bin/cc -O2 -g -DNDEBUG  -rdynamic CMakeFiles/sndfile-metadata-get.dir/programs/sndfile-metadata-get.c.o CMakeFiles/sndfile-metadata-get.dir/programs/common.c.o  -o sndfile-metadata-get  libsndfile.a -lm 

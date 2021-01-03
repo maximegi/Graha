@@ -1,1 +1,0 @@
-/usr/bin/cc -O2 -g -DNDEBUG  -rdynamic CMakeFiles/sfprocess.dir/examples/sfprocess.c.o  -o sfprocess  libsndfile.a -lm 

@@ -1,1 +1,0 @@
-/usr/bin/cc -O2 -g -DNDEBUG  -rdynamic CMakeFiles/virtual_io_test.dir/tests/virtual_io_test.c.o  -o virtual_io_test  libsndfile.a libtest_utils.a -lm libsndfile.a -lm 

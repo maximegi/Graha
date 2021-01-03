@@ -1,1 +1,0 @@
-/usr/bin/cc -O2 -g -DNDEBUG  -rdynamic CMakeFiles/sndfile-info.dir/programs/sndfile-info.c.o CMakeFiles/sndfile-info.dir/programs/common.c.o  -o sndfile-info  libsndfile.a -lm 

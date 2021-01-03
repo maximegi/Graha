@@ -100,8 +100,6 @@ Graha: /usr/lib/x86_64-linux-gnu/libSDLmain.a
 Graha: /usr/lib/x86_64-linux-gnu/libSDL.so
 Graha: /usr/lib/x86_64-linux-gnu/libGL.so.1
 Graha: /usr/lib/x86_64-linux-gnu/libGLEW.so
-Graha: sndfile/libsndfile.a
-Graha: OpenAL/libopenal.so.1.21.0
 Graha: CMakeFiles/Graha.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/maxime/Documents/PROJET_2020/Graha/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Graha"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Graha.dir/link.txt --verbose=$(VERBOSE)
