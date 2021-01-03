@@ -86,6 +86,105 @@ glm::mat4 vectorstr2mat4(std::vector<std::string> vec)
 	    glm::vec3(std::stof(vec[6]), std::stof(vec[8]), std::stof(vec[7]))); //scale
 }
 
+void Planet::initSkybox()
+{
+	std::vector<float> skyboxVertices = {
+    // positions          
+	    -1.0f,  1.0f, -1.0f,
+	    -1.0f, -1.0f, -1.0f,
+	     1.0f, -1.0f, -1.0f,
+	     1.0f, -1.0f, -1.0f,
+	     1.0f,  1.0f, -1.0f,
+	    -1.0f,  1.0f, -1.0f,
+
+	    -1.0f, -1.0f,  1.0f,
+	    -1.0f, -1.0f, -1.0f,
+	    -1.0f,  1.0f, -1.0f,
+	    -1.0f,  1.0f, -1.0f,
+	    -1.0f,  1.0f,  1.0f,
+	    -1.0f, -1.0f,  1.0f,
+
+	     1.0f, -1.0f, -1.0f,
+	     1.0f, -1.0f,  1.0f,
+	     1.0f,  1.0f,  1.0f,
+	     1.0f,  1.0f,  1.0f,
+	     1.0f,  1.0f, -1.0f,
+	     1.0f, -1.0f, -1.0f,
+
+	    -1.0f, -1.0f,  1.0f,
+	    -1.0f,  1.0f,  1.0f,
+	     1.0f,  1.0f,  1.0f,
+	     1.0f,  1.0f,  1.0f,
+	     1.0f, -1.0f,  1.0f,
+	    -1.0f, -1.0f,  1.0f,
+
+	    -1.0f,  1.0f, -1.0f,
+	     1.0f,  1.0f, -1.0f,
+	     1.0f,  1.0f,  1.0f,
+	     1.0f,  1.0f,  1.0f,
+	    -1.0f,  1.0f,  1.0f,
+	    -1.0f,  1.0f, -1.0f,
+
+	    -1.0f, -1.0f, -1.0f,
+	    -1.0f, -1.0f,  1.0f,
+	     1.0f, -1.0f, -1.0f,
+	     1.0f, -1.0f, -1.0f,
+	    -1.0f, -1.0f,  1.0f,
+	     1.0f, -1.0f,  1.0f
+	};
+	mSkyboxFaces = {
+		mApplicationPath.dirPath() + "assets/textures/right.jpg",
+		mApplicationPath.dirPath() + "assets/textures/left.jpg",
+		mApplicationPath.dirPath() + "assets/textures/top.jpg",
+		mApplicationPath.dirPath() + "assets/textures/bottom.jpg",
+		mApplicationPath.dirPath() + "assets/textures/front.jpg",
+		mApplicationPath.dirPath() + "assets/textures/back.jpg",
+	}
+
+    glGenBuffers(1,&mVboSky);
+    glBindBuffer(GL_ARRAY_BUFFER,mVboSky);
+    GLfloat vertices[] = { -0.5f, -0.5f,
+                            0.5f, -0.5f, 
+                            0.0f, 0.5f };
+    glBufferData(GL_ARRAY_BUFFER, skyboxVertices.size()*sizeof(float), skyboxVertices.data(), GL_STATIC_DRAW);
+    glBindBuffer(GL_ARRAY_BUFFER,0);
+
+    glGenVertexArrays(1,&mVaoSky);
+    glBindVertexArray(mVaoSky);
+    glEnableVertexAttribArray(0);
+    glBindBuffer(GL_ARRAY_BUFFER,mVboSky);
+    glVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE,3*sizeof(GLfloat),0);
+    glBindBuffer(GL_ARRAY_BUFFER,0);
+    glBindVertexArray(0);
+
+	loadSkybox();
+}
+
+void Planet::loadSkybox()
+{
+    glGenTextures(1, &mTextureSkybox);
+    glBindTexture(GL_TEXTURE_CUBE_MAP, mTextureSkybox);
+
+    for (unsigned int i = 0; i < mSkyboxFaces.size(); i++)
+    {
+	    std::unique_ptr<Image> face = loadImage(mSkyboxFaces[i]);
+	    if(face == NULL)
+	    {
+	        std::cerr << "error: " + mSkyboxFaces[i] + " image could not be loaded" << std::endl;
+	        return EXIT_FAILURE;
+	    }
+        else
+        {
+            glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, 
+                         0, GL_RGBA, face->getWidth(), face->getHeight(), 0, GL_RGBA, GL_UNSIGNED_BYTE, face->getPixels());
+        }
+    }
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
+}  
 
 void Planet::processInput(const glimac::SDLWindowManager &windowManager, float deltaTime, glm::vec2 mousePosition)
 {

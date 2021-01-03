@@ -34,6 +34,7 @@ public:
 																								mSun(true), mUsingLamp(false)
 	{
 		parse(meshesFile);
+		initSkybox();
 	}
 
 	void processInput(const glimac::SDLWindowManager &windowManager, float deltaTime, glm::vec2 mousePosition);
@@ -52,10 +53,15 @@ private:
 	glimac::FilePath mApplicationPath;
     glimac::Program mProgram;
 
+    std::vector<glimac::FilePath> mSkyboxFaces;
+    GLuint mVboSky, mVaoSky, mTextureSkybox;
+    glimac::Program mSkyProgram;
+
     bool mSun;
     bool mUsingLamp;
 
     void parse(std::string &meshesFile);
+    void initSkybox();
     bool collision(glm::mat4 newTransformationsMatrix, glm::vec3 position);
 };
 
