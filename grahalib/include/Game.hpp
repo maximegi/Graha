@@ -30,7 +30,6 @@ public:
 			
 	void RenderLoop();
 	void close();
-	void quest();
 
 private:
 	unsigned int mWindowWidth, mWindowHeight;
