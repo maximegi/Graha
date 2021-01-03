@@ -27,13 +27,16 @@ add_subdirectory(modellib)
 
 add_subdirectory(glimac)
 
+set(ALL_LIBRARIES modellib glimac ${SDL_LIBRARY} ${OPENGL_LIBRARIES} ${GLEW_LIBRARY} ${ASSIMP_LIBRARIES})
+
 file(GLOB HEADER_FILES ${CMAKE_SOURCE_DIR}/src/*.hpp)
 file(GLOB SRC_FILES ${CMAKE_SOURCE_DIR}/src/*.cpp)
 file(GLOB_RECURSE SHADER_FILES ${CMAKE_SOURCE_DIR}/assets/shaders/*.glsl)
 
 set(OUTPUT ${PROJECT_NAME})
 add_executable(${OUTPUT} ${HEADER_FILES} ${SRC_FILES} ${SHADER_FILES})
-target_link_libraries(${OUTPUT} ${ALL_LIBRARIES})
+<<<<<<< HEAD
+target_link_libraries(${OUTPUT} ${ALL_LIBRARIES} openal sndfile)
 
 file(COPY assets DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 target_compile_options(${OUTPUT} PRIVATE -I/usr/include/freetype2 -I/usr/include/libpng16 -Wall -O2 -D VERBOSE) # -D VERBOSE to activate VERBOSE mode

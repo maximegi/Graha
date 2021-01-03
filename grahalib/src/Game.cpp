@@ -5,6 +5,8 @@
 
 void Game::RenderLoop()
 {
+    musicAudio.play();
+
 	bool done = false;
     while(!done) {
         // Event loop:
@@ -23,7 +25,7 @@ void Game::RenderLoop()
         lastFrame = currentFrame;
         
     //EVENTS
-        firstPlanet.processInput(mWindowManager,deltaTime, mMousePosition);
+        firstPlanet.processInput(mWindowManager,deltaTime, mMousePosition, footAudio);
 
     //MODELS
         firstPlanet.drawModels(mProjMatrix);
@@ -41,4 +43,11 @@ void Game::RenderLoop()
 void Game::close()
 {
 	firstPlanet.deleteBuffers();
+
+    cube.deleteBuffers();
+    music.deleteBuffer();
+    foot.deleteBuffer();
+    new_object.deleteBuffer();
+    wood.deleteBuffer();
+    shutdownOpenAL();
 }

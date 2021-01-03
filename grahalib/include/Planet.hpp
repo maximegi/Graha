@@ -21,6 +21,7 @@
 #include <Cylinder.hpp>
 #include <Spheric.hpp>
 
+#include "Audio.hpp"
 #include "FirstPersonCamera.hpp"
 
 class Planet
@@ -33,7 +34,7 @@ public:
 		parse(meshesFile);
 	}
 
-	void processInput(const glimac::SDLWindowManager &windowManager, float deltaTime, glm::vec2 mousePosition);
+	void processInput(const glimac::SDLWindowManager &windowManager, float deltaTime, glm::vec2 mousePosition, Audio footAudio);
 	void drawModels(glm::mat4 &ProjMatrix);
 	void deleteBuffers();
 
