@@ -42,12 +42,13 @@ void Game::RenderLoop()
 
 void Game::close()
 {
+    //MODELS
 	firstPlanet.deleteBuffers();
 
-    cube.deleteBuffers();
-    music.deleteBuffer();
-    foot.deleteBuffer();
-    new_object.deleteBuffer();
-    wood.deleteBuffer();
+    //AUDIO
+    musicAudio.deleteBuffer();
+    footAudio.deleteBuffer();
+    new_objectAudio.deleteBuffer();
+    woodAudio.deleteBuffer();
     shutdownOpenAL();
 }

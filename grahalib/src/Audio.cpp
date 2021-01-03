@@ -7,7 +7,7 @@
 #include <vector>
 #include "Audio.hpp"
 
-void Audio::loadAudio(const std::string &path, std::string type)
+void Audio::loadAudio(const std::string path, std::string type)
 {
 	SF_INFO fileInfos;
     SNDFILE* file = sf_open(path.c_str(), SFM_READ, &fileInfos);
