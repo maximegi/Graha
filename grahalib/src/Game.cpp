@@ -212,6 +212,9 @@ void Game::RenderLoop(glimac::FilePath &applicationPath)
         glEnableVertexAttribArray(VERTEX_ATTR_POSITION);
         glEnableVertexAttribArray(VERTEX_ATTR_TEXTURE);
         glBindBuffer(GL_ARRAY_BUFFER, vbo);
+        
+    //TEXTS
+        firstPlanet.quest(text, mWindowManager);
 
         glVertexAttribPointer(VERTEX_ATTR_POSITION,2,GL_FLOAT,GL_FALSE,sizeof(Vertex2DUV),(const GLvoid*)(offsetof(Vertex2DUV, position)));
         glVertexAttribPointer(VERTEX_ATTR_TEXTURE,2,GL_FLOAT,GL_FALSE,sizeof(Vertex2DUV),(const GLvoid*)(offsetof(Vertex2DUV, texture)));

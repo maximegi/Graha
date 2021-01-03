@@ -37,7 +37,6 @@ public:
 			
 	void RenderLoop(glimac::FilePath &applicationPath);
 	void close();
-	void quest();
 
 private:
 	unsigned int mWindowWidth, mWindowHeight;
