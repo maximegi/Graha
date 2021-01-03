@@ -33,7 +33,10 @@ file(GLOB_RECURSE SHADER_FILES ${CMAKE_SOURCE_DIR}/assets/shaders/*.glsl)
 
 set(OUTPUT ${PROJECT_NAME})
 add_executable(${OUTPUT} ${HEADER_FILES} ${SRC_FILES} ${SHADER_FILES})
-target_link_libraries(${OUTPUT} ${ALL_LIBRARIES})
+
+#sudo apt-get install libsndfile-dev
+#sudo apt-get install libopenal-dev
+target_link_libraries(${OUTPUT} ${ALL_LIBRARIES} openal sndfile)
 
 file(COPY assets DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 target_compile_options(${OUTPUT} PRIVATE -I/usr/include/freetype2 -I/usr/include/libpng16 -Wall -O2 -D VERBOSE) # -D VERBOSE to activate VERBOSE mode

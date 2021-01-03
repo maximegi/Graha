@@ -185,7 +185,7 @@ void Planet::quest(Text &text, const glimac::SDLWindowManager &windowManager){
     
 }
 
-void Planet::processInput(const glimac::SDLWindowManager &windowManager, float deltaTime, glm::vec2 mousePosition)
+void Planet::processInput(const glimac::SDLWindowManager &windowManager, float deltaTime, glm::vec2 mousePosition, Audio footAudio)
 {
     if(windowManager.isMouseButtonPressed(SDL_BUTTON_RIGHT))
     {
@@ -206,18 +206,26 @@ void Planet::processInput(const glimac::SDLWindowManager &windowManager, float d
     if(windowManager.isKeyPressed(SDLK_q) && !collision(glm::rotate(mTransformationsMatrix,glm::radians(t),mCamera.getDirection()),mCamera.getPosition()))
     {
         mTransformationsMatrix = glm::rotate(mTransformationsMatrix,glm::radians(t),mCamera.getDirection());
+        footAudio.pause();
+        footAudio.play();
     }
     if(windowManager.isKeyPressed(SDLK_z) && !collision(glm::rotate(mTransformationsMatrix,-glm::radians(t),mCamera.getLeftVector()),mCamera.getPosition()))
     {
         mTransformationsMatrix = glm::rotate(mTransformationsMatrix,-glm::radians(t),mCamera.getLeftVector());
+        footAudio.pause();
+        footAudio.play();
     }
     if(windowManager.isKeyPressed(SDLK_d) && !collision(glm::rotate(mTransformationsMatrix,-glm::radians(t),mCamera.getDirection()),mCamera.getPosition()))
     {
         mTransformationsMatrix = glm::rotate(mTransformationsMatrix,-glm::radians(t),mCamera.getDirection());
+        footAudio.pause();
+        footAudio.play();
     }
     if(windowManager.isKeyPressed(SDLK_s) && !collision(glm::rotate(mTransformationsMatrix,glm::radians(t),mCamera.getLeftVector()),mCamera.getPosition()))
     {
         mTransformationsMatrix = glm::rotate(mTransformationsMatrix,glm::radians(t),mCamera.getLeftVector());
+        footAudio.pause();
+        footAudio.play();
     }
 
 }

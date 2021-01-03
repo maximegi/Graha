@@ -1,4 +1,6 @@
 #include <GL/glew.h>
+#include <AL/al.h>
+#include <AL/alc.h>
 #include <iostream>
 
 //glimac
@@ -7,6 +9,7 @@
 
 //grahalib
 #include <Game.hpp>
+#include <Audio.hpp>
 
 using namespace glimac;
 
@@ -16,7 +19,6 @@ int main(int argc, char** argv) {
     const unsigned int WINDOW_H = 900;
 
     // Initialize SDL
-
     SDLWindowManager window(WINDOW_W, WINDOW_H, "Graha");
 
     // Initialize glew for OpenGL3+ support
@@ -29,6 +31,10 @@ int main(int argc, char** argv) {
     std::cout << "OpenGL Version : " << glGetString(GL_VERSION) << std::endl;
     std::cout << "GLEW Version : " << glewGetString(GLEW_VERSION) << std::endl;
 
+    //Initialize OpenAL
+    initOpenAL();
+
+
     //GAME
 
     //Initialization
@@ -36,7 +42,7 @@ int main(int argc, char** argv) {
     Game graha(WINDOW_W, WINDOW_H, window, applicationPath);
 
     // Application loop:
-    graha.RenderLoop();
+    graha.RenderLoop(applicationPath);
 
     //Delete buffers from planets
     graha.close();
