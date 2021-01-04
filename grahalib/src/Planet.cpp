@@ -1,6 +1,6 @@
 #include <iostream>
 #include <GL/glew.h>
-#include "Shader.hpp"
+#include <Image.hpp>
 
 #include "Planet.hpp"
 
@@ -89,102 +89,82 @@ glm::mat4 vectorstr2mat4(std::vector<std::string> vec)
 void Planet::initSkybox()
 {
 	std::vector<float> skyboxVertices = {
-    // positions          
-	    -1.0f,  1.0f, -1.0f,
-	    -1.0f, -1.0f, -1.0f,
-	     1.0f, -1.0f, -1.0f,
-	     1.0f, -1.0f, -1.0f,
-	     1.0f,  1.0f, -1.0f,
-	    -1.0f,  1.0f, -1.0f,
-
-	    -1.0f, -1.0f,  1.0f,
-	    -1.0f, -1.0f, -1.0f,
-	    -1.0f,  1.0f, -1.0f,
-	    -1.0f,  1.0f, -1.0f,
-	    -1.0f,  1.0f,  1.0f,
-	    -1.0f, -1.0f,  1.0f,
-
-	     1.0f, -1.0f, -1.0f,
-	     1.0f, -1.0f,  1.0f,
-	     1.0f,  1.0f,  1.0f,
-	     1.0f,  1.0f,  1.0f,
-	     1.0f,  1.0f, -1.0f,
-	     1.0f, -1.0f, -1.0f,
-
-	    -1.0f, -1.0f,  1.0f,
-	    -1.0f,  1.0f,  1.0f,
-	     1.0f,  1.0f,  1.0f,
-	     1.0f,  1.0f,  1.0f,
-	     1.0f, -1.0f,  1.0f,
-	    -1.0f, -1.0f,  1.0f,
-
-	    -1.0f,  1.0f, -1.0f,
-	     1.0f,  1.0f, -1.0f,
-	     1.0f,  1.0f,  1.0f,
-	     1.0f,  1.0f,  1.0f,
-	    -1.0f,  1.0f,  1.0f,
-	    -1.0f,  1.0f, -1.0f,
-
-	    -1.0f, -1.0f, -1.0f,
-	    -1.0f, -1.0f,  1.0f,
-	     1.0f, -1.0f, -1.0f,
-	     1.0f, -1.0f, -1.0f,
-	    -1.0f, -1.0f,  1.0f,
-	     1.0f, -1.0f,  1.0f
+    // positions
+		//front
+	    -20.0f,  20.0f, -20.0f,  2.f/3.f,  1.f/4.f,
+	    -20.0f, -20.0f, -20.0f,  1.f/3.f,  1.f/4.f,
+	     20.0f, -20.0f, -20.0f,  1.f/3.f,  2.f/4.f,
+	     20.0f, -20.0f, -20.0f,  1.f/3.f,  2.f/4.f,
+	     20.0f,  20.0f, -20.0f,  2.f/3.f,  2.f/4.f,
+	    -20.0f,  20.0f, -20.0f,  2.f/3.f,  1.f/4.f,
+	    //left
+	    -20.0f, -20.0f,  20.0f,  1.f/3.f,  0.f/4.f,
+	    -20.0f, -20.0f, -20.0f,  1.f/3.f,  1.f/4.f,
+	    -20.0f,  20.0f, -20.0f,  2.f/3.f,  1.f/4.f,
+	    -20.0f,  20.0f, -20.0f,  2.f/3.f,  1.f/4.f,
+	    -20.0f,  20.0f,  20.0f,  2.f/3.f,  0.f/4.f,
+	    -20.0f, -20.0f,  20.0f,  1.f/3.f,  0.f/4.f,
+	    //right
+	     20.0f, -20.0f, -20.0f,  1.f/3.f,  2.f/4.f,
+	     20.0f, -20.0f,  20.0f,  1.f/3.f,  3.f/4.f,
+	     20.0f,  20.0f,  20.0f,  2.f/3.f,  3.f/4.f,
+	     20.0f,  20.0f,  20.0f,  2.f/3.f,  3.f/4.f,
+	     20.0f,  20.0f, -20.0f,  2.f/3.f,  2.f/4.f,
+	     20.0f, -20.0f, -20.0f,  1.f/3.f,  2.f/4.f,
+	     //back
+	    -20.0f, -20.0f,  20.0f,  1.f/3.f,  4.f/4.f,
+	    -20.0f,  20.0f,  20.0f,  2.f/3.f,  4.f/4.f,
+	     20.0f,  20.0f,  20.0f,  2.f/3.f,  3.f/4.f,
+	     20.0f,  20.0f,  20.0f,  2.f/3.f,  3.f/4.f,
+	     20.0f, -20.0f,  20.0f,  1.f/3.f,  3.f/4.f,
+	    -20.0f, -20.0f,  20.0f,  1.f/3.f,  4.f/4.f,
+	    //top
+	    -20.0f,  20.0f, -20.0f,  2.f/3.f,  1.f/4.f,
+	     20.0f,  20.0f, -20.0f,  2.f/3.f,  2.f/4.f,
+	     20.0f,  20.0f,  20.0f,  3.f/3.f,  2.f/4.f,
+	     20.0f,  20.0f,  20.0f,  3.f/3.f,  2.f/4.f,
+	    -20.0f,  20.0f,  20.0f,  3.f/3.f,  1.f/4.f,
+	    -20.0f,  20.0f, -20.0f,  2.f/3.f,  1.f/4.f,
+	    //bottom
+	    -20.0f, -20.0f, -20.0f,  1.f/3.f,  1.f/4.f,
+	    -20.0f, -20.0f,  20.0f,  0.f/3.f,  1.f/4.f,
+	     20.0f, -20.0f, -20.0f,  1.f/3.f,  2.f/4.f,
+	     20.0f, -20.0f, -20.0f,  1.f/3.f,  2.f/4.f,
+	    -20.0f, -20.0f,  20.0f,  0.f/3.f,  1.f/4.f,
+	     20.0f, -20.0f,  20.0f,  0.f/3.f,  2.f/4.f
 	};
-	mSkyboxFaces = {
-		mApplicationPath.dirPath() + "assets/textures/right.jpg",
-		mApplicationPath.dirPath() + "assets/textures/left.jpg",
-		mApplicationPath.dirPath() + "assets/textures/top.jpg",
-		mApplicationPath.dirPath() + "assets/textures/bottom.jpg",
-		mApplicationPath.dirPath() + "assets/textures/front.jpg",
-		mApplicationPath.dirPath() + "assets/textures/back.jpg",
-	}
 
     glGenBuffers(1,&mVboSky);
     glBindBuffer(GL_ARRAY_BUFFER,mVboSky);
-    GLfloat vertices[] = { -0.5f, -0.5f,
-                            0.5f, -0.5f, 
-                            0.0f, 0.5f };
     glBufferData(GL_ARRAY_BUFFER, skyboxVertices.size()*sizeof(float), skyboxVertices.data(), GL_STATIC_DRAW);
     glBindBuffer(GL_ARRAY_BUFFER,0);
 
     glGenVertexArrays(1,&mVaoSky);
     glBindVertexArray(mVaoSky);
     glEnableVertexAttribArray(0);
+    glEnableVertexAttribArray(1);
     glBindBuffer(GL_ARRAY_BUFFER,mVboSky);
-    glVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE,3*sizeof(GLfloat),0);
+    glVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE,5*sizeof(GLfloat),0);
+    glVertexAttribPointer(1,2,GL_FLOAT,GL_FALSE,5*sizeof(GLfloat),(const GLvoid*)(3*sizeof(float)));
     glBindBuffer(GL_ARRAY_BUFFER,0);
     glBindVertexArray(0);
 
-	loadSkybox();
-}
 
-void Planet::loadSkybox()
-{
     glGenTextures(1, &mTextureSkybox);
-    glBindTexture(GL_TEXTURE_CUBE_MAP, mTextureSkybox);
+    glBindTexture(GL_TEXTURE_2D, mTextureSkybox);
 
-    for (unsigned int i = 0; i < mSkyboxFaces.size(); i++)
+    std::unique_ptr<glimac::Image> skyboxImage = loadImage(mApplicationPath.dirPath() + "assets/textures/SkyBox.jpg");
+    if(skyboxImage == NULL)
     {
-	    std::unique_ptr<Image> face = loadImage(mSkyboxFaces[i]);
-	    if(face == NULL)
-	    {
-	        std::cerr << "error: " + mSkyboxFaces[i] + " image could not be loaded" << std::endl;
-	        return EXIT_FAILURE;
-	    }
-        else
-        {
-            glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, 
-                         0, GL_RGBA, face->getWidth(), face->getHeight(), 0, GL_RGBA, GL_UNSIGNED_BYTE, face->getPixels());
-        }
+        std::cerr << "error: skybox image could not be loaded" << std::endl;
+        return;
     }
-    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
-}  
+
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, skyboxImage->getWidth(), skyboxImage->getHeight(), 0, GL_RGBA, GL_FLOAT, skyboxImage->getPixels());
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glBindTexture(GL_TEXTURE_2D, 0);
+}
 
 void Planet::processInput(const glimac::SDLWindowManager &windowManager, float deltaTime, glm::vec2 mousePosition)
 {
@@ -221,7 +201,6 @@ void Planet::processInput(const glimac::SDLWindowManager &windowManager, float d
     {
         mTransformationsMatrix = glm::rotate(mTransformationsMatrix,glm::radians(t),mCamera.getLeftVector());
     }
-
 
     if(windowManager.isKeyPressed(SDLK_p))
     {
@@ -284,13 +263,18 @@ void Planet::drawModels(glm::mat4 &ProjMatrix)
     //LIGHTS
     if(mSun)
     {
-	    glUniform3fv(glGetUniformLocation(mProgram.getGLId(), "uLightDirection"),1,glm::value_ptr(glm::vec3(-1.,-1.,0.))); //Position of the light, don't forget to multiply by the view matrix
-	    glUniform3fv(glGetUniformLocation(mProgram.getGLId(), "uLightIntensity"),1,glm::value_ptr(glm::vec3(1.,1.,1.))); //Color of the light
+	    glUniform3fv(glGetUniformLocation(mProgram.getGLId(), "uFirstLightDirection"),1,glm::value_ptr(glm::vec3(mSkyTransform*glm::vec4(1.,-1.,1.,0.))));
+	    glUniform3fv(glGetUniformLocation(mProgram.getGLId(), "uSecondLightDirection"),1,glm::value_ptr(glm::vec3(mSkyTransform*glm::vec4(-1.,-1.,1.,0.))));
+	    glUniform3fv(glGetUniformLocation(mProgram.getGLId(), "uThirdLightDirection"),1,glm::value_ptr(glm::vec3(mSkyTransform*glm::vec4(0.,-1.,-1.,0.))));
+	    glUniform3fv(glGetUniformLocation(mProgram.getGLId(), "uFourthLightDirection"),1,glm::value_ptr(glm::vec3(mSkyTransform*glm::vec4(1.,1.,1.,0.))));
+	    glUniform3fv(glGetUniformLocation(mProgram.getGLId(), "uFifthLightDirection"),1,glm::value_ptr(glm::vec3(mSkyTransform*glm::vec4(-1.,1.,1.,0.))));
+	    glUniform3fv(glGetUniformLocation(mProgram.getGLId(), "uSixthLightDirection"),1,glm::value_ptr(glm::vec3(mSkyTransform*glm::vec4(0.,1.,-1.,0.))));
+	    glUniform3fv(glGetUniformLocation(mProgram.getGLId(), "uLightIntensity"),1,glm::value_ptr(glm::vec3(2.,2.,2.))); //Color of the light
 	}
 
     if(mUsingLamp)
     {
-	    glUniform3fv(glGetUniformLocation(mProgram.getGLId(), "uLightPos_vs"),1,glm::value_ptr(mCamera.getPosition())); //Position of the light which is the position of the camera
+	    glUniform3fv(glGetUniformLocation(mProgram.getGLId(), "uLightPos_vs"),1,glm::value_ptr(mCamera.getPosition())); 
 	    glUniform3fv(glGetUniformLocation(mProgram.getGLId(), "uLightIntensity"),1,glm::value_ptr(glm::vec3(2.,2.,2.))); //Color of the light
 	    glUniform3fv(glGetUniformLocation(mProgram.getGLId(), "uLightDirection"),1,glm::value_ptr(mCamera.getFrontVector()));
 	    glUniform1f(glGetUniformLocation(mProgram.getGLId(), "uInnerCutOff"),glm::cos(glm::radians(17.5f)));
@@ -318,6 +302,27 @@ void Planet::drawModels(glm::mat4 &ProjMatrix)
     glDisable(GL_DEPTH_TEST);
 }
 
+void Planet::drawSky(glm::mat4 &ProjMatrix)
+{
+    glEnable(GL_DEPTH_TEST);
+
+    mSkyProgram.use();
+
+    mSkyTransform = mTransformationsMatrix * mSkyTransform;
+
+    glUniformMatrix4fv(glGetUniformLocation(mSkyProgram.getGLId(), "uMVPMatrix"),1,GL_FALSE,glm::value_ptr(ProjMatrix * mCamera.getViewMatrix() * mSkyTransform));
+
+    //DRAW
+
+    glBindVertexArray(mVaoSky);
+    glBindTexture(GL_TEXTURE_2D, mTextureSkybox);
+    glDrawArrays(GL_TRIANGLES, 0, 36);
+    glBindTexture(GL_TEXTURE_2D,0);
+    glBindVertexArray(0);
+
+    glDisable(GL_DEPTH_TEST);
+}
+
 void Planet::deleteBuffers()
 {
     std::map<std::string, Model<Rectangle>>::iterator irec;
@@ -335,4 +340,7 @@ void Planet::deleteBuffers()
     {
         (isph->second).deleteBuffers();
     }
+
+    glDeleteBuffers(1, &mVboSky);
+    glDeleteVertexArrays(1,&mVaoSky);
 }

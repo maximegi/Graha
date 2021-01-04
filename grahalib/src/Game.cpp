@@ -15,7 +15,7 @@ void Game::RenderLoop()
             }
         }
 
-        glClearColor(0.1,0.2,0.4,0.3);
+        // glClearColor(0.1,0.2,0.4,0.3);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         float currentFrame = mWindowManager.getTime();
@@ -25,8 +25,12 @@ void Game::RenderLoop()
     //EVENTS
         firstPlanet.processInput(mWindowManager,deltaTime, mMousePosition);
 
+    //SKY
+        firstPlanet.drawSky(mProjMatrix);
+
     //MODELS
         firstPlanet.drawModels(mProjMatrix);
+
 
     //TEXTS
         text.write("Objectives", 0.1, 150.0, 0.7, glm::vec3(1., 1., 1.));

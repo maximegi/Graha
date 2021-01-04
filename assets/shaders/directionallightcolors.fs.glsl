@@ -13,12 +13,17 @@ uniform vec3 uKd;
 uniform vec3 uKs;
 uniform float uShininess;
 
-uniform vec3 uLightDirection;
+uniform vec3 uFirstLightDirection;
+uniform vec3 uSecondLightDirection;
+uniform vec3 uThirdLightDirection;
+uniform vec3 uFourthLightDirection;
+uniform vec3 uFifthLightDirection;
+uniform vec3 uSixthLightDirection;
 uniform vec3 uLightIntensity;
 
-vec3 blinnPhong()
+vec3 blinnPhong(vec3 lightDirection)
 {
-	vec3 lightDir = normalize(-uLightDirection);
+	vec3 lightDir = normalize(-lightDirection);
 
 	vec3 ambientColor = vec3(0.1,0.1,0.1)*uKa;
 
@@ -33,5 +38,5 @@ vec3 blinnPhong()
 
 void main()
 {
-	fFragColor = blinnPhong();
+	fFragColor = (blinnPhong(uFirstLightDirection) + blinnPhong(uSecondLightDirection) + blinnPhong(uThirdLightDirection) + blinnPhong(uFourthLightDirection) + blinnPhong(uFifthLightDirection) + blinnPhong(uSixthLightDirection))/6.f;
 }

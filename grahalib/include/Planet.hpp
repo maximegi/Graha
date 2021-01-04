@@ -31,6 +31,9 @@ public:
 																								mApplicationPath(applicationPath),
 																								mProgram(glimac::loadProgram(applicationPath.dirPath() + "assets/shaders/3D.vs.glsl",
 							                              							 										 applicationPath.dirPath() + "assets/shaders/directionallightcolors.fs.glsl")),
+																								mSkyProgram(glimac::loadProgram(applicationPath.dirPath() + "assets/shaders/skybox.vs.glsl",
+							                              							 											applicationPath.dirPath() + "assets/shaders/skybox.fs.glsl")),
+																								mSkyTransform(glm::mat4(1)),
 																								mSun(true), mUsingLamp(false)
 	{
 		parse(meshesFile);
@@ -39,6 +42,7 @@ public:
 
 	void processInput(const glimac::SDLWindowManager &windowManager, float deltaTime, glm::vec2 mousePosition);
 	void drawModels(glm::mat4 &ProjMatrix);
+	void drawSky(glm::mat4 &ProjMatrix);
 	void deleteBuffers();
 
 private:
@@ -53,9 +57,9 @@ private:
 	glimac::FilePath mApplicationPath;
     glimac::Program mProgram;
 
-    std::vector<glimac::FilePath> mSkyboxFaces;
-    GLuint mVboSky, mVaoSky, mTextureSkybox;
     glimac::Program mSkyProgram;
+    GLuint mVboSky, mVaoSky, mTextureSkybox;
+    glm::mat4 mSkyTransform;
 
     bool mSun;
     bool mUsingLamp;
