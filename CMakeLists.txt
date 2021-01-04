@@ -19,7 +19,7 @@ find_package(Freetype REQUIRED)
 
 include_directories(${SDL_INCLUDE_DIR} ${OPENGL_INCLUDE_DIR} ${GLEW_INCLUDE_DIR} ${ASSIMP_INCLUDE_DIR} glimac/include modellib/include grahalib/include third-party/include)
 
-set(ALL_LIBRARIES grahalib modellib glimac ${FREETYPE_LIBRARIES} ${SDL_LIBRARY} ${OPENGL_LIBRARIES} ${GLEW_LIBRARY} ${ASSIMP_LIBRARIES})
+set(ALL_LIBRARIES grahalib modellib glimac openal sndfile ${FREETYPE_LIBRARIES} ${SDL_LIBRARY} ${OPENGL_LIBRARIES} ${GLEW_LIBRARY} ${ASSIMP_LIBRARIES})
 
 add_subdirectory(grahalib)
 
@@ -36,7 +36,7 @@ add_executable(${OUTPUT} ${HEADER_FILES} ${SRC_FILES} ${SHADER_FILES})
 
 #sudo apt-get install libsndfile-dev
 #sudo apt-get install libopenal-dev
-target_link_libraries(${OUTPUT} ${ALL_LIBRARIES} openal sndfile)
+target_link_libraries(${OUTPUT} ${ALL_LIBRARIES})
 
 file(COPY assets DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 target_compile_options(${OUTPUT} PRIVATE -I/usr/include/freetype2 -I/usr/include/libpng16 -Wall -O2 -D VERBOSE) # -D VERBOSE to activate VERBOSE mode

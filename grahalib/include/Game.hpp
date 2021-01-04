@@ -47,16 +47,7 @@ private:
 	glimac::SDLWindowManager mWindowManager;
 	Text text;
 
-    Audio musicAudio;
-    Audio footAudio;
-    Audio new_objectAudio;
-    Audio woodAudio;
-    Audio selectAudio;
-    Audio flyoverAudio;
-    Audio roseAudio;
-    Audio blueAudio;
-    Audio yellowAudio;
-    Audio applauseAudio;
+    Audio musicAudio, footAudio, new_objectAudio, woodAudio, selectAudio, flyoverAudio, roseAudio, blueAudio, yellowAudio, applauseAudio;
 
     glm::mat4 mProjMatrix;
     glm::vec2 mMousePosition;

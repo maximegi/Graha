@@ -5,15 +5,15 @@
 
 void Mesh::DrawTextures(glimac::Program &program)
 {
-	// glActiveTexture(GL_TEXTURE0);
-	// glBindTexture(GL_TEXTURE_2D, mTextures[0].id);
-	// glUniform1i(glGetUniformLocation(program.getGLId(),mTextures[0].uName.c_str()),0);
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, mTextures[0].id);
+	glUniform1i(glGetUniformLocation(program.getGLId(),mTextures[0].uName.c_str()),0);
 
-	// glActiveTexture(GL_TEXTURE1);
-	// glBindTexture(GL_TEXTURE_2D, mTextures[1].id);
-	// glUniform1i(glGetUniformLocation(program.getGLId(),mTextures[1].uName.c_str()),1);
+	glActiveTexture(GL_TEXTURE1);
+	glBindTexture(GL_TEXTURE_2D, mTextures[1].id);
+	glUniform1i(glGetUniformLocation(program.getGLId(),mTextures[1].uName.c_str()),1);
 
-	// glActiveTexture(GL_TEXTURE0);
+	glActiveTexture(GL_TEXTURE0);
 
 	glBindVertexArray(this->vao);
 	glDrawElements(GL_TRIANGLES,this->mIndices.size(),GL_UNSIGNED_INT,0);

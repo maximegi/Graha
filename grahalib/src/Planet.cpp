@@ -183,13 +183,16 @@ void Planet::quest(Text &text, const glimac::SDLWindowManager &windowManager, Au
     if (mPhase0){
         if(windowManager.isKeyPressed(SDLK_e) && (rectangleModel.find("monster_pink")->second).canInteract(mCamera.getPosition()))
         {
+            rose.pause();
             rose.play();
             text.write("Il n'y a plus de lumiere ! Retrouve les piles !", 210.0, 100.0, 0.42, glm::vec3(1., 1., 1.));
+            mProgram = glimac::loadProgram(mApplicationPath.dirPath() + "assets/shaders/3D.vs.glsl", mApplicationPath.dirPath() + "assets/shaders/spotlight.fs.glsl");
             mPhase0 = false;
             mPhase1 = true;
         }
         if(windowManager.isKeyPressed(SDLK_e) && (rectangleModel.find("monster_blue")->second).canInteract(mCamera.getPosition()))
         {
+            blue.pause();
             blue.play();
             text.write("Belle journée aujourd'hui, n'est-ce pas ?", 195.0, 100.0, 0.42, glm::vec3(1., 1., 1.));
         }
@@ -205,11 +208,13 @@ void Planet::quest(Text &text, const glimac::SDLWindowManager &windowManager, Au
     if (mPhase1){
         if(windowManager.isKeyPressed(SDLK_e) && (rectangleModel.find("monster_pink")->second).canInteract(mCamera.getPosition()))
         {
+            rose.pause();
             rose.play();
             text.write("Il n'y a plus de lumiere ! Retrouve les piles !", 210.0, 100.0, 0.42, glm::vec3(1., 1., 1.));
         }
         if(windowManager.isKeyPressed(SDLK_e) && (rectangleModel.find("monster_blue")->second).canInteract(mCamera.getPosition()))
         {
+            blue.pause();
             blue.play();
             text.write("J'ai perdu ma pile ! Je pense qu'elle n'est pas loin !", 195.0, 100.0, 0.42, glm::vec3(1., 1., 1.));
         }
@@ -251,14 +256,17 @@ void Planet::quest(Text &text, const glimac::SDLWindowManager &windowManager, Au
     if (mPhase2){
         if(windowManager.isKeyPressed(SDLK_e) && (rectangleModel.find("monster_pink")->second).canInteract(mCamera.getPosition()))
         {
+            rose.pause();
             rose.play();
             text.write("Merci beaucoup", 320.0, 120.0, 0.42, glm::vec3(1., 1., 1.));
             text.write("Ce radin de Bleu ne me donne jamais de bois, vole lui sa hache", 120.0, 90.0, 0.42, glm::vec3(1., 1., 1.));
             text.write("et coupe moi 3 arbres pour chauffer ma maison", 200.0, 60.0, 0.42, glm::vec3(1., 1., 1.));
             mNeedTalkToPink = false;
+            mProgram = glimac::loadProgram(mApplicationPath.dirPath() + "assets/shaders/3D.vs.glsl", mApplicationPath.dirPath() + "assets/shaders/directionallightcolors.fs.glsl");
         }
-        if(windowManager.isKeyPressed(SDLK_e) && mAx == false && (rectangleModel.find("monster_blue")->second).canInteract(mCamera.getPosition()))
+        if(windowManager.isKeyPressed(SDLK_e) && !mAx && (rectangleModel.find("monster_blue")->second).canInteract(mCamera.getPosition()))
         {
+            blue.pause();
             blue.play();
             text.write("Merci ! La lumiere est revenue !", 230.0, 100.0, 0.42, glm::vec3(1., 1., 1.));
         }
@@ -268,7 +276,7 @@ void Planet::quest(Text &text, const glimac::SDLWindowManager &windowManager, Au
             yellow.play();
             text.write("T'aimes l'espace toi ? Viens me voir quand tu auras du temps", 120.0, 100.0, 0.42, glm::vec3(1., 1., 1.));
         }
-        if (mNeedTalkToPink==false)
+        if (!mNeedTalkToPink)
         {
             if(windowManager.isKeyPressed(SDLK_e) && (cylinderModel.find("ax")->second).canInteract(mCamera.getPosition()))
             {
@@ -276,17 +284,9 @@ void Planet::quest(Text &text, const glimac::SDLWindowManager &windowManager, Au
                 new_object.play();
                 mAx = true;
             }
-            if (mAx == false)
+            if (!mAx)
                 text.write("Vole la hache", 15, 50.0, 0.5, glm::vec3(1., 1., 1.));
-            {
-                if(windowManager.isKeyPressed(SDLK_e) && (rectangleModel.find("monster_blue")->second).canInteract(mCamera.getPosition()))
-                {
-                    blue.play();
-                    text.write("Merci ! La lumiere est revenue !", 230.0, 100.0, 0.42, glm::vec3(1., 1., 1.));
-                }
-
-            }
-            if (mAx == true){
+            if (mAx){
                 text.write("Coupe 3 arbres : ", 15, 50.0, 0.5, glm::vec3(1., 1., 1.));
                 if (mTreeCtr == 0){
                     text.write("0/3", 230, 50.0, 0.5, glm::vec3(1., 1., 1.));
@@ -308,6 +308,7 @@ void Planet::quest(Text &text, const glimac::SDLWindowManager &windowManager, Au
                 }
                 if(windowManager.isKeyPressed(SDLK_e) && (rectangleModel.find("monster_blue")->second).canInteract(mCamera.getPosition()))
                 {
+                    blue.pause();
                     blue.play();
                     text.write("Hop hop hop rends moi ma hache voleur !", 230.0, 100.0, 0.42, glm::vec3(1., 1., 1.));
                 }
@@ -324,6 +325,7 @@ void Planet::quest(Text &text, const glimac::SDLWindowManager &windowManager, Au
     if (mPhase3){
         if(windowManager.isKeyPressed(SDLK_e) && (rectangleModel.find("monster_pink")->second).canInteract(mCamera.getPosition()))
         {
+            rose.pause();
             rose.play();
             text.write("Merci beaucoup de ton aide ! Va t'amuser !", 192.0, 90.0, 0.42, glm::vec3(1., 1., 1.));
             text.write("Tiens essaye de mettre un but pour voir !", 200.0, 60.0, 0.42, glm::vec3(1., 1., 1.));
@@ -331,6 +333,7 @@ void Planet::quest(Text &text, const glimac::SDLWindowManager &windowManager, Au
         }
         if(windowManager.isKeyPressed(SDLK_e) && (rectangleModel.find("monster_blue")->second).canInteract(mCamera.getPosition()))
         {
+            blue.pause();
             blue.play();
             text.write("Mais tu vas me rendre ma hache oui ?!", 230.0, 100.0, 0.42, glm::vec3(1., 1., 1.));
         }
@@ -346,10 +349,9 @@ void Planet::quest(Text &text, const glimac::SDLWindowManager &windowManager, Au
                 text.write("Tu ne vas quand même pas raser les bois ?", 230.0, 100.0, 0.42, glm::vec3(0.5, 0.1, 0.1));
             }
         }
-        if (mNeedTalkToPink==false){
+        if (!mNeedTalkToPink){
             text.write("Marque un but ! ", 15, 50.0, 0.5, glm::vec3(1., 1., 1.));
-            if((sphericModel.find("ball")->second).isIn(rectangleModel.find("cage1")->second) || (sphericModel.find("ball")->second).isIn(rectangleModel.find("cage2")->second) ) {            
-                applause.play();
+            if((sphericModel.find("ball")->second).isIn(rectangleModel.find("cage1")->second) || (sphericModel.find("ball")->second).isIn(rectangleModel.find("cage2")->second) ) {
                 mPhase3 = false;
                 mPhase4 = true;
                 mNeedTalkToYellow = true;
@@ -362,15 +364,18 @@ void Planet::quest(Text &text, const glimac::SDLWindowManager &windowManager, Au
         if (mNeedTalkToYellow)
         {   
             applause.pause();
+            applause.play();
             text.write("Va voir Jaune ", 15, 50.0, 0.5, glm::vec3(1., 1., 1.));
         }
         if(windowManager.isKeyPressed(SDLK_e) && (rectangleModel.find("monster_pink")->second).canInteract(mCamera.getPosition()))
         {
+            rose.pause();
             rose.play();
             text.write("Alors le foot ?", 350.0, 90.0, 0.42, glm::vec3(1., 1., 1.));
         }
         if(windowManager.isKeyPressed(SDLK_e) && (rectangleModel.find("monster_blue")->second).canInteract(mCamera.getPosition()))
         {
+            blue.pause();
             blue.play();
             text.write("Mais tu vas me rendre ma hache oui ?!", 230.0, 100.0, 0.42, glm::vec3(1., 1., 1.));
         }
@@ -382,7 +387,7 @@ void Planet::quest(Text &text, const glimac::SDLWindowManager &windowManager, Au
             mNeedTalkToYellow = false;
             mRocketKeys = true;
         }
-        if (mRocketKeys==true)
+        if (mRocketKeys)
         {
             text.write("Emprunte la fusee ", 15, 50.0, 0.5, glm::vec3(1., 1., 1.));
         }
@@ -445,19 +450,6 @@ void Planet::processInput(const glimac::SDLWindowManager &windowManager, float d
         footAudio.pause();
         footAudio.play();
     }
-
-    if(windowManager.isKeyPressed(SDLK_p))
-    {
-    	mSun = false;
-    	mUsingLamp = true;
-		mProgram = glimac::loadProgram(mApplicationPath.dirPath() + "assets/shaders/3D.vs.glsl", mApplicationPath.dirPath() + "assets/shaders/spotlight.fs.glsl");
-    }
-    if(windowManager.isKeyPressed(SDLK_o))
-    {
-    	mUsingLamp = false;
-    	mSun = true;
-		mProgram = glimac::loadProgram(mApplicationPath.dirPath() + "assets/shaders/3D.vs.glsl", mApplicationPath.dirPath() + "assets/shaders/directionallightcolors.fs.glsl");
-    }
 }
 
 bool Planet::collision(glm::mat4 newTransformationsMatrix, glm::vec3 position)
@@ -496,8 +488,16 @@ void Planet::drawModels(glm::mat4 &ProjMatrix)
     mProgram.use();
 
     //LIGHTS
-    if(mSun)
+    if(mPhase1 || (mPhase2 && mNeedTalkToPink))
     {
+	    glUniform3fv(glGetUniformLocation(mProgram.getGLId(), "uLightPos_vs"),1,glm::value_ptr(mCamera.getPosition())); 
+	    glUniform3fv(glGetUniformLocation(mProgram.getGLId(), "uLightIntensity"),1,glm::value_ptr(glm::vec3(0.5 + (float)mBatteryCtr, 0.5 + (float)mBatteryCtr, 0.5 + (float)mBatteryCtr))); //Color of the light
+	    glUniform3fv(glGetUniformLocation(mProgram.getGLId(), "uLightDirection"),1,glm::value_ptr(mCamera.getFrontVector()));
+	    glUniform1f(glGetUniformLocation(mProgram.getGLId(), "uInnerCutOff"),glm::cos(glm::radians(7.5f + 5.f*mBatteryCtr)));
+	    glUniform1f(glGetUniformLocation(mProgram.getGLId(), "uOuterCutOff"),glm::cos(glm::radians(12.5f + 5.f*mBatteryCtr)));
+	}
+	else
+	{
 	    glUniform3fv(glGetUniformLocation(mProgram.getGLId(), "uFirstLightDirection"),1,glm::value_ptr(glm::vec3(mSkyTransform*glm::vec4(1.,-1.,1.,0.))));
 	    glUniform3fv(glGetUniformLocation(mProgram.getGLId(), "uSecondLightDirection"),1,glm::value_ptr(glm::vec3(mSkyTransform*glm::vec4(-1.,-1.,1.,0.))));
 	    glUniform3fv(glGetUniformLocation(mProgram.getGLId(), "uThirdLightDirection"),1,glm::value_ptr(glm::vec3(mSkyTransform*glm::vec4(0.,-1.,-1.,0.))));
@@ -505,15 +505,6 @@ void Planet::drawModels(glm::mat4 &ProjMatrix)
 	    glUniform3fv(glGetUniformLocation(mProgram.getGLId(), "uFifthLightDirection"),1,glm::value_ptr(glm::vec3(mSkyTransform*glm::vec4(-1.,1.,1.,0.))));
 	    glUniform3fv(glGetUniformLocation(mProgram.getGLId(), "uSixthLightDirection"),1,glm::value_ptr(glm::vec3(mSkyTransform*glm::vec4(0.,1.,-1.,0.))));
 	    glUniform3fv(glGetUniformLocation(mProgram.getGLId(), "uLightIntensity"),1,glm::value_ptr(glm::vec3(2.,2.,2.))); //Color of the light
-	}
-
-    if(mUsingLamp)
-    {
-	    glUniform3fv(glGetUniformLocation(mProgram.getGLId(), "uLightPos_vs"),1,glm::value_ptr(mCamera.getPosition())); 
-	    glUniform3fv(glGetUniformLocation(mProgram.getGLId(), "uLightIntensity"),1,glm::value_ptr(glm::vec3(2.,2.,2.))); //Color of the light
-	    glUniform3fv(glGetUniformLocation(mProgram.getGLId(), "uLightDirection"),1,glm::value_ptr(mCamera.getFrontVector()));
-	    glUniform1f(glGetUniformLocation(mProgram.getGLId(), "uInnerCutOff"),glm::cos(glm::radians(17.5f)));
-	    glUniform1f(glGetUniformLocation(mProgram.getGLId(), "uOuterCutOff"),glm::cos(glm::radians(22.5f)));
 	}
 
     std::map<std::string, Model<Rectangle>>::iterator irec;

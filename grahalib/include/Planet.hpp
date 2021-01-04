@@ -35,8 +35,7 @@ public:
 							                              							 										 applicationPath.dirPath() + "assets/shaders/directionallightcolors.fs.glsl")),
 																								mSkyProgram(glimac::loadProgram(applicationPath.dirPath() + "assets/shaders/skybox.vs.glsl",
 							                              							 											applicationPath.dirPath() + "assets/shaders/skybox.fs.glsl")),
-																								mSkyTransform(glm::mat4(1)),
-																								mSun(true), mUsingLamp(false)
+																								mSkyTransform(glm::mat4(1))
 	{
 		parse(meshesFile);
 		initSkybox();
@@ -78,9 +77,6 @@ private:
     glimac::Program mSkyProgram;
     GLuint mVboSky, mVaoSky, mTextureSkybox;
     glm::mat4 mSkyTransform;
-
-    bool mSun;
-    bool mUsingLamp;
 
     void parse(std::string &meshesFile);
     void initSkybox();

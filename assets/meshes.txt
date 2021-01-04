@@ -123,7 +123,7 @@ mat~-0.5788,7.5984,0.88602,-88.1f,23f,8.1f,0.190,0.190,0.190
 col~Rectangle
 name~monster_blue
 mod~assets/models/rock1/rock1.obj
-mat~7.4753,0.4487,1.9271,3.28f,65.2f,12.4f,0.253,0.253,0.467
+mat~5.6693,-3.7121,3.2135,-104f,-224f,-28f,0.124,0.172,0.112
 col~Rectangle
 name~rock11
 mod~assets/models/rock1/rock1.obj
@@ -174,10 +174,6 @@ mod~assets/models/rock1/rock1.obj
 mat~6.3107,-2.4578,3.3258,-52.5f,-191f,-9.59f,0.188,0.260,0.169
 col~Rectangle
 name~rock113
-mod~assets/models/rock1/rock1.obj
-mat~5.6693,-3.7121,3.2135,-104f,-224f,-28f,0.124,0.172,0.112
-col~Rectangle
-name~rock114
 mod~assets/models/rock2/rock2.obj
 mat~-2.3436,1.7528,-6.9005,0f,-96f,0f,0.021,0.021,0.021
 col~Rectangle
