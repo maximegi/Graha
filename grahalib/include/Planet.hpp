@@ -38,7 +38,8 @@ public:
 	void processInput(const glimac::SDLWindowManager &windowManager, float deltaTime, glm::vec2 mousePosition, Audio footAudio);
 	void drawModels(glm::mat4 &ProjMatrix);
 	void deleteBuffers();
-	void quest(Text &text, const glimac::SDLWindowManager &windowManager);
+	void quest(Text &text, const glimac::SDLWindowManager &windowManager, Audio &wood, Audio &new_object, Audio &rose, Audio &blue, Audio &yellow, Audio &applause);
+    bool getmEnd() { return mEnd; };
 
 
 private:

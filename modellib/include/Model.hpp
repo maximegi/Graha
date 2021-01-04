@@ -21,7 +21,7 @@ template<typename T>
 class Model
 {
 	public:
-		Model(std::string &path, glm::mat4 ModelMatrix) : mModelMatrix(ModelMatrix), mCollision(ModelMatrix), mActionZone(glm::scale(ModelMatrix,glm::vec3(4.5f,4.5f,4.5f)))
+		Model(std::string &path, glm::mat4 ModelMatrix) : mCollision(ModelMatrix), mModelMatrix(ModelMatrix), mActionZone(glm::scale(ModelMatrix,glm::vec3(4.5f,4.5f,4.5f)))
 		{
 			loadModel(path);
 		}

@@ -174,13 +174,15 @@ void Game::RenderLoop(glimac::FilePath &applicationPath)
             
         //EVENTS
             firstPlanet.processInput(mWindowManager,deltaTime, mMousePosition, footAudio);
-            firstPlanet.quest(text, mWindowManager);
         //MODELS
             firstPlanet.drawModels(mProjMatrix);
 
         //TEXTS
-            text.write("Objectives", 0.1, 150.0, 0.7, glm::vec3(1., 1., 1.));
-
+            firstPlanet.quest(text, mWindowManager, woodAudio, new_objectAudio, roseAudio, blueAudio, yellowAudio, applauseAudio);
+            if(firstPlanet.getmEnd())
+            {
+                loop = 2;
+            }
             mMousePosition = mWindowManager.getMousePosition();
             mWindowManager.swapBuffers();
         }
@@ -212,18 +214,17 @@ void Game::RenderLoop(glimac::FilePath &applicationPath)
         glEnableVertexAttribArray(VERTEX_ATTR_POSITION);
         glEnableVertexAttribArray(VERTEX_ATTR_TEXTURE);
         glBindBuffer(GL_ARRAY_BUFFER, vbo);
-        
+
     //TEXTS
-        firstPlanet.quest(text, mWindowManager);
 
         glVertexAttribPointer(VERTEX_ATTR_POSITION,2,GL_FLOAT,GL_FALSE,sizeof(Vertex2DUV),(const GLvoid*)(offsetof(Vertex2DUV, position)));
         glVertexAttribPointer(VERTEX_ATTR_TEXTURE,2,GL_FLOAT,GL_FALSE,sizeof(Vertex2DUV),(const GLvoid*)(offsetof(Vertex2DUV, texture)));
 
         glBindBuffer(GL_ARRAY_BUFFER,0);
         glBindVertexArray(0);
+
         while(loop == 2)
         {
-            Bouton replay(353., 265., 111., 20., 0.5, "Play again");
             Bouton quit(385., 225., 70., 20., 0.5, "Quit");
             glClearColor(1.0,1.0,1.0,0.3);
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -235,38 +236,20 @@ void Game::RenderLoop(glimac::FilePath &applicationPath)
             glDrawArrays(GL_QUADS,0,4);
             glBindVertexArray(0);
             glBindTexture(GL_TEXTURE_2D, 0);
-            text.write(replay.mtext, replay.mx, replay.my, replay.mstext, glm::vec3(1., 1., 1.));
             text.write(quit.mtext, quit.mx, quit.my, quit.mstext, glm::vec3(1., 1., 1.));
+            text.write("C'est la fin du jeu je te jure, t'es triste non ?", 190., 365., 0.5, glm::vec3(1., 1., 1.));
 
             float currentFrame = mWindowManager.getTime();
             deltaTime = currentFrame - lastFrame;
             lastFrame = currentFrame;
             while(mWindowManager.pollEvent(e))
             {
-                if(e.type == SDL_MOUSEBUTTONUP && e.button.x * (2./3.) >= replay.mx && e.button.x * (2./3.) <= replay.mx + replay.mw
-                    && (float(mWindowHeight) - e.button.y) * (2./3.) >= replay.my && (float(mWindowHeight) - e.button.y) * (2./3.) <= replay.my + replay.mh)
-                {
-                    loop = 1;
-                    selectAudio.play();
-                }
                 if(e.type == SDL_QUIT || mWindowManager.isKeyPressed(SDLK_ESCAPE) || (e.type == SDL_MOUSEBUTTONUP && e.button.x * (2./3.) >= quit.mx && e.button.x * (2./3.) <= quit.mx + quit.mw
                     && (float(mWindowHeight) - e.button.y) * (2./3.) >= quit.my && (float(mWindowHeight) - e.button.y) * (2./3.) <= quit.my + quit.mh))
                 {
                     loop = 3;
                     done = true;
                 }
-            }
-            if(mWindowManager.isKeyPressed(SDLK_p))
-            {
-                loop = 1;
-                selectAudio.play();
-            }
-            if(mWindowManager.getMousePosition()[0] * (2./3.) >= replay.mx && mWindowManager.getMousePosition()[0] * (2./3.) <= replay.mx + replay.mw
-                && (float(mWindowHeight) - mWindowManager.getMousePosition()[1]) * (2./3.) >= replay.my && (float(mWindowHeight) - mWindowManager.getMousePosition()[1]) * (2./3.) <= replay.my + replay.mh)
-            {
-                flyoverAudio.pause();
-                flyoverAudio.play();
-                text.write(replay.mtext, replay.mx, replay.my, replay.mstext, glm::vec3(1., 1., 0.5));
             }
             if(mWindowManager.getMousePosition()[0] * (2./3.) >= quit.mx && mWindowManager.getMousePosition()[0] * (2./3.) <= quit.mx + quit.mw
                 && (float(mWindowHeight) - mWindowManager.getMousePosition()[1]) * (2./3.) >= quit.my && (float(mWindowHeight) - mWindowManager.getMousePosition()[1]) * (2./3.) <= quit.my + quit.mh)
@@ -284,11 +267,14 @@ void Game::close()
 {
     //MODELS
 	firstPlanet.deleteBuffers();
-
     //AUDIO
     musicAudio.deleteBuffer();
     footAudio.deleteBuffer();
     new_objectAudio.deleteBuffer();
     woodAudio.deleteBuffer();
+    roseAudio.deleteBuffer();
+    blueAudio.deleteBuffer();
+    yellowAudio.deleteBuffer();
+    applauseAudio.deleteBuffer();
     shutdownOpenAL();
 }
