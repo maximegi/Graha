@@ -14,6 +14,7 @@
 #include <glm.hpp>
 
 #include <Program.hpp>
+#include <FilePath.hpp>
 
 //modellib
 #include <Model.hpp>
@@ -29,14 +30,21 @@ class Planet
 {
 public:
 	Planet(glimac::FilePath applicationPath, std::string meshesFile, glm::vec3 beginPosition) : mCamera(beginPosition),
+																								mApplicationPath(applicationPath),
 																								mProgram(glimac::loadProgram(applicationPath.dirPath() + "assets/shaders/3D.vs.glsl",
-							                              							 										 applicationPath.dirPath() + "assets/shaders/directionallightcolors.fs.glsl")) 
+							                              							 										 applicationPath.dirPath() + "assets/shaders/directionallightcolors.fs.glsl")),
+																								mSkyProgram(glimac::loadProgram(applicationPath.dirPath() + "assets/shaders/skybox.vs.glsl",
+							                              							 											applicationPath.dirPath() + "assets/shaders/skybox.fs.glsl")),
+																								mSkyTransform(glm::mat4(1)),
+																								mSun(true), mUsingLamp(false)
 	{
 		parse(meshesFile);
+		initSkybox();
 	}
 
 	void processInput(const glimac::SDLWindowManager &windowManager, float deltaTime, glm::vec2 mousePosition, Audio footAudio);
 	void drawModels(glm::mat4 &ProjMatrix);
+	void drawSky(glm::mat4 &ProjMatrix);
 	void deleteBuffers();
 	void quest(Text &text, const glimac::SDLWindowManager &windowManager, Audio &wood, Audio &new_object, Audio &rose, Audio &blue, Audio &yellow, Audio &applause);
     bool getmEnd() { return mEnd; };
@@ -52,6 +60,7 @@ private:
 
 	FirstPersonCamera mCamera;
 
+	glimac::FilePath mApplicationPath;
     glimac::Program mProgram;
     bool mPhase0 = true;
     bool mPhase1 = false;
@@ -66,7 +75,15 @@ private:
 	int mBatteryCtr = 0;
 	int mTreeCtr = 0;
 
+    glimac::Program mSkyProgram;
+    GLuint mVboSky, mVaoSky, mTextureSkybox;
+    glm::mat4 mSkyTransform;
+
+    bool mSun;
+    bool mUsingLamp;
+
     void parse(std::string &meshesFile);
+    void initSkybox();
     bool collision(glm::mat4 newTransformationsMatrix, glm::vec3 position);
 
 };

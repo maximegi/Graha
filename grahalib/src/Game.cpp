@@ -165,7 +165,6 @@ void Game::RenderLoop(glimac::FilePath &applicationPath)
                     loop = 2;
                 }
             }
-            glClearColor(0.1,0.2,0.4,0.3);
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
             float currentFrame = mWindowManager.getTime();
@@ -174,6 +173,9 @@ void Game::RenderLoop(glimac::FilePath &applicationPath)
             
         //EVENTS
             firstPlanet.processInput(mWindowManager,deltaTime, mMousePosition, footAudio);
+
+        //SKY
+            firstPlanet.drawSky(mProjMatrix);
         //MODELS
             firstPlanet.drawModels(mProjMatrix);
 
@@ -214,8 +216,6 @@ void Game::RenderLoop(glimac::FilePath &applicationPath)
         glEnableVertexAttribArray(VERTEX_ATTR_POSITION);
         glEnableVertexAttribArray(VERTEX_ATTR_TEXTURE);
         glBindBuffer(GL_ARRAY_BUFFER, vbo);
-
-    //TEXTS
 
         glVertexAttribPointer(VERTEX_ATTR_POSITION,2,GL_FLOAT,GL_FALSE,sizeof(Vertex2DUV),(const GLvoid*)(offsetof(Vertex2DUV, position)));
         glVertexAttribPointer(VERTEX_ATTR_TEXTURE,2,GL_FLOAT,GL_FALSE,sizeof(Vertex2DUV),(const GLvoid*)(offsetof(Vertex2DUV, texture)));

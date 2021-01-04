@@ -39,6 +39,7 @@ public:
 	glm::mat4 getViewMatrix(){ return glm::lookAt(mPosition,mPosition+mFrontVector,mUpVector); }
 
 	glm::vec3 getPosition(){ return mPosition; }
-	glm::vec3 getDirection(){ return glm::cross(mLeftVector,glm::vec3(0.,1.,0.)); }
+	glm::vec3 getDirection(){ return glm::cross(mLeftVector,glm::vec3(0.,1.,0.)); } // Return direction of the player
+	glm::vec3 getFrontVector(){ return mFrontVector; } // Return direction of the camera
 	glm::vec3 getLeftVector(){ return mLeftVector; }
 };
