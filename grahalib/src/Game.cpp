@@ -24,8 +24,8 @@ void Game::RenderLoop(glimac::FilePath &applicationPath)
         while(loop == 0)
         {
 
-            Bouton play(385., 265., 70., 20., 0.5, "Play");
-            Bouton quit(385., 225., 70., 20., 0.5, "Quit");
+            Bouton play(385., 265., 50., 20., 0.5, "Play");
+            Bouton quit(385., 225., 50., 20., 0.5, "Quit");
 
             glClear(GL_COLOR_BUFFER_BIT);
 
@@ -118,7 +118,7 @@ void Game::RenderLoop(glimac::FilePath &applicationPath)
 
         while(loop == 2)
         {
-            Bouton quit(385., 225., 70., 20., 0.5, "Quit");
+            Bouton quit(385., 225., 50., 20., 0.5, "Quit");
 
             glClear(GL_COLOR_BUFFER_BIT);
 
